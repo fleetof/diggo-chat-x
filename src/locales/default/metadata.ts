@@ -5,7 +5,7 @@ export default {
   },
   chat: {
     description: '{{appName}} 带给你最好的 ChatGPT, Claude , Gemini, OLLaMA WebUI 使用体验',
-    title: '{{appName}}：个人 AI 效能工具，给自己一个更聪明的大脑',
+    title: '{{appName}}：Your AI Assistant',
   },
   discover: {
     assistants: {
@@ -39,6 +39,6 @@ export default {
   },
   welcome: {
     description: '{{appName}} 带给你最好的 ChatGPT, Claude , Gemini, OLLaMA WebUI 使用体验',
-    title: '欢迎使用 {{appName}}：个人 AI 效能工具，给自己一个更聪明的大脑',
+    title: '欢迎使用 {{appName}}：Your AI Assistant',
   },
 };

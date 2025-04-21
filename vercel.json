@@ -1,4 +1,9 @@
 {
-  "buildCommand": "NODE_OPTIONS=--max-old-space-size=6144 bun run build", 
+  "buildCommand": "NODE_OPTIONS=--max-old-space-size=6144 bun run build",
+  "git": {
+    "deploymentEnabled": {
+      "main": false
+    }
+  },
   "installCommand": "bun install"
 }
