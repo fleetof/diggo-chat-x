@@ -122,7 +122,7 @@ export class Meta {
         },
       ],
       locale,
-      siteName: 'LobeChat',
+      siteName: 'Diggo Chat',
       title,
       type,
       url,
