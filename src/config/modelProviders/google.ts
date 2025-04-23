@@ -4,6 +4,23 @@ import { ModelProviderCard } from '@/types/llm';
 const Google: ModelProviderCard = {
   chatModels: [
     {
+      contextWindowTokens: 1_048_576 + 65_536,
+      description:
+        'Gemini 2.5 Flash Preview 是 Google 性价比最高的模型，提供全面的功能。',
+      displayName: 'Gemini 2.5 Flash Preview 04-17',
+      enabled: true,
+      functionCall: true,
+      id: 'gemini-2.5-flash-preview-04-17',
+      maxOutput: 65_536,
+      pricing: {
+        cachedInput: 0,
+        input: 0.15,
+        output: 3.5, // Thinking
+      },
+      releasedAt: '2025-04-17',
+      vision: true,
+    },
+    {
       contextWindowTokens: 2_097_152 + 8192,
       description:
         'Gemini 2.5 Pro Experimental 是 Google 最新的实验性多模态AI模型，与历史版本相比有一定的质量提升，特别是对于世界知识、代码和长上下文。',
@@ -89,7 +106,7 @@ const Google: ModelProviderCard = {
       description:
         'Gemini 2.0 Flash Thinking Exp 是 Google 的实验性多模态推理AI模型，能对复杂问题进行推理，拥有新的思维能力。',
       displayName: 'Gemini 2.0 Flash Thinking Experimental 01-21',
-      enabled: true,
+      enabled: false,
       id: 'gemini-2.0-flash-thinking-exp-01-21',
       maxOutput: 65_536,
       pricing: {
