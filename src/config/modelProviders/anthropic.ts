@@ -25,7 +25,7 @@ const Anthropic: ModelProviderCard = {
       description:
         'Claude 3.7 sonnet Extended thinking 是 Anthropic 最快的下一代模型。与 Claude 3 Haiku 相比，Claude 3.7 Sonnet 在各项技能上都有所提升，并在许多智力基准测试中超越了上一代最大的模型 Claude 3 Opus。',
       displayName: 'Claude 3.7 Sonnet Extended thinking',
-      enabled: true,
+      enabled: false,
       functionCall: true,
       id: 'claude-3-7-sonnet-20250219',
       maxOutput: 64_000,
@@ -42,7 +42,7 @@ const Anthropic: ModelProviderCard = {
       description:
         'Claude 3.5 Haiku 是 Anthropic 最快的下一代模型。与 Claude 3 Haiku 相比，Claude 3.5 Haiku 在各项技能上都有所提升，并在许多智力基准测试中超越了上一代最大的模型 Claude 3 Opus。',
       displayName: 'Claude 3.5 Haiku',
-      enabled: true,
+      enabled: false,
       functionCall: true,
       id: 'claude-3-5-haiku-20241022',
       maxOutput: 8192,
@@ -124,7 +124,7 @@ const Anthropic: ModelProviderCard = {
       description:
         'Claude 3 Opus 是 Anthropic 用于处理高度复杂任务的最强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
       displayName: 'Claude 3 Opus',
-      enabled: true,
+      enabled: false,
       functionCall: true,
       id: 'claude-3-opus-20240229',
       maxOutput: 4096,

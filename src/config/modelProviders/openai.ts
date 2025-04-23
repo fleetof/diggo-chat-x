@@ -4,6 +4,23 @@ import { ModelProviderCard } from '@/types/llm';
 const OpenAI: ModelProviderCard = {
   chatModels: [
     {
+      contextWindowTokens: 200_000,
+      description:
+        'o4-mini 是我们最新的小型 o 系列模型。 它专为快速有效的推理而优化，在编码和视觉任务中表现出极高的效率和性能。',
+      displayName: 'o4-mini',
+      enabled: true,
+      functionCall: true,
+      id: 'o4-mini',
+      maxOutput: 100_000,
+      pricing: {
+        cachedInput: 0.275,
+        input: 1.1,
+        output: 4.4,
+      },
+      releasedAt: '2025-04-17',
+      vision: true,
+    },
+    {
       contextWindowTokens: 1_047_576,
       description:
         'GPT-4.1 mini 提供了智能、速度和成本之间的平衡，使其成为许多用例中有吸引力的模型。',
