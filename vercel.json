@@ -1,7 +1,7 @@
 {
   "build": {
     "env": {
-      "NODE_OPTIONS": "--max-old-space-size=8192"
+      "VERCEL_FORCE_NO_BUILD_CACHE": "1"
     }
   },
   "buildCommand": "NODE_OPTIONS=--max-old-space-size=6144 bun run build",
