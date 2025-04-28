@@ -40,7 +40,7 @@ const Google: ModelProviderCard = {
       contextWindowTokens: 2_097_152 + 8192,
       description:
         'Gemini 2.0 Flash Experimental 是 Google 最新的实验性多模态AI模型，与历史版本相比有一定的质量提升，特别是对于世界知识、代码和长上下文。',
-      displayName: 'Gemini 2.0 Flash Experimental',
+      displayName: 'Gemini 2.0 Flash Experimental (推荐使用！强大且全面)',
       enabled: true,
       functionCall: true,
       id: 'gemini-2.0-flash-exp',
