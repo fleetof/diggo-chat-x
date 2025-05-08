@@ -73,3 +73,5 @@ vertex-ai-key.json
 
 
 .specstory
+# SpecStory explanation file
+.specstory/.what-is-this.md
