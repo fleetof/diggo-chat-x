@@ -3,8 +3,12 @@
 import { useRouter } from 'next/navigation';
 import { memo, useEffect } from 'react';
 
+import { topicService } from '@/services/topic';
+// <-- 确保导入
 import { useGlobalStore } from '@/store/global';
 import { systemStatusSelectors } from '@/store/global/selectors';
+import { useSessionStore } from '@/store/session';
+// <-- 确保导入
 import { useUserStore } from '@/store/user';
 
 import { AppLoadingStage } from '../stage';
@@ -16,30 +20,45 @@ interface RedirectProps {
 const Redirect = memo<RedirectProps>(({ setActiveStage }) => {
   const router = useRouter();
   const isUserStateInit = useUserStore((s) => s.isUserStateInit);
-
+  const activeId = useSessionStore((s) => s.activeId); // <-- 使用 activeId
   const isPgliteNotEnabled = useGlobalStore(systemStatusSelectors.isPgliteNotEnabled);
 
-  const navToChat = () => {
+  const navigateToChatWithLatestTopic = async () => {
     setActiveStage(AppLoadingStage.GoToChat);
-    router.replace('/chat');
+    try {
+      if (!activeId) {
+        router.replace('/chat');
+        return;
+      }
+
+      const topics = await topicService.getTopics({ sessionId: activeId }); // <-- 使用 topicService
+
+      if (topics && topics.length > 0) {
+        const latestTopicId = topics[0].id;
+        router.replace(`/chat?topic=${latestTopicId}`);
+      } else {
+        router.replace('/chat');
+      }
+    } catch (error) {
+      console.error('[ClientRedirect] Failed to fetch topics, redirecting to /chat:', error);
+      router.replace('/chat');
+    }
   };
 
   useEffect(() => {
-    // if pglite is not enabled, redirect to chat
     if (isPgliteNotEnabled) {
-      navToChat();
+      setActiveStage(AppLoadingStage.GoToChat);
+      router.replace('/chat');
       return;
     }
 
-    // if user state not init, wait for loading
     if (!isUserStateInit) {
       setActiveStage(AppLoadingStage.InitUser);
       return;
     }
 
-    // finally check the conversation status
-    navToChat();
-  }, [isUserStateInit, isPgliteNotEnabled]);
+    navigateToChatWithLatestTopic();
+  }, [isUserStateInit, isPgliteNotEnabled, activeId, router, setActiveStage]); // <-- 依赖项更新
 
   return null;
 });
