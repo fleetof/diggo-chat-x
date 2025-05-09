@@ -22,7 +22,7 @@ export const DEFAULT_LLM_CONFIG = genUserLLMConfig({
   },
 });
 
-export const DEFAULT_MODEL = 'gemini-2.0-flash-exp'; // 修改默认模型，这里也要改
+export const DEFAULT_MODEL = 'gemini-2.0-pro-exp-02-05'; // 修改默认模型，这里也要改
 
 export const DEFAULT_EMBEDDING_MODEL = 'text-embedding-3-small';
 export const DEFAULT_EMBEDDING_PROVIDER = ModelProvider.OpenAI;
