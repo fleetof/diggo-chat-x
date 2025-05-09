@@ -22,7 +22,7 @@ export const DEFAULT_LLM_CONFIG = genUserLLMConfig({
   },
 });
 
-export const DEFAULT_MODEL = 'gemini-2.0-pro-exp-02-05'; // 修改默认模型，这里也要改
+export const DEFAULT_MODEL = 'gpt-4.1-mini'; // 修改默认模型，这里也要改
 
 export const DEFAULT_EMBEDDING_MODEL = 'text-embedding-3-small';
 export const DEFAULT_EMBEDDING_PROVIDER = ModelProvider.OpenAI;
@@ -31,4 +31,4 @@ export const DEFAULT_RERANK_MODEL = 'rerank-english-v3.0';
 export const DEFAULT_RERANK_PROVIDER = 'cohere';
 export const DEFAULT_RERANK_QUERY_MODE = 'full_text';
 
-export const DEFAULT_PROVIDER = ModelProvider.Google; // 修改默认模型，这里也要改
+export const DEFAULT_PROVIDER = ModelProvider.OpenAI; // 修改默认模型，这里也要改
