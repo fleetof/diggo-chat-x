@@ -21,6 +21,22 @@ const OpenAI: ModelProviderCard = {
       vision: true,
     },
     {
+      contextWindowTokens: 1_047_576,
+      description: 'GPT-4.1 是我们用于复杂任务的旗舰模型。它非常适合跨领域解决问题。',
+      displayName: 'GPT-4.1 (复杂任务、跨领域解决问题)',
+      enabled: true,
+      functionCall: true,
+      id: 'gpt-4.1',
+      maxOutput: 32_768,
+      pricing: {
+        cachedInput: 0.5,
+        input: 2,
+        output: 8,
+      },
+      releasedAt: '2025-04-14',
+      vision: true,
+    },
+    {
       contextWindowTokens: 200_000,
       description:
         'o4-mini 是我们最新的小型 o 系列模型。 它专为快速有效的推理而优化，在编码和视觉任务中表现出极高的效率和性能。',
