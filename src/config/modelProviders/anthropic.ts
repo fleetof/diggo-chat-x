@@ -23,6 +23,23 @@ const Anthropic: ModelProviderCard = {
     },
     {
       contextWindowTokens: 200_000,
+      description: 'Claude 4 sonnet 是 Anthropic 最快的下一代模型。',
+      displayName: 'Claude 4 Sonnet (数学证明、复杂逻辑推理专用)',
+      enabled: true,
+      functionCall: true,
+      id: 'claude-sonnet-4-0',
+      maxOutput: 8192,
+      pricing: {
+        cachedInput: 0.1,
+        input: 1,
+        output: 5,
+        writeCacheInput: 1.25,
+      },
+      releasedAt: '2025-02-24',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 200_000,
       description:
         'Claude 3.7 sonnet Extended thinking 是 Anthropic 最快的下一代模型。与 Claude 3 Haiku 相比，Claude 3.7 Sonnet 在各项技能上都有所提升，并在许多智力基准测试中超越了上一代最大的模型 Claude 3 Opus。',
       displayName: 'Claude 3.7 Sonnet Extended thinking',
