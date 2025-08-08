@@ -18,8 +18,8 @@ const vercelUrl = `https://${process.env.VERCEL_URL}`;
 
 const APP_URL = process.env.APP_URL ? process.env.APP_URL : isInVercel ? vercelUrl : undefined;
 
-// only throw error in server mode and server side
-if (typeof window === 'undefined' && isServerMode && !APP_URL) {
+// only throw error in server mode and server side, but allow Vercel auto URL
+if (typeof window === 'undefined' && isServerMode && !APP_URL && !isInVercel) {
   throw new Error('`APP_URL` is required in server mode');
 }
 
