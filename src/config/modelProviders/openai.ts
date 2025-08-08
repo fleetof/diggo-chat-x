@@ -8,10 +8,27 @@ const OpenAI: ModelProviderCard = {
       contextWindowTokens: 400_000,
       description:
         '更快、更经济高效的 GPT-5 版本，适用于明确定义的任务。在保持高质量输出的同时，提供更快的响应速度。',
-      displayName: 'GPT-5 mini',
+      displayName: 'GPT-5 mini (日常对话、创意写作)',
       enabled: true,
       functionCall: true,
       id: 'gpt-5-mini',
+      maxOutput: 128_000,
+      pricing: {
+        cachedInput: 0.03,
+        input: 0.25,
+        output: 2,
+      },
+      releasedAt: '2025-08-07',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 400_000,
+      description:
+        'GPT-5 是 OpenAI 的最新一代模型，具有更强大的推理能力和更快的响应速度。适用于需要进行复杂推理和逻辑推理的任务。',
+      displayName: 'GPT-5 (数文学证明、复杂逻辑推理专用)',
+      enabled: true,
+      functionCall: true,
+      id: 'gpt-5',
       maxOutput: 128_000,
       pricing: {
         cachedInput: 0.03,
@@ -41,7 +58,7 @@ const OpenAI: ModelProviderCard = {
       contextWindowTokens: 1_047_576,
       description: 'GPT-4.1 是我们用于复杂任务的旗舰模型。它非常适合跨领域解决问题。',
       displayName: 'GPT-4.1 (复杂任务、跨领域解决问题)',
-      enabled: true,
+      enabled: false,
       functionCall: true,
       id: 'gpt-4.1',
       maxOutput: 32_768,
@@ -58,7 +75,7 @@ const OpenAI: ModelProviderCard = {
       description:
         'o4-mini 是我们最新的小型 o 系列模型。 它专为快速有效的推理而优化，在编码和视觉任务中表现出极高的效率和性能。',
       displayName: 'o4-mini (数学证明、复杂逻辑推理专用)',
-      enabled: true,
+      enabled: false,
       functionCall: true,
       id: 'o4-mini',
       maxOutput: 100_000,
