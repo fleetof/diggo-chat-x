@@ -260,6 +260,17 @@
     },
     "title": "本地檔案"
   },
+  "localSystem": {
+    "apiName": {
+      "listLocalFiles": "查看檔案列表",
+      "moveLocalFiles": "移動檔案",
+      "readLocalFile": "讀取檔案內容",
+      "renameLocalFile": "重新命名",
+      "searchLocalFiles": "搜尋檔案",
+      "writeLocalFile": "寫入檔案"
+    },
+    "title": "本地檔案"
+  },
   "mcpInstall": {
     "CHECKING_INSTALLATION": "檢查安裝環境...",
     "COMPLETED": "安裝完成",
@@ -306,6 +317,7 @@
     "skipDependencies": "跳過檢查"
   },
   "pluginList": "插件列表",
+  "pluginList": "外掛清單",
   "protocolInstall": {
     "actions": {
       "install": "安裝",
@@ -366,20 +378,6 @@
     "title": "安裝 MCP 插件",
     "warning": "⚠️ 請確認您信任此插件的來源，惡意插件可能會危害您的系統安全。"
   },
-  "localSystem": {
-    "apiName": {
-      "listLocalFiles": "查看檔案列表",
-      "moveLocalFiles": "移動檔案",
-      "readLocalFile": "讀取檔案內容",
-      "renameLocalFile": "重新命名",
-      "searchLocalFiles": "搜尋檔案",
-      "writeLocalFile": "寫入檔案"
-    },
-    "title": "本地檔案"
-  },
-  "pluginList": "外掛清單",
-  "search": {
-    "apiName": {
   "search": {
     "apiName": {
       "crawlMultiPages": "讀取多個頁面內容",

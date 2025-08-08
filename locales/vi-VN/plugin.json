@@ -260,15 +260,6 @@
     },
     "title": "Tệp cục bộ"
   },
-  "pluginList": "Danh sách plugin",
-  "search": {
-    "apiName": {
-      "crawlSinglePage": "Đọc nội dung trang",
-      "search": "Tìm kiếm trang"
-      "writeLocalFile": "Ghi tệp"
-    },
-    "title": "Tệp cục bộ"
-  },
   "mcpInstall": {
     "CHECKING_INSTALLATION": "Đang kiểm tra môi trường cài đặt...",
     "COMPLETED": "Hoàn thành cài đặt",
@@ -314,6 +305,7 @@
     "recheckDependencies": "Kiểm tra lại",
     "skipDependencies": "Bỏ qua kiểm tra"
   },
+  "pluginList": "Danh sách plugin",
   "pluginList": "Danh sách plugin",
   "protocolInstall": {
     "actions": {

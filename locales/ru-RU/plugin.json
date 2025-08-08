@@ -260,6 +260,17 @@
     },
     "title": "Локальные файлы"
   },
+  "localSystem": {
+    "apiName": {
+      "listLocalFiles": "Просмотреть список файлов",
+      "moveLocalFiles": "Переместить файл",
+      "readLocalFile": "Читать содержимое файла",
+      "renameLocalFile": "Переименовать",
+      "searchLocalFiles": "Поиск файлов",
+      "writeLocalFile": "Записать файл"
+    },
+    "title": "Локальные файлы"
+  },
   "mcpInstall": {
     "CHECKING_INSTALLATION": "Проверка среды установки...",
     "COMPLETED": "Установка завершена",
@@ -304,17 +315,6 @@
     },
     "recheckDependencies": "Проверить зависимости снова",
     "skipDependencies": "Пропустить проверку"
-  },
-  "localSystem": {
-    "apiName": {
-      "listLocalFiles": "Просмотреть список файлов",
-      "moveLocalFiles": "Переместить файл",
-      "readLocalFile": "Читать содержимое файла",
-      "renameLocalFile": "Переименовать",
-      "searchLocalFiles": "Поиск файлов",
-      "writeLocalFile": "Записать файл"
-    },
-    "title": "Локальные файлы"
   },
   "pluginList": "Список плагинов",
   "protocolInstall": {
@@ -379,8 +379,6 @@
   },
   "search": {
     "apiName": {
-      "crawlSinglePage": "Читать содержимое страницы",
-      "search": "Поиск страницы"
       "crawlMultiPages": "Чтение содержимого нескольких страниц",
       "crawlSinglePage": "Чтение содержимого страницы",
       "search": "Поиск по странице"

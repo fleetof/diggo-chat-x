@@ -306,6 +306,7 @@
     "skipDependencies": "チェックをスキップ"
   },
   "pluginList": "プラグイン一覧",
+  "pluginList": "プラグインリスト",
   "protocolInstall": {
     "actions": {
       "install": "インストール",
@@ -366,21 +367,6 @@
     "title": "MCPプラグインをインストール",
     "warning": "⚠️ このプラグインの出所を信頼していることを確認してください。悪意のあるプラグインはシステムの安全を脅かす可能性があります。"
   },
-  "localSystem": {
-    "apiName": {
-      "listLocalFiles": "ファイルリストを表示",
-      "moveLocalFiles": "ファイルを移動",
-      "readLocalFile": "ファイル内容を読み取る",
-      "renameLocalFile": "名前を変更",
-      "searchLocalFiles": "ファイルを検索",
-      "writeLocalFile": "ファイルに書き込む"
-    },
-    "title": "ローカルファイル"
-  },
-  "pluginList": "プラグインリスト",
-  "search": {
-    "apiName": {
-      "crawlSinglePage": "ページ内容を読み取る",
   "search": {
     "apiName": {
       "crawlMultiPages": "複数ページの内容を読み込み",
