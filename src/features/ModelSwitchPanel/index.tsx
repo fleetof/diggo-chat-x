@@ -1,9 +1,8 @@
-import { ActionIcon, Icon } from '@lobehub/ui';
+import { ActionIcon } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import type { ItemType } from 'antd/es/menu/interface';
-import { LucideArrowRight, LucideBolt } from 'lucide-react';
+import { LucideBolt } from 'lucide-react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { type ReactNode, memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
@@ -49,14 +48,13 @@ interface IProps {
 
 const ModelSwitchPanel = memo<IProps>(({ children, onOpenChange, open }) => {
   const { t } = useTranslation('components');
-  const { styles, theme } = useStyles();
+  const { styles } = useStyles();
   const [model, provider, updateAgentConfig] = useAgentStore((s) => [
     agentSelectors.currentAgentModel(s),
     agentSelectors.currentAgentModelProvider(s),
     s.updateAgentConfig,
   ]);
   const { showLLM } = useServerConfigStore(featureFlagsSelectors);
-  const router = useRouter();
   const enabledList = useEnabledChatModels();
 
   const items = useMemo<ItemType[]>(() => {
@@ -69,43 +67,12 @@ const ModelSwitchPanel = memo<IProps>(({ children, onOpenChange, open }) => {
         },
       }));
 
-      // if there is empty items, add a placeholder guide
-      if (items.length === 0)
-        return [
-          {
-            key: `${provider.id}-empty`,
-            label: (
-              <Flexbox gap={8} horizontal style={{ color: theme.colorTextTertiary }}>
-                {t('ModelSwitchPanel.emptyModel')}
-                <Icon icon={LucideArrowRight} />
-              </Flexbox>
-            ),
-            onClick: () => {
-              router.push(
-                isDeprecatedEdition ? '/settings/llm' : `/settings/provider/${provider.id}`,
-              );
-            },
-          },
-        ];
-
+      // Simply return empty array if no models
       return items;
     };
 
-    if (enabledList.length === 0)
-      return [
-        {
-          key: `no-provider`,
-          label: (
-            <Flexbox gap={8} horizontal style={{ color: theme.colorTextTertiary }}>
-              {t('ModelSwitchPanel.emptyProvider')}
-              <Icon icon={LucideArrowRight} />
-            </Flexbox>
-          ),
-          onClick: () => {
-            router.push(isDeprecatedEdition ? '/settings/llm' : `/settings/provider`);
-          },
-        },
-      ];
+    // Simply return empty array if no providers
+    if (enabledList.length === 0) return [];
 
     // otherwise show with provider group
     return enabledList.map((provider) => ({

@@ -12,7 +12,6 @@ import BedrockProvider from './bedrock';
 import CloudflareProvider from './cloudflare';
 import CohereProvider from './cohere';
 import DeepSeekProvider from './deepseek';
-import FalProvider from './fal';
 import FireworksAIProvider from './fireworksai';
 import GiteeAIProvider from './giteeai';
 import GithubProvider from './github';
@@ -128,7 +127,7 @@ export const DEFAULT_MODEL_PROVIDER_LIST = [
   MoonshotProvider,
   AiHubMixProvider,
   OpenRouterProvider,
-  FalProvider,
+  // FalProvider, // 完全不在面板中显示 Fal
   HuggingFaceProvider,
   CloudflareProvider,
   GithubProvider,

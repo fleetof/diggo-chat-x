@@ -1,8 +1,7 @@
-import { ActionIcon, Icon, Select, type SelectProps } from '@lobehub/ui';
-import { createStyles, useTheme } from 'antd-style';
-import { LucideArrowRight, LucideBolt } from 'lucide-react';
+import { ActionIcon, Select, type SelectProps } from '@lobehub/ui';
+import { createStyles } from 'antd-style';
+import { LucideBolt } from 'lucide-react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
@@ -33,9 +32,7 @@ interface ModelOption {
 const ModelSelect = memo(() => {
   const { styles } = useStyles();
   const { t } = useTranslation('components');
-  const theme = useTheme();
   const { showLLM } = useServerConfigStore(featureFlagsSelectors);
-  const router = useRouter();
 
   const [currentModel, currentProvider] = useImageStore((s) => [
     imageGenerationConfigSelectors.model(s),
@@ -53,48 +50,12 @@ const ModelSelect = memo(() => {
         value: `${provider.id}/${model.id}`,
       }));
 
-      // if there are no models, add a placeholder guide
-      if (modelOptions.length === 0) {
-        return [
-          {
-            disabled: true,
-            label: (
-              <Flexbox gap={8} horizontal style={{ color: theme.colorTextTertiary }}>
-                {t('ModelSwitchPanel.emptyModel')}
-                <Icon icon={LucideArrowRight} />
-              </Flexbox>
-            ),
-            onClick: () => {
-              router.push(
-                isDeprecatedEdition ? '/settings/llm' : `/settings/provider/${provider.id}`,
-              );
-            },
-            value: `${provider.id}/empty`,
-          },
-        ];
-      }
-
+      // Simply return empty array if no models
       return modelOptions;
     };
 
-    // if there are no providers at all
-    if (enabledImageModelList.length === 0) {
-      return [
-        {
-          disabled: true,
-          label: (
-            <Flexbox gap={8} horizontal style={{ color: theme.colorTextTertiary }}>
-              {t('ModelSwitchPanel.emptyProvider')}
-              <Icon icon={LucideArrowRight} />
-            </Flexbox>
-          ),
-          onClick: () => {
-            router.push(isDeprecatedEdition ? '/settings/llm' : '/settings/provider');
-          },
-          value: 'no-provider',
-        },
-      ];
-    }
+    // Simply return empty array if no providers
+    if (enabledImageModelList.length === 0) return [];
 
     if (enabledImageModelList.length === 1) {
       const provider = enabledImageModelList[0];
@@ -125,7 +86,7 @@ const ModelSelect = memo(() => {
       ),
       options: getImageModels(provider),
     }));
-  }, [enabledImageModelList, showLLM, t, theme.colorTextTertiary, router]);
+  }, [enabledImageModelList, showLLM, t]);
 
   return (
     <Select
@@ -133,8 +94,6 @@ const ModelSelect = memo(() => {
         root: styles.popup,
       }}
       onChange={(value, option) => {
-        // Skip onChange for disabled options (empty states)
-        if (value === 'no-provider' || value.includes('/empty')) return;
         const model = value.split('/').slice(1).join('/');
         const provider = (option as unknown as ModelOption).provider;
         if (model !== currentModel || provider !== currentProvider) {
