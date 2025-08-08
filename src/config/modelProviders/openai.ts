@@ -43,6 +43,7 @@ const OpenAI: ModelProviderCard = {
       description:
         'GPT-4.1 mini 提供了智能、速度和成本之间的平衡，使其成为许多用例中有吸引力的模型。',
       displayName: 'GPT-4.1 mini',
+      enabled: false,
       functionCall: true,
       id: 'gpt-4.1-mini',
       maxOutput: 32_768,
