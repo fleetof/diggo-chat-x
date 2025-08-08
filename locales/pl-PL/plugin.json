@@ -260,6 +260,17 @@
     },
     "title": "Pliki lokalne"
   },
+  "localSystem": {
+    "apiName": {
+      "listLocalFiles": "Wyświetl listę plików",
+      "moveLocalFiles": "Przenieś pliki",
+      "readLocalFile": "Odczytaj zawartość pliku",
+      "renameLocalFile": "Zmień nazwę",
+      "searchLocalFiles": "Szukaj plików",
+      "writeLocalFile": "Zapisz plik"
+    },
+    "title": "Pliki lokalne"
+  },
   "mcpInstall": {
     "CHECKING_INSTALLATION": "Sprawdzanie środowiska instalacji...",
     "COMPLETED": "Instalacja zakończona",
@@ -304,17 +315,6 @@
     },
     "recheckDependencies": "Sprawdź ponownie",
     "skipDependencies": "Pomiń sprawdzanie"
-  },
-  "localSystem": {
-    "apiName": {
-      "listLocalFiles": "Wyświetl listę plików",
-      "moveLocalFiles": "Przenieś pliki",
-      "readLocalFile": "Odczytaj zawartość pliku",
-      "renameLocalFile": "Zmień nazwę",
-      "searchLocalFiles": "Szukaj plików",
-      "writeLocalFile": "Zapisz plik"
-    },
-    "title": "Pliki lokalne"
   },
   "pluginList": "Lista wtyczek",
   "protocolInstall": {
@@ -379,8 +379,6 @@
   },
   "search": {
     "apiName": {
-      "crawlSinglePage": "Odczytaj zawartość strony",
-      "search": "Szukaj strony"
       "crawlMultiPages": "Odczytaj zawartość wielu stron",
       "crawlSinglePage": "Odczytaj zawartość strony",
       "search": "Wyszukaj stronę"

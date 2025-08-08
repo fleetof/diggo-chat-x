@@ -260,6 +260,17 @@
     },
     "title": "Arquivos locais"
   },
+  "localSystem": {
+    "apiName": {
+      "listLocalFiles": "Ver lista de arquivos",
+      "moveLocalFiles": "Mover arquivos",
+      "readLocalFile": "Ler conteúdo do arquivo",
+      "renameLocalFile": "Renomear",
+      "searchLocalFiles": "Pesquisar arquivos",
+      "writeLocalFile": "Escrever no arquivo"
+    },
+    "title": "Arquivos Locais"
+  },
   "mcpInstall": {
     "CHECKING_INSTALLATION": "Verificando ambiente de instalação...",
     "COMPLETED": "Instalação concluída",
@@ -306,6 +317,7 @@
     "skipDependencies": "Pular verificação"
   },
   "pluginList": "Lista de plugins",
+  "pluginList": "Lista de Plugins",
   "protocolInstall": {
     "actions": {
       "install": "Instalar",
@@ -366,20 +378,6 @@
     "title": "Instalar plugin MCP",
     "warning": "⚠️ Por favor, confirme que confia na fonte deste plugin, plugins maliciosos podem comprometer a segurança do seu sistema."
   },
-  "localSystem": {
-    "apiName": {
-      "listLocalFiles": "Ver lista de arquivos",
-      "moveLocalFiles": "Mover arquivos",
-      "readLocalFile": "Ler conteúdo do arquivo",
-      "renameLocalFile": "Renomear",
-      "searchLocalFiles": "Pesquisar arquivos",
-      "writeLocalFile": "Escrever no arquivo"
-    },
-    "title": "Arquivos Locais"
-  },
-  "pluginList": "Lista de Plugins",
-  "search": {
-    "apiName": {
   "search": {
     "apiName": {
       "crawlMultiPages": "Ler conteúdo de várias páginas",

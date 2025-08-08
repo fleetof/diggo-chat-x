@@ -74,6 +74,9 @@
   "DeepSeek-V3": {
     "description": "DeepSeek-V3 是一款由深度求索公司自研的MoE模型。DeepSeek-V3 多項評測成績超越了 Qwen2.5-72B 和 Llama-3.1-405B 等其他開源模型，並在性能上和世界頂尖的閉源模型 GPT-4o 以及 Claude-3.5-Sonnet 不分伯仲。"
   },
+  "DeepSeek-V3-Fast": {
+    "description": "模型供應商為：sophnet平台。DeepSeek V3 Fast 是 DeepSeek V3 0324 版本的高TPS極速版，滿血非量化，代碼與數學能力更強，響應更快！"
+  },
   "Doubao-1.5-thinking-pro-m": {
     "description": "Doubao-1.5 全新深度思考模型 (m 版本自帶原生多模態深度推理能力)，在數學、程式設計、科學推理等專業領域及創意寫作等通用任務中表現突出，在 AIME 2024、Codeforces、GPQA 等多項權威基準上達到或接近業界第一梯隊水平。支持 128k 上下文窗口，16k 輸出。"
   },
@@ -85,8 +88,6 @@
   },
   "Doubao-1.5-vision-pro-32k": {
     "description": "Doubao-1.5-vision-pro 全新升級的多模態大模型，支持任意解析度和極端長寬比圖像識別，增強視覺推理、文檔識別、細節信息理解和指令遵循能力。"
-  "DeepSeek-V3-Fast": {
-    "description": "模型供應商為：sophnet平台。DeepSeek V3 Fast 是 DeepSeek V3 0324 版本的高TPS極速版，滿血非量化，代碼與數學能力更強，響應更快！"
   },
   "Doubao-lite-128k": {
     "description": "Doubao-lite 擁有極致的響應速度，更好的性價比，為客戶不同場景提供更靈活的選擇。支持128k上下文視窗的推理和精調。"
@@ -376,13 +377,14 @@
   "Qwen2.5-Coder-32B-Instruct": {
     "description": "Qwen2.5-Coder-32B-Instruct 是一款專為代碼生成、代碼理解和高效開發場景設計的大型語言模型，採用了業界領先的32B參數規模，能夠滿足多樣化的程式需求。"
   },
-  "SenseCat-5-1202": {
-    "description": "是基於V5.5的最新版本，較上版本在中英文基礎能力、聊天、理科知識、文科知識、寫作、數理邏輯、字數控制等幾個維度的表現有顯著提升。"
   "Qwen3-235B": {
     "description": "Qwen3-235B-A22B，MoE（混合專家模型）模型，引入了「混合推理模式」，支援用戶在「思考模式」和「非思考模式」之間無縫切換，支援119種語言和方言理解與推理，並具備強大的工具調用能力，在綜合能力、程式碼與數學、多語言能力、知識與推理等多項基準測試中，都能與DeepSeek R1、OpenAI o1、o3-mini、Grok 3和谷歌Gemini 2.5 Pro等目前市場上的主流大型模型競爭。"
   },
   "Qwen3-32B": {
     "description": "Qwen3-32B，稠密模型（Dense Model），引入了「混合推理模式」，支援用戶在「思考模式」和「非思考模式」之間無縫切換，由於模型架構改進、訓練資料增加以及更有效的訓練方法，整體性能與Qwen2.5-72B表現相當。"
+  },
+  "SenseCat-5-1202": {
+    "description": "是基於V5.5的最新版本，較上版本在中英文基礎能力、聊天、理科知識、文科知識、寫作、數理邏輯、字數控制等幾個維度的表現有顯著提升。"
   },
   "SenseChat": {
     "description": "基礎版本模型 (V4)，4K上下文長度，通用能力強大"

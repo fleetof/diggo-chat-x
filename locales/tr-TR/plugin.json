@@ -257,18 +257,6 @@
       "renameLocalFile": "Yeniden adlandır",
       "searchLocalFiles": "Dosyaları ara",
       "writeLocalFile": "Dosyaya yaz"
-    }
-  },
-  "pluginList": "Eklenti Listesi",
-  "search": {
-    "apiName": {
-      "crawlSinglePage": "Sayfa içeriğini oku",
-      "search": "Sayfayı ara"
-      "moveLocalFiles": "Dosya taşı",
-      "readLocalFile": "Dosya içeriğini oku",
-      "renameLocalFile": "Dosya adını değiştir",
-      "searchLocalFiles": "Dosya ara",
-      "writeLocalFile": "Dosyaya yaz"
     },
     "title": "Yerel Dosyalar"
   },
@@ -317,6 +305,7 @@
     "recheckDependencies": "Bağımlılıkları tekrar kontrol et",
     "skipDependencies": "Kontrolü atla"
   },
+  "pluginList": "Eklenti Listesi",
   "pluginList": "Eklenti Listesi",
   "protocolInstall": {
     "actions": {
@@ -477,7 +466,6 @@
     },
     "title": "Eklenti Mağazası"
   },
-  "title": "Yerel Dosyalar",
   "unknownError": "Bilinmeyen hata",
   "unknownPlugin": "Bilinmeyen eklenti"
 }

@@ -74,6 +74,9 @@
   "DeepSeek-V3": {
     "description": "DeepSeek-V3, Derin Arayış şirketi tarafından geliştirilen bir MoE modelidir. DeepSeek-V3, birçok değerlendirmede Qwen2.5-72B ve Llama-3.1-405B gibi diğer açık kaynak modelleri geride bırakmış ve performans açısından dünya çapında en iyi kapalı kaynak model olan GPT-4o ve Claude-3.5-Sonnet ile eşit seviyededir."
   },
+  "DeepSeek-V3-Fast": {
+    "description": "Model sağlayıcısı: sophnet platformu. DeepSeek V3 Fast, DeepSeek V3 0324 sürümünün yüksek TPS hızlı versiyonudur, tam performanslı ve kuantize edilmemiştir, kodlama ve matematik yetenekleri daha güçlüdür, yanıt süresi daha hızlıdır!"
+  },
   "Doubao-1.5-thinking-pro-m": {
     "description": "Doubao-1.5, yeni derin düşünme modeli (m versiyonu yerel çok modlu derin akıl yürütme yeteneği ile birlikte gelir) ve matematik, programlama, bilimsel akıl yürütme gibi uzmanlık alanlarında ve yaratıcı yazım gibi genel görevlerde mükemmel performans sergilemektedir. AIME 2024, Codeforces, GPQA gibi birçok otoriter benchmarkta endüstri birinciliğine ulaşmakta veya yaklaşmaktadır. 128k bağlam penceresi ve 16k çıktı destekler."
   },
@@ -85,8 +88,6 @@
   },
   "Doubao-1.5-vision-pro-32k": {
     "description": "Doubao-1.5-vision-pro, tamamen yenilenen çok modlu büyük modeldir, herhangi bir çözünürlük ve aşırı en-boy oranına sahip görüntü tanıma desteği sunar, görsel akıl yürütme, belge tanıma, detay bilgisi anlama ve talimatları takip etme yeteneklerini artırır."
-  "DeepSeek-V3-Fast": {
-    "description": "Model sağlayıcısı: sophnet platformu. DeepSeek V3 Fast, DeepSeek V3 0324 sürümünün yüksek TPS hızlı versiyonudur, tam performanslı ve kuantize edilmemiştir, kodlama ve matematik yetenekleri daha güçlüdür, yanıt süresi daha hızlıdır!"
   },
   "Doubao-lite-128k": {
     "description": "Doubao-lite, son derece hızlı yanıt süresi ve daha iyi fiyat-performans oranı ile müşterilere farklı senaryolar için daha esnek seçenekler sunar. 128k bağlam penceresi ile çıkarım ve ince ayar desteği sağlar."
@@ -376,13 +377,14 @@
   "Qwen2.5-Coder-32B-Instruct": {
     "description": "Qwen2.5-Coder-32B-Instruct, kod üretimi, kod anlama ve verimli geliştirme senaryoları için tasarlanmış büyük bir dil modelidir. Sektördeki en ileri 32B parametre ölçeğini kullanarak çeşitli programlama ihtiyaçlarını karşılayabilir."
   },
-  "SenseCat-5-1202": {
-    "description": "V5.5 tabanlı en son sürüm olup, önceki sürüme göre Çince ve İngilizce temel yetenekler, sohbet, fen bilgisi, sosyal bilimler, yazma, matematiksel mantık, kelime sayısı kontrolü gibi birkaç boyutta önemli iyileştirmeler göstermektedir."
   "Qwen3-235B": {
     "description": "Qwen3-235B-A22B, MoE (Hibrit Uzman Modeli) modelidir ve \"Hibrit Akıl Yürütme Modu\"nu tanıtmaktadır. Kullanıcıların \"düşünme modu\" ile \"düşünme modu dışı\" arasında kesintisiz geçiş yapmasını destekler, 119 dil ve lehçede anlama ve akıl yürütme yeteneğine sahiptir ve güçlü araç çağırma kapasitesine sahiptir. Kapsamlı yetenekler, kodlama ve matematik, çok dilli yetenekler, bilgi ve akıl yürütme gibi çeşitli kıyaslama testlerinde, DeepSeek R1, OpenAI o1, o3-mini, Grok 3 ve Google Gemini 2.5 Pro gibi piyasadaki önde gelen büyük modellerle rekabet edebilmektedir."
   },
   "Qwen3-32B": {
     "description": "Qwen3-32B, Yoğun Model (Dense Model) olup \"Hibrit Akıl Yürütme Modu\"nu tanıtmaktadır. Kullanıcıların \"düşünme modu\" ile \"düşünme modu dışı\" arasında kesintisiz geçiş yapmasını destekler. Model mimarisi iyileştirmeleri, artırılmış eğitim verisi ve daha etkili eğitim yöntemleri sayesinde genel performansı Qwen2.5-72B ile karşılaştırılabilir düzeydedir."
+  },
+  "SenseCat-5-1202": {
+    "description": "V5.5 tabanlı en son sürüm olup, önceki sürüme göre Çince ve İngilizce temel yetenekler, sohbet, fen bilgisi, sosyal bilimler, yazma, matematiksel mantık, kelime sayısı kontrolü gibi birkaç boyutta önemli iyileştirmeler göstermektedir."
   },
   "SenseChat": {
     "description": "Temel sürüm model (V4), 4K bağlam uzunluğu ile genel yetenekleri güçlüdür."
