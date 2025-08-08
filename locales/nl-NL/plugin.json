@@ -251,29 +251,24 @@
   },
   "localSystem": {
     "apiName": {
-<<<<<<< HEAD
       "listLocalFiles": "Bestandlijst weergeven",
       "moveLocalFiles": "Bestanden verplaatsen",
       "readLocalFile": "Bestand inhoud lezen",
       "renameLocalFile": "Hernoemen",
-=======
       "listLocalFiles": "Bestandslijst bekijken",
       "moveLocalFiles": "Bestanden verplaatsen",
       "readLocalFile": "Bestandsinhoud lezen",
       "renameLocalFile": "Naam wijzigen",
->>>>>>> upstream/main
       "searchLocalFiles": "Bestanden zoeken",
       "writeLocalFile": "Bestand schrijven"
     },
     "title": "Lokale bestanden"
   },
-<<<<<<< HEAD
   "pluginList": "Lijst met plugins",
   "search": {
     "apiName": {
       "crawlSinglePage": "Pagina-inhoud lezen",
       "search": "Pagina zoeken"
-=======
   "mcpInstall": {
     "CHECKING_INSTALLATION": "Installatieomgeving controleren...",
     "COMPLETED": "Installatie voltooid",
@@ -325,7 +320,6 @@
       "install": "Installeren",
       "installAnyway": "Toch installeren",
       "installed": "Geïnstalleerd"
->>>>>>> upstream/main
     },
     "config": {
       "args": "Parameters",

@@ -256,7 +256,6 @@
       "readLocalFile": "Đọc nội dung tệp",
       "renameLocalFile": "Đổi tên",
       "searchLocalFiles": "Tìm kiếm tệp",
-<<<<<<< HEAD
       "writeLocalFile": "Ghi vào tệp"
     },
     "title": "Tệp cục bộ"
@@ -266,7 +265,6 @@
     "apiName": {
       "crawlSinglePage": "Đọc nội dung trang",
       "search": "Tìm kiếm trang"
-=======
       "writeLocalFile": "Ghi tệp"
     },
     "title": "Tệp cục bộ"
@@ -322,7 +320,6 @@
       "install": "Cài đặt",
       "installAnyway": "Vẫn cài đặt",
       "installed": "Đã cài đặt"
->>>>>>> upstream/main
     },
     "config": {
       "args": "Tham số",

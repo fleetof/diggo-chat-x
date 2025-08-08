@@ -74,7 +74,6 @@
   "DeepSeek-V3": {
     "description": "DeepSeek-V3 é um modelo MoE desenvolvido internamente pela DeepSeek. Os resultados de várias avaliações do DeepSeek-V3 superaram outros modelos de código aberto, como Qwen2.5-72B e Llama-3.1-405B, e seu desempenho é comparável aos melhores modelos fechados do mundo, como GPT-4o e Claude-3.5-Sonnet."
   },
-<<<<<<< HEAD
   "Doubao-1.5-thinking-pro-m": {
     "description": "O Doubao-1.5 é um novo modelo de pensamento profundo (a versão m possui capacidade nativa de raciocínio multimodal), destacando-se em áreas profissionais como matemática, programação, raciocínio científico e tarefas gerais como escrita criativa, alcançando ou se aproximando do nível de elite em várias referências de prestígio como AIME 2024, Codeforces, GPQA."
   },
@@ -86,10 +85,8 @@
   },
   "Doubao-1.5-vision-pro-32k": {
     "description": "Doubao-1.5-vision-pro é um modelo multimodal de grande porte totalmente atualizado, que suporta reconhecimento de imagens em qualquer resolução e proporções extremas, melhorando a capacidade de raciocínio visual, reconhecimento de documentos, compreensão de informações detalhadas e seguimento de instruções."
-=======
   "DeepSeek-V3-Fast": {
     "description": "Fornecedor do modelo: plataforma sophnet. DeepSeek V3 Fast é a versão de alta velocidade e alto TPS do DeepSeek V3 0324, totalmente não quantificada, com capacidades aprimoradas de código e matemática, respondendo de forma mais rápida!"
->>>>>>> upstream/main
   },
   "Doubao-lite-128k": {
     "description": "Doubao-lite oferece velocidade de resposta extrema e melhor custo-benefício, proporcionando opções mais flexíveis para diferentes cenários dos clientes. Suporta inferência e fine-tuning com janela de contexto de 128k."
@@ -379,16 +376,13 @@
   "Qwen2.5-Coder-32B-Instruct": {
     "description": "Qwen2.5-Coder-32B-Instruct é um grande modelo de linguagem projetado para geração de código, compreensão de código e cenários de desenvolvimento eficiente, com uma escala de 32 bilhões de parâmetros, atendendo a diversas necessidades de programação."
   },
-<<<<<<< HEAD
   "SenseCat-5-1202": {
     "description": "Baseado na versão V5.5, a versão mais recente apresenta melhorias significativas em várias dimensões, incluindo habilidades básicas em chinês e inglês, conversação, conhecimento em ciências exatas, conhecimento em ciências humanas, redação, lógica matemática e controle de contagem de palavras."
-=======
   "Qwen3-235B": {
     "description": "Qwen3-235B-A22B, modelo MoE (especialista misto), introduz o “modo de raciocínio híbrido”, permitindo aos usuários alternar perfeitamente entre os modos “reflexivo” e “não reflexivo”. Suporta compreensão e raciocínio em 119 idiomas e dialetos, além de possuir forte capacidade de chamada de ferramentas. Em testes de benchmark abrangentes, incluindo habilidades gerais, código, matemática, multilinguismo, conhecimento e raciocínio, compete com os principais grandes modelos do mercado, como DeepSeek R1, OpenAI o1, o3-mini, Grok 3 e Google Gemini 2.5 Pro."
   },
   "Qwen3-32B": {
     "description": "Qwen3-32B, modelo denso (Dense Model), introduz o “modo de raciocínio híbrido”, permitindo aos usuários alternar perfeitamente entre os modos “reflexivo” e “não reflexivo”. Graças a melhorias na arquitetura do modelo, aumento dos dados de treinamento e métodos de treinamento mais eficazes, seu desempenho geral é comparável ao do Qwen2.5-72B."
->>>>>>> upstream/main
   },
   "SenseChat": {
     "description": "Modelo da versão básica (V4), com comprimento de contexto de 4K, com capacidades gerais poderosas."
@@ -402,12 +396,9 @@
   "SenseChat-5": {
     "description": "Modelo da versão mais recente (V5.5), com comprimento de contexto de 128K, com capacidades significativamente aprimoradas em raciocínio matemático, diálogos em inglês, seguimento de instruções e compreensão de textos longos, rivalizando com o GPT-4o."
   },
-<<<<<<< HEAD
-=======
   "SenseChat-5-1202": {
     "description": "Baseado na versão mais recente V5.5, apresenta melhorias significativas em várias dimensões, incluindo habilidades básicas em chinês e inglês, conversação, conhecimento científico, conhecimento humanístico, escrita, lógica matemática e controle de contagem de palavras."
   },
->>>>>>> upstream/main
   "SenseChat-5-Cantonese": {
     "description": "Comprimento de contexto de 32K, superando o GPT-4 na compreensão de diálogos em cantonês, competindo com o GPT-4 Turbo em várias áreas, incluindo conhecimento, raciocínio, matemática e programação."
   },
@@ -1208,8 +1199,6 @@
   },
   "gemini-2.0-flash-preview-image-generation": {
     "description": "Modelo de pré-visualização Gemini 2.0 Flash, suporta geração de imagens"
-<<<<<<< HEAD
-=======
   },
   "gemini-2.5-flash": {
     "description": "Gemini 2.5 Flash é o modelo com melhor custo-benefício do Google, oferecendo funcionalidades abrangentes."
@@ -1219,7 +1208,6 @@
   },
   "gemini-2.5-flash-lite-preview-06-17": {
     "description": "Gemini 2.5 Flash-Lite Preview é o modelo mais compacto e com melhor custo-benefício do Google, projetado para uso em larga escala."
->>>>>>> upstream/main
   },
   "gemini-2.5-flash-preview-04-17": {
     "description": "O Gemini 2.5 Flash Preview é o modelo mais acessível do Google, oferecendo uma gama completa de funcionalidades."
@@ -1671,12 +1659,9 @@
   "internvl3-latest": {
     "description": "Lançamos nosso mais recente modelo multimodal, com habilidades aprimoradas de compreensão de texto e imagem, e capacidade de entender imagens em longas sequências, com desempenho comparável aos melhores modelos fechados. Aponta por padrão para nossa mais recente série de modelos InternVL, atualmente direcionando para internvl3-78b."
   },
-<<<<<<< HEAD
-=======
   "irag-1.0": {
     "description": "iRAG (image based RAG) desenvolvido pela Baidu, tecnologia de geração de imagens baseada em recuperação, que combina recursos de bilhões de imagens do Baidu Search com poderosos modelos base, gerando imagens ultra-realistas que superam sistemas nativos de geração de imagens, eliminando o aspecto artificial da IA e com baixo custo. iRAG é caracterizado por ausência de alucinações, ultra-realismo e resultados imediatos."
   },
->>>>>>> upstream/main
   "jamba-large": {
     "description": "Nosso modelo mais poderoso e avançado, projetado para lidar com tarefas complexas em nível empresarial, com desempenho excepcional."
   },

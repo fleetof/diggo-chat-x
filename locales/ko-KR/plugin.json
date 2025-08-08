@@ -254,18 +254,13 @@
       "listLocalFiles": "파일 목록 보기",
       "moveLocalFiles": "파일 이동",
       "readLocalFile": "파일 내용 읽기",
-<<<<<<< HEAD
       "renameLocalFile": "이름 바꾸기",
-=======
       "renameLocalFile": "파일 이름 변경",
->>>>>>> upstream/main
       "searchLocalFiles": "파일 검색",
       "writeLocalFile": "파일 쓰기"
     },
     "title": "로컬 파일"
   },
-<<<<<<< HEAD
-=======
   "mcpInstall": {
     "CHECKING_INSTALLATION": "설치 환경 확인 중...",
     "COMPLETED": "설치 완료",
@@ -311,7 +306,6 @@
     "recheckDependencies": "의존성 재확인",
     "skipDependencies": "확인 건너뛰기"
   },
->>>>>>> upstream/main
   "pluginList": "플러그인 목록",
   "protocolInstall": {
     "actions": {
@@ -375,10 +369,7 @@
   },
   "search": {
     "apiName": {
-<<<<<<< HEAD
-=======
       "crawlMultiPages": "여러 페이지 내용 읽기",
->>>>>>> upstream/main
       "crawlSinglePage": "페이지 내용 읽기",
       "search": "페이지 검색"
     },
