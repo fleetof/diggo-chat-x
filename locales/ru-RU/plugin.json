@@ -379,14 +379,11 @@
   },
   "search": {
     "apiName": {
-<<<<<<< HEAD
       "crawlSinglePage": "Читать содержимое страницы",
       "search": "Поиск страницы"
-=======
       "crawlMultiPages": "Чтение содержимого нескольких страниц",
       "crawlSinglePage": "Чтение содержимого страницы",
       "search": "Поиск по странице"
->>>>>>> upstream/main
     },
     "config": {
       "addKey": "Добавить ключ",

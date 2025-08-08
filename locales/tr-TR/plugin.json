@@ -252,7 +252,6 @@
   "localSystem": {
     "apiName": {
       "listLocalFiles": "Dosya listesini görüntüle",
-<<<<<<< HEAD
       "moveLocalFiles": "Dosyaları taşı",
       "readLocalFile": "Dosya içeriğini oku",
       "renameLocalFile": "Yeniden adlandır",
@@ -265,7 +264,6 @@
     "apiName": {
       "crawlSinglePage": "Sayfa içeriğini oku",
       "search": "Sayfayı ara"
-=======
       "moveLocalFiles": "Dosya taşı",
       "readLocalFile": "Dosya içeriğini oku",
       "renameLocalFile": "Dosya adını değiştir",
@@ -325,7 +323,6 @@
       "install": "Yükle",
       "installAnyway": "Yine de yükle",
       "installed": "Yüklendi"
->>>>>>> upstream/main
     },
     "config": {
       "args": "Parametreler",

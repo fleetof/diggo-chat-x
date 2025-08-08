@@ -260,8 +260,6 @@
     },
     "title": "本地文件"
   },
-<<<<<<< HEAD
-=======
   "mcpInstall": {
     "CHECKING_INSTALLATION": "检查安装环境...",
     "COMPLETED": "安装完成",
@@ -307,7 +305,6 @@
     "recheckDependencies": "重新检查",
     "skipDependencies": "跳过检查"
   },
->>>>>>> upstream/main
   "pluginList": "插件列表",
   "protocolInstall": {
     "actions": {
@@ -371,10 +368,7 @@
   },
   "search": {
     "apiName": {
-<<<<<<< HEAD
-=======
       "crawlMultiPages": "读取多个页面内容",
->>>>>>> upstream/main
       "crawlSinglePage": "读取页面内容",
       "search": "搜索页面"
     },

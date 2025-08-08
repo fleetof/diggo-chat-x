@@ -366,7 +366,6 @@
     "title": "MCPプラグインをインストール",
     "warning": "⚠️ このプラグインの出所を信頼していることを確認してください。悪意のあるプラグインはシステムの安全を脅かす可能性があります。"
   },
-<<<<<<< HEAD
   "localSystem": {
     "apiName": {
       "listLocalFiles": "ファイルリストを表示",
@@ -382,12 +381,10 @@
   "search": {
     "apiName": {
       "crawlSinglePage": "ページ内容を読み取る",
-=======
   "search": {
     "apiName": {
       "crawlMultiPages": "複数ページの内容を読み込み",
       "crawlSinglePage": "ページ内容を読み込み",
->>>>>>> upstream/main
       "search": "ページを検索"
     },
     "config": {

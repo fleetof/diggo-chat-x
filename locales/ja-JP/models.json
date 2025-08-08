@@ -383,12 +383,9 @@
   "SenseChat-5": {
     "description": "最新バージョンのモデル (V5.5)、128Kのコンテキスト長で、数学的推論、英語の対話、指示のフォロー、長文理解などの分野での能力が大幅に向上し、GPT-4oに匹敵します。"
   },
-<<<<<<< HEAD
-=======
   "SenseChat-5-1202": {
     "description": "V5.5をベースにした最新バージョンで、前バージョンに比べて中英語の基礎能力、チャット、理系知識、文系知識、ライティング、数理論理、文字数制御など複数の面で顕著に向上しています。"
   },
->>>>>>> upstream/main
   "SenseChat-5-Cantonese": {
     "description": "32Kのコンテキスト長で、広東語の対話理解においてGPT-4を超え、知識、推論、数学、コード作成などの複数の分野でGPT-4 Turboに匹敵します。"
   },
@@ -1189,8 +1186,6 @@
   },
   "gemini-2.0-flash-preview-image-generation": {
     "description": "Gemini 2.0 Flash プレビュー モデル、画像生成をサポート"
-<<<<<<< HEAD
-=======
   },
   "gemini-2.5-flash": {
     "description": "Gemini 2.5 FlashはGoogleのコストパフォーマンスに優れたモデルで、包括的な機能を提供します。"
@@ -1200,7 +1195,6 @@
   },
   "gemini-2.5-flash-lite-preview-06-17": {
     "description": "Gemini 2.5 Flash-Lite PreviewはGoogleの最小かつコストパフォーマンスに優れたモデルで、大規模利用を目的に設計されています。"
->>>>>>> upstream/main
   },
   "gemini-2.5-flash-preview-04-17": {
     "description": "Gemini 2.5 Flash Previewは、Googleのコストパフォーマンスに優れたモデルで、包括的な機能を提供します。"
@@ -1652,12 +1646,9 @@
   "internvl3-latest": {
     "description": "私たちの最新のマルチモーダル大規模モデルは、より強力な画像と言語の理解能力と長期的な画像理解能力を備えており、トップクラスのクローズドソースモデルに匹敵する性能を持っています。デフォルトでは、私たちの最新の InternVL シリーズモデルに指向されており、現在は internvl3-78b に指向しています。"
   },
-<<<<<<< HEAD
-=======
   "irag-1.0": {
     "description": "百度が独自開発したiRAG（image based RAG）は、検索強化型のテキストから画像生成技術で、百度検索の億単位の画像リソースと強力な基盤モデル能力を組み合わせ、非常にリアルな画像を生成します。従来のテキストから画像生成システムを大きく上回る効果を持ち、AI臭さがなく、コストも低減。iRAGは幻覚がなく、超リアルで即時利用可能な特徴を備えています。"
   },
->>>>>>> upstream/main
   "jamba-large": {
     "description": "私たちの最も強力で先進的なモデルで、企業レベルの複雑なタスクを処理するために設計されており、卓越した性能を備えています。"
   },

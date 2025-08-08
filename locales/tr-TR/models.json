@@ -74,7 +74,6 @@
   "DeepSeek-V3": {
     "description": "DeepSeek-V3, Derin Arayış şirketi tarafından geliştirilen bir MoE modelidir. DeepSeek-V3, birçok değerlendirmede Qwen2.5-72B ve Llama-3.1-405B gibi diğer açık kaynak modelleri geride bırakmış ve performans açısından dünya çapında en iyi kapalı kaynak model olan GPT-4o ve Claude-3.5-Sonnet ile eşit seviyededir."
   },
-<<<<<<< HEAD
   "Doubao-1.5-thinking-pro-m": {
     "description": "Doubao-1.5, yeni derin düşünme modeli (m versiyonu yerel çok modlu derin akıl yürütme yeteneği ile birlikte gelir) ve matematik, programlama, bilimsel akıl yürütme gibi uzmanlık alanlarında ve yaratıcı yazım gibi genel görevlerde mükemmel performans sergilemektedir. AIME 2024, Codeforces, GPQA gibi birçok otoriter benchmarkta endüstri birinciliğine ulaşmakta veya yaklaşmaktadır. 128k bağlam penceresi ve 16k çıktı destekler."
   },
@@ -86,10 +85,8 @@
   },
   "Doubao-1.5-vision-pro-32k": {
     "description": "Doubao-1.5-vision-pro, tamamen yenilenen çok modlu büyük modeldir, herhangi bir çözünürlük ve aşırı en-boy oranına sahip görüntü tanıma desteği sunar, görsel akıl yürütme, belge tanıma, detay bilgisi anlama ve talimatları takip etme yeteneklerini artırır."
-=======
   "DeepSeek-V3-Fast": {
     "description": "Model sağlayıcısı: sophnet platformu. DeepSeek V3 Fast, DeepSeek V3 0324 sürümünün yüksek TPS hızlı versiyonudur, tam performanslı ve kuantize edilmemiştir, kodlama ve matematik yetenekleri daha güçlüdür, yanıt süresi daha hızlıdır!"
->>>>>>> upstream/main
   },
   "Doubao-lite-128k": {
     "description": "Doubao-lite, son derece hızlı yanıt süresi ve daha iyi fiyat-performans oranı ile müşterilere farklı senaryolar için daha esnek seçenekler sunar. 128k bağlam penceresi ile çıkarım ve ince ayar desteği sağlar."
@@ -379,16 +376,13 @@
   "Qwen2.5-Coder-32B-Instruct": {
     "description": "Qwen2.5-Coder-32B-Instruct, kod üretimi, kod anlama ve verimli geliştirme senaryoları için tasarlanmış büyük bir dil modelidir. Sektördeki en ileri 32B parametre ölçeğini kullanarak çeşitli programlama ihtiyaçlarını karşılayabilir."
   },
-<<<<<<< HEAD
   "SenseCat-5-1202": {
     "description": "V5.5 tabanlı en son sürüm olup, önceki sürüme göre Çince ve İngilizce temel yetenekler, sohbet, fen bilgisi, sosyal bilimler, yazma, matematiksel mantık, kelime sayısı kontrolü gibi birkaç boyutta önemli iyileştirmeler göstermektedir."
-=======
   "Qwen3-235B": {
     "description": "Qwen3-235B-A22B, MoE (Hibrit Uzman Modeli) modelidir ve \"Hibrit Akıl Yürütme Modu\"nu tanıtmaktadır. Kullanıcıların \"düşünme modu\" ile \"düşünme modu dışı\" arasında kesintisiz geçiş yapmasını destekler, 119 dil ve lehçede anlama ve akıl yürütme yeteneğine sahiptir ve güçlü araç çağırma kapasitesine sahiptir. Kapsamlı yetenekler, kodlama ve matematik, çok dilli yetenekler, bilgi ve akıl yürütme gibi çeşitli kıyaslama testlerinde, DeepSeek R1, OpenAI o1, o3-mini, Grok 3 ve Google Gemini 2.5 Pro gibi piyasadaki önde gelen büyük modellerle rekabet edebilmektedir."
   },
   "Qwen3-32B": {
     "description": "Qwen3-32B, Yoğun Model (Dense Model) olup \"Hibrit Akıl Yürütme Modu\"nu tanıtmaktadır. Kullanıcıların \"düşünme modu\" ile \"düşünme modu dışı\" arasında kesintisiz geçiş yapmasını destekler. Model mimarisi iyileştirmeleri, artırılmış eğitim verisi ve daha etkili eğitim yöntemleri sayesinde genel performansı Qwen2.5-72B ile karşılaştırılabilir düzeydedir."
->>>>>>> upstream/main
   },
   "SenseChat": {
     "description": "Temel sürüm model (V4), 4K bağlam uzunluğu ile genel yetenekleri güçlüdür."
@@ -402,12 +396,9 @@
   "SenseChat-5": {
     "description": "En son sürüm model (V5.5), 128K bağlam uzunluğu, matematiksel akıl yürütme, İngilizce diyalog, talimat takibi ve uzun metin anlama gibi alanlarda önemli gelişmeler göstermektedir ve GPT-4o ile karşılaştırılabilir."
   },
-<<<<<<< HEAD
-=======
   "SenseChat-5-1202": {
     "description": "V5.5 tabanlı en son sürüm olup, önceki sürüme kıyasla Çince ve İngilizce temel yetenekler, sohbet, fen bilimleri bilgisi, sosyal bilimler bilgisi, yazım, matematiksel mantık ve kelime sayısı kontrolü gibi birçok alanda belirgin gelişmeler sunar."
   },
->>>>>>> upstream/main
   "SenseChat-5-Cantonese": {
     "description": "32K bağlam uzunluğu ile, Kantonca diyalog anlama konusunda GPT-4'ü aşmakta, bilgi, akıl yürütme, matematik ve kod yazma gibi birçok alanda GPT-4 Turbo ile rekabet edebilmektedir."
   },
@@ -1208,8 +1199,6 @@
   },
   "gemini-2.0-flash-preview-image-generation": {
     "description": "Gemini 2.0 Flash önizleme modeli, görüntü üretimini destekler."
-<<<<<<< HEAD
-=======
   },
   "gemini-2.5-flash": {
     "description": "Gemini 2.5 Flash, Google'ın en yüksek maliyet-performans modelidir ve kapsamlı özellikler sunar."
@@ -1219,7 +1208,6 @@
   },
   "gemini-2.5-flash-lite-preview-06-17": {
     "description": "Gemini 2.5 Flash-Lite Önizlemesi, Google'ın en küçük ve en yüksek maliyet-performans modelidir ve büyük ölçekli kullanım için tasarlanmıştır."
->>>>>>> upstream/main
   },
   "gemini-2.5-flash-preview-04-17": {
     "description": "Gemini 2.5 Flash Önizleme, Google'ın en iyi fiyat-performans oranına sahip modelidir ve kapsamlı özellikler sunar."
@@ -1671,12 +1659,9 @@
   "internvl3-latest": {
     "description": "En son yayımladığımız çok modlu büyük model, daha güçlü metin-görüntü anlama yeteneği ve uzun süreli görüntü anlama yeteneğine sahiptir; performansı en iyi kapalı kaynak modellerle karşılaştırılabilir. Varsayılan olarak en son yayımladığımız InternVL serisi modele işaret eder, şu anda internvl3-78b'ye işaret ediyor."
   },
-<<<<<<< HEAD
-=======
   "irag-1.0": {
     "description": "Baidu tarafından geliştirilen iRAG (image based RAG), arama destekli metinden görüntü oluşturma teknolojisidir. Baidu'nun milyarlarca görsel kaynağı ile güçlü temel model yeteneklerini birleştirerek çok gerçekçi görüntüler oluşturur. Genel performansı metinden görüntü oluşturma sistemlerinin çok ötesindedir, yapay zeka izini ortadan kaldırır ve maliyeti düşürür. iRAG, halüsinasyon yapmama, ultra gerçekçilik ve anında erişim özelliklerine sahiptir."
   },
->>>>>>> upstream/main
   "jamba-large": {
     "description": "En güçlü ve en gelişmiş modelimiz, kurumsal düzeyde karmaşık görevleri işlemek için tasarlanmıştır ve olağanüstü performans sunar."
   },

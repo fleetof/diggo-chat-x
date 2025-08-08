@@ -379,14 +379,11 @@
   },
   "search": {
     "apiName": {
-<<<<<<< HEAD
       "crawlSinglePage": "Odczytaj zawartość strony",
       "search": "Szukaj strony"
-=======
       "crawlMultiPages": "Odczytaj zawartość wielu stron",
       "crawlSinglePage": "Odczytaj zawartość strony",
       "search": "Wyszukaj stronę"
->>>>>>> upstream/main
     },
     "config": {
       "addKey": "Dodaj klucz",

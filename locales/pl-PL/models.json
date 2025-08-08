@@ -74,7 +74,6 @@
   "DeepSeek-V3": {
     "description": "DeepSeek-V3 to model MoE opracowany przez firmę DeepSeek. Wyniki DeepSeek-V3 w wielu testach przewyższają inne modele open source, takie jak Qwen2.5-72B i Llama-3.1-405B, a jego wydajność jest porównywalna z najlepszymi zamkniętymi modelami na świecie, takimi jak GPT-4o i Claude-3.5-Sonnet."
   },
-<<<<<<< HEAD
   "Doubao-1.5-thinking-pro-m": {
     "description": "Doubao-1.5 to nowy model głębokiego myślenia (wersja m z wbudowaną natywną zdolnością do wielomodalnego wnioskowania), który wyróżnia się w dziedzinach takich jak matematyka, programowanie, wnioskowanie naukowe oraz twórcze pisanie, osiągając poziom bliski pierwszej ligi w wielu uznawanych benchmarkach, takich jak AIME 2024, Codeforces, GPQA. Wspiera okno kontekstowe 128k oraz 16k wyjścia."
   },
@@ -86,10 +85,8 @@
   },
   "Doubao-1.5-vision-pro-32k": {
     "description": "Doubao-1.5-vision-pro to nowa wersja ulepszonego modelu multimodalnego, który obsługuje rozpoznawanie obrazów o dowolnej rozdzielczości i ekstremalnych proporcjach, wzmacniając zdolności wnioskowania wizualnego, rozpoznawania dokumentów, rozumienia szczegółowych informacji oraz przestrzegania instrukcji."
-=======
   "DeepSeek-V3-Fast": {
     "description": "Dostawca modelu: platforma sophnet. DeepSeek V3 Fast to szybka wersja o wysokim TPS modelu DeepSeek V3 0324, w pełni nienkwantyzowana, z ulepszonym kodem i zdolnościami matematycznymi, zapewniająca szybszą reakcję!"
->>>>>>> upstream/main
   },
   "Doubao-lite-128k": {
     "description": "Doubao-lite oferuje niezwykle szybkie reakcje i lepszy stosunek jakości do ceny, zapewniając klientom elastyczne opcje dla różnych scenariuszy. Obsługuje wnioskowanie i dostrajanie z kontekstem do 128k."
@@ -379,16 +376,13 @@
   "Qwen2.5-Coder-32B-Instruct": {
     "description": "Qwen2.5-Coder-32B-Instruct to duży model językowy zaprojektowany specjalnie do generowania kodu, rozumienia kodu i efektywnych scenariuszy rozwoju, wykorzystujący wiodącą w branży skalę 32B parametrów, zdolny do zaspokojenia różnorodnych potrzeb programistycznych."
   },
-<<<<<<< HEAD
   "SenseCat-5-1202": {
     "description": "Jest to najnowsza wersja oparta na V5.5, która w porównaniu do poprzedniej wersji wykazuje znaczną poprawę w kilku wymiarach, takich jak podstawowe umiejętności w języku chińskim i angielskim, czat, wiedza ścisła, wiedza humanistyczna, pisanie, logika matematyczna oraz kontrola liczby słów."
-=======
   "Qwen3-235B": {
     "description": "Qwen3-235B-A22B to model MoE (ekspert mieszany), który wprowadza „hybrydowy tryb rozumowania”, umożliwiający użytkownikom płynne przełączanie się między trybem myślenia a trybem bez myślenia. Obsługuje rozumienie i rozumowanie w 119 językach i dialektach oraz posiada zaawansowane możliwości wywoływania narzędzi. W testach porównawczych obejmujących zdolności ogólne, kodowanie, matematykę, wielojęzyczność, wiedzę i rozumowanie konkuruje z czołowymi modelami rynkowymi, takimi jak DeepSeek R1, OpenAI o1, o3-mini, Grok 3 oraz Google Gemini 2.5 Pro."
   },
   "Qwen3-32B": {
     "description": "Qwen3-32B to model gęsty (Dense Model), który wprowadza „hybrydowy tryb rozumowania”, umożliwiający użytkownikom płynne przełączanie się między trybem myślenia a trybem bez myślenia. Dzięki ulepszonej architekturze modelu, zwiększonej ilości danych treningowych oraz bardziej efektywnym metodom treningu, jego ogólna wydajność jest porównywalna z Qwen2.5-72B."
->>>>>>> upstream/main
   },
   "SenseChat": {
     "description": "Podstawowa wersja modelu (V4), długość kontekstu 4K, silne zdolności ogólne."
@@ -402,12 +396,9 @@
   "SenseChat-5": {
     "description": "Najnowsza wersja modelu (V5.5), długość kontekstu 128K, znacznie poprawione zdolności w zakresie rozumowania matematycznego, rozmów w języku angielskim, podążania za instrukcjami oraz rozumienia długich tekstów, dorównująca GPT-4o."
   },
-<<<<<<< HEAD
-=======
   "SenseChat-5-1202": {
     "description": "Oparty na najnowszej wersji V5.5, z wyraźnymi ulepszeniami w podstawowych zdolnościach w języku chińskim i angielskim, czacie, wiedzy ścisłej i humanistycznej, pisaniu, logice matematycznej oraz kontroli liczby słów."
   },
->>>>>>> upstream/main
   "SenseChat-5-Cantonese": {
     "description": "Długość kontekstu 32K, w rozumieniu rozmów w języku kantońskim przewyższa GPT-4, w wielu dziedzinach, takich jak wiedza, rozumowanie, matematyka i programowanie, dorównuje GPT-4 Turbo."
   },
@@ -1208,8 +1199,6 @@
   },
   "gemini-2.0-flash-preview-image-generation": {
     "description": "Model Gemini 2.0 Flash do generowania obrazów, wspierający generację obrazów"
-<<<<<<< HEAD
-=======
   },
   "gemini-2.5-flash": {
     "description": "Gemini 2.5 Flash to najbardziej opłacalny model Google, oferujący wszechstronne funkcje."
@@ -1219,7 +1208,6 @@
   },
   "gemini-2.5-flash-lite-preview-06-17": {
     "description": "Gemini 2.5 Flash-Lite Preview to najmniejszy i najbardziej opłacalny model Google, zaprojektowany z myślą o masowym zastosowaniu."
->>>>>>> upstream/main
   },
   "gemini-2.5-flash-preview-04-17": {
     "description": "Gemini 2.5 Flash Preview to najbardziej opłacalny model Google, oferujący wszechstronne funkcje."
@@ -1671,12 +1659,9 @@
   "internvl3-latest": {
     "description": "Nasz najnowszy model multimodalny, który ma silniejsze zdolności rozumienia tekstu i obrazów oraz długoterminowego rozumienia obrazów, osiągający wyniki porównywalne z najlepszymi modelami zamkniętymi. Domyślnie wskazuje na nasz najnowszy model z serii InternVL, obecnie wskazuje na internvl3-78b."
   },
-<<<<<<< HEAD
-=======
   "irag-1.0": {
     "description": "Opracowana przez Baidu technologia iRAG (image based RAG) to wzmacniana wyszukiwaniem generacja obrazów na podstawie tekstu, łącząca miliardowe zasoby obrazów Baidu z potężnymi możliwościami modelu bazowego. Pozwala generować niezwykle realistyczne obrazy, znacznie przewyższając natywne systemy generacji tekst-na-obraz, eliminując sztuczny efekt AI i przy niskich kosztach. iRAG cechuje się brakiem halucynacji, ultra-realistycznym wyglądem i natychmiastową dostępnością."
   },
->>>>>>> upstream/main
   "jamba-large": {
     "description": "Nasz najsilniejszy i najbardziej zaawansowany model, zaprojektowany do obsługi złożonych zadań na poziomie przedsiębiorstw, oferujący doskonałą wydajność."
   },

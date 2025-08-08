@@ -366,7 +366,6 @@
     "title": "Instalar plugin MCP",
     "warning": "⚠️ Por favor, confirme que confia na fonte deste plugin, plugins maliciosos podem comprometer a segurança do seu sistema."
   },
-<<<<<<< HEAD
   "localSystem": {
     "apiName": {
       "listLocalFiles": "Ver lista de arquivos",
@@ -381,11 +380,9 @@
   "pluginList": "Lista de Plugins",
   "search": {
     "apiName": {
-=======
   "search": {
     "apiName": {
       "crawlMultiPages": "Ler conteúdo de várias páginas",
->>>>>>> upstream/main
       "crawlSinglePage": "Ler conteúdo da página",
       "search": "Pesquisar página"
     },

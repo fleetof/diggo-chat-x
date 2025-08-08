@@ -366,7 +366,6 @@
     "title": "安裝 MCP 插件",
     "warning": "⚠️ 請確認您信任此插件的來源，惡意插件可能會危害您的系統安全。"
   },
-<<<<<<< HEAD
   "localSystem": {
     "apiName": {
       "listLocalFiles": "查看檔案列表",
@@ -381,11 +380,9 @@
   "pluginList": "外掛清單",
   "search": {
     "apiName": {
-=======
   "search": {
     "apiName": {
       "crawlMultiPages": "讀取多個頁面內容",
->>>>>>> upstream/main
       "crawlSinglePage": "讀取頁面內容",
       "search": "搜尋頁面"
     },

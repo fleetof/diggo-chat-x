@@ -74,7 +74,6 @@
   "DeepSeek-V3": {
     "description": "DeepSeek-V3 是一款由深度求索公司自研的MoE模型。DeepSeek-V3 多项评测成绩超越了 Qwen2.5-72B 和 Llama-3.1-405B 等其他开源模型，并在性能上和世界顶尖的闭源模型 GPT-4o 以及 Claude-3.5-Sonnet 不分伯仲。"
   },
-<<<<<<< HEAD
   "Doubao-1.5-thinking-pro-m": {
     "description": "Doubao-1.5全新深度思考模型 (m 版本自带原生多模态深度推理能力)，在数学、编程、科学推理等专业领域及创意写作等通用任务中表现突出，在AIME 2024、Codeforces、GPQA等多项权威基准上达到或接近业界第一梯队水平。支持128k上下文窗口，16k输出。"
   },
@@ -86,10 +85,8 @@
   },
   "Doubao-1.5-vision-pro-32k": {
     "description": "Doubao-1.5-vision-pro 全新升级的多模态大模型，支持任意分辨率和极端长宽比图像识别，增强视觉推理、文档识别、细节信息理解和指令遵循能力。"
-=======
   "DeepSeek-V3-Fast": {
     "description": "模型供应商为：sophnet平台。DeepSeek V3 Fast 是 DeepSeek V3 0324 版本的高TPS极速版，满血非量化，代码与数学能力更强，响应更快！"
->>>>>>> upstream/main
   },
   "Doubao-lite-128k": {
     "description": "Doubao-lite 拥有极致的响应速度，更好的性价比，为客户不同场景提供更灵活的选择。支持128k上下文窗口的推理和精调。"
@@ -379,16 +376,13 @@
   "Qwen2.5-Coder-32B-Instruct": {
     "description": "高级 LLM，支持代码生成、推理和修复，涵盖主流编程语言。"
   },
-<<<<<<< HEAD
   "SenseCat-5-1202": {
     "description": "是基于V5.5的最新版本，较上版本在中英文基础能力，聊天，理科知识， 文科知识，写作，数理逻辑，字数控制 等几个维度的表现有显著提升。"
-=======
   "Qwen3-235B": {
     "description": "Qwen3-235B-A22B，MoE（混合专家模型）模型,引入了“混合推理模式”，支持用户在“思考模式”和“非思考模式”之间无缝切换，支持119种语言和方言理解与推理，并具备强大的工具调用能力，在综合能力、代码与数学、多语言能力、知识与推理等多项基准测试中，都能与DeepSeek R1、OpenAI o1、o3-mini、Grok 3和谷歌Gemini 2.5 Pro等目前市场上的主流大模型竞争。"
   },
   "Qwen3-32B": {
     "description": "Qwen3-32B，稠密模型（Dense Model）,引入了“混合推理模式”，支持用户在“思考模式”和“非思考模式”之间无缝切换，由于模型架构改进、训练数据增加以及更有效的训练方法，整体性能与Qwen2.5-72B表现相当。"
->>>>>>> upstream/main
   },
   "SenseChat": {
     "description": "基础版本模型 (V4)，4K上下文长度，通用能力强大"
@@ -1202,8 +1196,6 @@
   },
   "gemini-2.0-flash-preview-image-generation": {
     "description": "Gemini 2.0 Flash 预览模型，支持图像生成"
-<<<<<<< HEAD
-=======
   },
   "gemini-2.5-flash": {
     "description": "Gemini 2.5 Flash 是 Google 性价比最高的模型，提供全面的功能。"
@@ -1213,7 +1205,6 @@
   },
   "gemini-2.5-flash-lite-preview-06-17": {
     "description": "Gemini 2.5 Flash-Lite Preview 是 Google 最小、性价比最高的模型，专为大规模使用而设计。"
->>>>>>> upstream/main
   },
   "gemini-2.5-flash-preview-04-17": {
     "description": "Gemini 2.5 Flash Preview 是 Google 性价比最高的模型，提供全面的功能。"
@@ -1665,12 +1656,9 @@
   "internvl3-latest": {
     "description": "我们最新发布多模态大模型，具备更强的图文理解能力、长时序图片理解能力，性能比肩顶尖闭源模型。默认指向我们最新发布的 InternVL 系列模型，当前指向 internvl3-78b。"
   },
-<<<<<<< HEAD
-=======
   "irag-1.0": {
     "description": "百度自研的iRAG（image based RAG），检索增强的文生图技术，将百度搜索的亿级图片资源跟强大的基础模型能力相结合，就可以生成各种超真实的图片，整体效果远远超过文生图原生系统，去掉了AI味儿，而且成本很低。iRAG具备无幻觉、超真实、立等可取等特点。"
   },
->>>>>>> upstream/main
   "jamba-large": {
     "description": "我们最强大、最先进的模型，专为处理企业级复杂任务而设计，具备卓越的性能。"
   },
