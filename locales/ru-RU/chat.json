@@ -43,6 +43,12 @@
     "reasoningBudgetToken": {
       "title": "Токены на размышления"
     },
+    "reasoningEffort": {
+      "title": "Интенсивность рассуждений"
+    },
+    "thinking": {
+      "title": "Переключатель глубокого мышления"
+    },
     "title": "Расширенные функции модели"
   },
   "history": {

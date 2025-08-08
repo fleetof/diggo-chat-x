@@ -43,6 +43,12 @@
     "reasoningBudgetToken": {
       "title": "Denken verbruik Token"
     },
+    "reasoningEffort": {
+      "title": "Redeneringsinspanning"
+    },
+    "thinking": {
+      "title": "Diepdenkschakelaar"
+    },
     "title": "Modeluitbreidingsfunctie"
   },
   "history": {

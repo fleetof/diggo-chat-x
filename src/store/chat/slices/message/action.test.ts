@@ -1,9 +1,9 @@
+import { TraceEventType } from '@lobechat/types';
 import * as lobeUIModules from '@lobehub/ui';
 import { act, renderHook, waitFor } from '@testing-library/react';
 import { mutate } from 'swr';
 import { Mock, afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { TraceEventType } from '@/const/trace';
 import { messageService } from '@/services/message';
 import { topicService } from '@/services/topic';
 import { messageMapKey } from '@/store/chat/utils/messageMapKey';
@@ -369,11 +369,12 @@ describe('chatMessage actions', () => {
       const messageId = 'message-id';
       const newContent = 'Updated content';
 
+      const spy = vi.spyOn(messageService, 'updateMessage');
       await act(async () => {
         await result.current.internal_updateMessageContent(messageId, newContent);
       });
 
-      expect(messageService.updateMessage).toHaveBeenCalledWith(messageId, { content: newContent });
+      expect(spy).toHaveBeenCalledWith(messageId, { content: newContent });
     });
 
     it('should dispatch message update action', async () => {

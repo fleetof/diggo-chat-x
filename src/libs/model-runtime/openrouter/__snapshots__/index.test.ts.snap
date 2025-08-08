@@ -13,6 +13,7 @@ _These are free, rate-limited endpoints for [Reflection 70B](/models/mattshumer/
     "enabled": false,
     "functionCall": true,
     "id": "mattshumer/reflection-70b:free",
+    "maxOutput": undefined,
     "maxTokens": 4096,
     "pricing": {
       "input": 0,
@@ -20,6 +21,7 @@ _These are free, rate-limited endpoints for [Reflection 70B](/models/mattshumer/
     },
     "reasoning": true,
     "releasedAt": "2024-09-06",
+    "type": "chat",
     "vision": false,
   },
 ]
@@ -38,6 +40,7 @@ _These are free, rate-limited endpoints for [Reflection 70B](/models/mattshumer/
     "enabled": false,
     "functionCall": false,
     "id": "mattshumer/reflection-70b:free",
+    "maxOutput": undefined,
     "maxTokens": 4096,
     "pricing": {
       "input": 0,
@@ -45,6 +48,7 @@ _These are free, rate-limited endpoints for [Reflection 70B](/models/mattshumer/
     },
     "reasoning": false,
     "releasedAt": "2024-09-06",
+    "type": "chat",
     "vision": false,
   },
 ]
@@ -63,6 +67,7 @@ _These are free, rate-limited endpoints for [Reflection 70B](/models/mattshumer/
     "enabled": false,
     "functionCall": false,
     "id": "mattshumer/reflection-70b:free",
+    "maxOutput": undefined,
     "maxTokens": 4096,
     "pricing": {
       "input": 0,
@@ -70,6 +75,7 @@ _These are free, rate-limited endpoints for [Reflection 70B](/models/mattshumer/
     },
     "reasoning": false,
     "releasedAt": "2024-09-06",
+    "type": "chat",
     "vision": false,
   },
 ]

@@ -2,14 +2,14 @@ import type { ChatModelCard } from '@/types/llm';
 
 import { AgentRuntimeErrorType } from '../error';
 import { ModelProvider } from '../types';
-import { LobeOpenAICompatibleFactory } from '../utils/openaiCompatibleFactory';
+import { createOpenAICompatibleRuntime } from '../utils/openaiCompatibleFactory';
 
 export interface GroqModelCard {
   context_window: number;
   id: string;
 }
 
-export const LobeGroq = LobeOpenAICompatibleFactory({
+export const LobeGroq = createOpenAICompatibleRuntime({
   baseURL: 'https://api.groq.com/openai/v1',
   chatCompletion: {
     handleError: (error) => {
@@ -21,8 +21,7 @@ export const LobeGroq = LobeOpenAICompatibleFactory({
       const { temperature, ...restPayload } = payload;
       return {
         ...restPayload,
-        // disable stream for tools due to groq dont support
-        stream: !payload.tools,
+        stream: payload.stream ?? true,
 
         temperature: temperature <= 0 ? undefined : temperature,
       } as any;

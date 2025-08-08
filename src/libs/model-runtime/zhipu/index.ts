@@ -1,7 +1,8 @@
-import type { ChatModelCard } from '@/types/llm';
-
 import { ModelProvider } from '../types';
-import { LobeOpenAICompatibleFactory } from '../utils/openaiCompatibleFactory';
+import { MODEL_LIST_CONFIGS, processModelList } from '../utils/modelParse';
+import { createOpenAICompatibleRuntime } from '../utils/openaiCompatibleFactory';
+import { OpenAIStream } from '../utils/streams/openai';
+import { convertIterableToStream } from '../utils/streams/protocol';
 
 export interface ZhipuModelCard {
   description: string;
@@ -9,11 +10,12 @@ export interface ZhipuModelCard {
   modelName: string;
 }
 
-export const LobeZhipuAI = LobeOpenAICompatibleFactory({
+export const LobeZhipuAI = createOpenAICompatibleRuntime({
   baseURL: 'https://open.bigmodel.cn/api/paas/v4',
   chatCompletion: {
     handlePayload: (payload) => {
-      const { enabledSearch, max_tokens, model, temperature, tools, top_p, ...rest } = payload;
+      const { enabledSearch, max_tokens, model, temperature, thinking, tools, top_p, ...rest } =
+        payload;
 
       const zhipuTools = enabledSearch
         ? [
@@ -22,6 +24,9 @@ export const LobeZhipuAI = LobeOpenAICompatibleFactory({
               type: 'web_search',
               web_search: {
                 enable: true,
+                result_sequence: 'before', // 将搜索结果返回顺序更改为 before 适配最小化 OpenAIStream 改动
+                search_engine: process.env.ZHIPU_SEARCH_ENGINE || 'search_std', // search_std, search_pro
+                search_result: true,
               },
             },
           ]
@@ -37,6 +42,7 @@ export const LobeZhipuAI = LobeOpenAICompatibleFactory({
               max_tokens,
         model,
         stream: true,
+        thinking: model.includes('-4.5') ? { type: thinking?.type } : undefined,
         tools: zhipuTools,
         ...(model === 'glm-4-alltools'
           ? {
@@ -52,15 +58,63 @@ export const LobeZhipuAI = LobeOpenAICompatibleFactory({
             }),
       } as any;
     },
+    handleStream: (stream, { callbacks, inputStartAt }) => {
+      const readableStream =
+        stream instanceof ReadableStream ? stream : convertIterableToStream(stream);
+
+      // GLM-4.5 系列模型在 tool_calls 中返回的 index 为 -1，需要在进入 OpenAIStream 之前修正
+      // 因为 OpenAIStream 内部会过滤掉 index < 0 的 tool_calls (openai.ts:58-60)
+      const preprocessedStream = readableStream.pipeThrough(
+        new TransformStream({
+          transform(chunk, controller) {
+            // 处理原始的 OpenAI ChatCompletionChunk 格式
+            if (chunk.choices && chunk.choices[0]) {
+              const choice = chunk.choices[0];
+              if (choice.delta?.tool_calls && Array.isArray(choice.delta.tool_calls)) {
+                // 修正负数 index，将 -1 转换为基于数组位置的正数 index
+                const fixedToolCalls = choice.delta.tool_calls.map(
+                  (toolCall: any, globalIndex: number) => ({
+                    ...toolCall,
+                    index: toolCall.index < 0 ? globalIndex : toolCall.index,
+                  }),
+                );
+
+                // 创建修正后的 chunk
+                const fixedChunk = {
+                  ...chunk,
+                  choices: [
+                    {
+                      ...choice,
+                      delta: {
+                        ...choice.delta,
+                        tool_calls: fixedToolCalls,
+                      },
+                    },
+                  ],
+                };
+
+                controller.enqueue(fixedChunk);
+              } else {
+                controller.enqueue(chunk);
+              }
+            } else {
+              controller.enqueue(chunk);
+            }
+          },
+        }),
+      );
+
+      return OpenAIStream(preprocessedStream, {
+        callbacks,
+        inputStartAt,
+        provider: 'zhipu',
+      });
+    },
   },
   debug: {
     chatCompletion: () => process.env.DEBUG_ZHIPU_CHAT_COMPLETION === '1',
   },
   models: async ({ client }) => {
-    const { LOBE_DEFAULT_MODEL_LIST } = await import('@/config/aiModels');
-
-    const reasoningKeywords = ['glm-zero', 'glm-z1'];
-
     // ref: https://open.bigmodel.cn/console/modelcenter/square
     const url = 'https://open.bigmodel.cn/api/fine-tuning/model_center/list?pageSize=100&pageNum=1';
     const response = await fetch(url, {
@@ -75,34 +129,12 @@ export const LobeZhipuAI = LobeOpenAICompatibleFactory({
 
     const modelList: ZhipuModelCard[] = json.rows;
 
-    return modelList
-      .map((model) => {
-        const knownModel = LOBE_DEFAULT_MODEL_LIST.find(
-          (m) => model.modelCode.toLowerCase() === m.id.toLowerCase(),
-        );
-
-        return {
-          contextWindowTokens: knownModel?.contextWindowTokens ?? undefined,
-          description: model.description,
-          displayName: model.modelName,
-          enabled: knownModel?.enabled || false,
-          functionCall:
-            (model.modelCode.toLowerCase().includes('glm-4') &&
-              !model.modelCode.toLowerCase().includes('glm-4v')) ||
-            knownModel?.abilities?.functionCall ||
-            false,
-          id: model.modelCode,
-          reasoning:
-            reasoningKeywords.some((keyword) => model.modelCode.toLowerCase().includes(keyword)) ||
-            knownModel?.abilities?.reasoning ||
-            false,
-          vision:
-            model.modelCode.toLowerCase().includes('glm-4v') ||
-            knownModel?.abilities?.vision ||
-            false,
-        };
-      })
-      .filter(Boolean) as ChatModelCard[];
+    const standardModelList = modelList.map((model) => ({
+      description: model.description,
+      displayName: model.modelName,
+      id: model.modelCode,
+    }));
+    return processModelList(standardModelList, MODEL_LIST_CONFIGS.zhipu);
   },
   provider: ModelProvider.ZhiPu,
 });

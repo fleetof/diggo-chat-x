@@ -1,4 +1,6 @@
-import { ElectronAppState } from '../types';
+import { ThemeAppearance } from 'antd-style';
+
+import { ElectronAppState, ThemeMode } from '../types';
 
 export interface SystemDispatchEvents {
   checkSystemAccessibility: () => boolean | undefined;
@@ -12,4 +14,10 @@ export interface SystemDispatchEvents {
    * @param locale 语言设置
    */
   updateLocale: (locale: string) => { success: boolean };
+  updateThemeMode: (themeMode: ThemeMode) => void;
+}
+
+export interface SystemBroadcastEvents {
+  systemThemeChanged: (data: { themeMode: ThemeAppearance }) => void;
+  themeChanged: (data: { themeMode: ThemeMode }) => void;
 }

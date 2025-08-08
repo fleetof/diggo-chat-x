@@ -43,6 +43,12 @@
     "reasoningBudgetToken": {
       "title": "Token für Denkaufwand"
     },
+    "reasoningEffort": {
+      "title": "Argumentationsstärke"
+    },
+    "thinking": {
+      "title": "Tiefdenk-Schalter"
+    },
     "title": "Modell Erweiterungsfunktionen"
   },
   "history": {

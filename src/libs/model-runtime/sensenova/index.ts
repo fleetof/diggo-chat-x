@@ -1,18 +1,18 @@
 import type { ChatModelCard } from '@/types/llm';
 
 import { ModelProvider } from '../types';
-import { LobeOpenAICompatibleFactory } from '../utils/openaiCompatibleFactory';
+import { createOpenAICompatibleRuntime } from '../utils/openaiCompatibleFactory';
 import { convertSenseNovaMessage } from '../utils/sensenovaHelpers';
 
 export interface SenseNovaModelCard {
   id: string;
 }
 
-export const LobeSenseNovaAI = LobeOpenAICompatibleFactory({
+export const LobeSenseNovaAI = createOpenAICompatibleRuntime({
   baseURL: 'https://api.sensenova.cn/compatible-mode/v1',
   chatCompletion: {
     handlePayload: (payload) => {
-      const { frequency_penalty, max_tokens, messages, model, temperature, top_p, ...rest } =
+      const { frequency_penalty, max_tokens, messages, model, temperature, thinking, top_p, ...rest } =
         payload;
 
       return {
@@ -33,6 +33,9 @@ export const LobeSenseNovaAI = LobeOpenAICompatibleFactory({
           temperature !== undefined && temperature > 0 && temperature <= 2
             ? temperature
             : undefined,
+        thinking: thinking 
+          ? (model && model.includes('-V6-5-') && thinking.type === 'enabled' ? { enabled: true } : { enabled: false })
+          : undefined,
         top_p: top_p !== undefined && top_p > 0 && top_p < 1 ? top_p : undefined,
       } as any;
     },

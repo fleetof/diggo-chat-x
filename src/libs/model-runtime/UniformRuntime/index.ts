@@ -1,9 +1,12 @@
+/**
+ * @see https://github.com/lobehub/lobe-chat/discussions/6563
+ */
 import { LobeRuntimeAI } from '../BaseAI';
 import { LobeOpenAI } from '../openai';
 import { providerRuntimeMap } from '../runtimeMap';
 import {
-  ChatCompetitionOptions,
   type ChatCompletionErrorPayload,
+  ChatMethodOptions,
   ChatStreamPayload,
   EmbeddingsOptions,
   EmbeddingsPayload,
@@ -70,11 +73,11 @@ class UniformRuntime {
     return runtimeItem.runtime;
   }
 
-  async chat(payload: ChatStreamPayload, options?: ChatCompetitionOptions) {
+  async chat(payload: ChatStreamPayload, options?: ChatMethodOptions) {
     try {
       const runtime = this.getRuntimeByModel(payload.model);
 
-      return await runtime.chat(payload, options);
+      return await runtime.chat!(payload, options);
     } catch (e) {
       if (this._options.chat?.handleError) {
         const error = this._options.chat.handleError(e);
