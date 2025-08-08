@@ -1,14 +1,4 @@
 {
-  "build": {
-    "env": {
-      "VERCEL_FORCE_NO_BUILD_CACHE": "1"
-    }
-  },
-  "buildCommand": "NODE_OPTIONS=--max-old-space-size=6144 bun run build",
-  "git": {
-    "deploymentEnabled": {
-      "main": true
-    }
-  },
+  "buildCommand": "bun run build",
   "installCommand": "bun install"
 }

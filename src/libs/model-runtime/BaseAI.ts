@@ -3,7 +3,7 @@ import OpenAI from 'openai';
 import { ChatModelCard } from '@/types/llm';
 
 import {
-  ChatCompetitionOptions,
+  ChatMethodOptions,
   ChatStreamPayload,
   Embeddings,
   EmbeddingsOptions,
@@ -14,17 +14,19 @@ import {
   TextToSpeechOptions,
   TextToSpeechPayload,
 } from './types';
+import { CreateImagePayload, CreateImageResponse } from './types/image';
 
 /* eslint-disable sort-keys-fix/sort-keys-fix , typescript-sort-keys/interface */
 export interface LobeRuntimeAI {
   baseURL?: string;
-  chat(payload: ChatStreamPayload, options?: ChatCompetitionOptions): Promise<Response>;
+  chat?(payload: ChatStreamPayload, options?: ChatMethodOptions): Promise<Response>;
 
   embeddings?(payload: EmbeddingsPayload, options?: EmbeddingsOptions): Promise<Embeddings[]>;
 
   models?(): Promise<any>;
 
   textToImage?: (payload: TextToImagePayload) => Promise<string[]>;
+  createImage?: (payload: CreateImagePayload) => Promise<CreateImageResponse>;
 
   textToSpeech?: (
     payload: TextToSpeechPayload,
@@ -40,7 +42,8 @@ export abstract class LobeOpenAICompatibleRuntime {
   abstract baseURL: string;
   abstract client: OpenAI;
 
-  abstract chat(payload: ChatStreamPayload, options?: ChatCompetitionOptions): Promise<Response>;
+  abstract chat(payload: ChatStreamPayload, options?: ChatMethodOptions): Promise<Response>;
+  abstract createImage(payload: CreateImagePayload): Promise<CreateImageResponse>;
 
   abstract models(): Promise<ChatModelCard[]>;
 

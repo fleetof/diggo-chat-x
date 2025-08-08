@@ -4,7 +4,7 @@ import type { ItemType } from 'antd/es/menu/interface';
 import { LucideArrowRight, LucideBolt } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { PropsWithChildren, memo, useMemo } from 'react';
+import { type ReactNode, memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
@@ -40,14 +40,14 @@ const useStyles = createStyles(({ css, prefixCls }) => ({
 
 const menuKey = (provider: string, model: string) => `${provider}-${model}`;
 
-const ModelSwitchPanel = memo<
-  PropsWithChildren<{
-    onOpenChange?: (open: boolean) => void;
-    open?: boolean;
-    setUpdating?: (updating: boolean) => void;
-    updating?: boolean;
-  }>
->(({ children, setUpdating, onOpenChange, open }) => {
+interface IProps {
+  children?: ReactNode;
+  onOpenChange?: (open: boolean) => void;
+  open?: boolean;
+  updating?: boolean;
+}
+
+const ModelSwitchPanel = memo<IProps>(({ children, onOpenChange, open }) => {
   const { t } = useTranslation('components');
   const { styles, theme } = useStyles();
   const [model, provider, updateAgentConfig] = useAgentStore((s) => [
@@ -65,9 +65,7 @@ const ModelSwitchPanel = memo<
         key: menuKey(provider.id, model.id),
         label: <ModelItemRender {...model} {...model.abilities} />,
         onClick: async () => {
-          setUpdating?.(true);
           await updateAgentConfig({ model: model.id, provider: provider.id });
-          setUpdating?.(false);
         },
       }));
 
@@ -143,13 +141,14 @@ const ModelSwitchPanel = memo<
   return (
     <ActionDropdown
       menu={{
+        // @ts-expect-error 等待 antd 修复
         activeKey: menuKey(provider, model),
         className: styles.menu,
         items,
         // 不加限高就会导致面板超长，顶部的内容会被隐藏
         // https://github.com/user-attachments/assets/9c043c47-42c5-46ef-b5c1-bee89376f042
         style: {
-          maxHeight: 500,
+          maxHeight: 550,
           overflowY: 'scroll',
         },
       }}

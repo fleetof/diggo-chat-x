@@ -1,17 +1,20 @@
 import { LobeAi21AI } from './ai21';
+import { Lobe302AI } from './ai302';
 import { LobeAi360AI } from './ai360';
-import LobeAnthropicAI from './anthropic';
+import { LobeAiHubMixAI } from './aihubmix';
+import { LobeAnthropicAI } from './anthropic';
 import { LobeAzureOpenAI } from './azureOpenai';
 import { LobeAzureAI } from './azureai';
 import { LobeBaichuanAI } from './baichuan';
-import LobeBedrockAI from './bedrock';
+import { LobeBedrockAI } from './bedrock';
 import { LobeCloudflareAI } from './cloudflare';
 import { LobeCohereAI } from './cohere';
 import { LobeDeepSeekAI } from './deepseek';
+import { LobeFalAI } from './fal';
 import { LobeFireworksAI } from './fireworksai';
 import { LobeGiteeAI } from './giteeai';
 import { LobeGithubAI } from './github';
-import LobeGoogleAI from './google';
+import { LobeGoogleAI } from './google';
 import { LobeGroq } from './groq';
 import { LobeHigressAI } from './higress';
 import { LobeHuggingFaceAI } from './huggingface';
@@ -22,10 +25,11 @@ import { LobeJinaAI } from './jina';
 import { LobeLMStudioAI } from './lmstudio';
 import { LobeMinimaxAI } from './minimax';
 import { LobeMistralAI } from './mistral';
+import { LobeModelScopeAI } from './modelscope';
 import { LobeMoonshotAI } from './moonshot';
 import { LobeNovitaAI } from './novita';
 import { LobeNvidiaAI } from './nvidia';
-import LobeOllamaAI from './ollama';
+import { LobeOllamaAI } from './ollama';
 import { LobeOpenAI } from './openai';
 import { LobeOpenRouterAI } from './openrouter';
 import { LobePerplexityAI } from './perplexity';
@@ -42,6 +46,7 @@ import { LobeTaichuAI } from './taichu';
 import { LobeTencentCloudAI } from './tencentcloud';
 import { LobeTogetherAI } from './togetherai';
 import { LobeUpstageAI } from './upstage';
+import { LobeV0AI } from './v0';
 import { LobeVLLMAI } from './vllm';
 import { LobeVolcengineAI } from './volcengine';
 import { LobeWenxinAI } from './wenxin';
@@ -52,7 +57,9 @@ import { LobeZhipuAI } from './zhipu';
 
 export const providerRuntimeMap = {
   ai21: LobeAi21AI,
+  ai302: Lobe302AI,
   ai360: LobeAi360AI,
+  aihubmix: LobeAiHubMixAI,
   anthropic: LobeAnthropicAI,
   azure: LobeAzureOpenAI,
   azureai: LobeAzureAI,
@@ -61,6 +68,7 @@ export const providerRuntimeMap = {
   cloudflare: LobeCloudflareAI,
   cohere: LobeCohereAI,
   deepseek: LobeDeepSeekAI,
+  fal: LobeFalAI,
   fireworksai: LobeFireworksAI,
   giteeai: LobeGiteeAI,
   github: LobeGithubAI,
@@ -75,6 +83,7 @@ export const providerRuntimeMap = {
   lmstudio: LobeLMStudioAI,
   minimax: LobeMinimaxAI,
   mistral: LobeMistralAI,
+  modelscope: LobeModelScopeAI,
   moonshot: LobeMoonshotAI,
   novita: LobeNovitaAI,
   nvidia: LobeNvidiaAI,
@@ -95,6 +104,7 @@ export const providerRuntimeMap = {
   tencentcloud: LobeTencentCloudAI,
   togetherai: LobeTogetherAI,
   upstage: LobeUpstageAI,
+  v0: LobeV0AI,
   vllm: LobeVLLMAI,
   volcengine: LobeVolcengineAI,
   wenxin: LobeWenxinAI,

@@ -2,13 +2,30 @@ import { ModelProviderCard } from '@/types/llm';
 
 // ref: https://platform.openai.com/docs/deprecations
 const OpenAI: ModelProviderCard = {
+  apiKeyUrl: 'https://platform.openai.com/api-keys?utm_source=lobehub',
   chatModels: [
+    {
+      contextWindowTokens: 400_000,
+      description:
+        '更快、更经济高效的 GPT-5 版本，适用于明确定义的任务。在保持高质量输出的同时，提供更快的响应速度。',
+      displayName: 'GPT-5 mini',
+      enabled: true,
+      functionCall: true,
+      id: 'gpt-5-mini',
+      maxOutput: 128_000,
+      pricing: {
+        cachedInput: 0.03,
+        input: 0.25,
+        output: 2,
+      },
+      releasedAt: '2025-08-07',
+      vision: true,
+    },
     {
       contextWindowTokens: 1_047_576,
       description:
         'GPT-4.1 mini 提供了智能、速度和成本之间的平衡，使其成为许多用例中有吸引力的模型。',
-      displayName: 'GPT-4.1 mini (日常对话、创意写作)',
-      enabled: true,
+      displayName: 'GPT-4.1 mini',
       functionCall: true,
       id: 'gpt-4.1-mini',
       maxOutput: 32_768,
@@ -109,6 +126,21 @@ const OpenAI: ModelProviderCard = {
         input: 0.15,
         output: 0.6,
       },
+      vision: true,
+    },
+    {
+      contextWindowTokens: 128_000,
+      description:
+        'GPT-4o mini search preview 是一个专门为搜索功能优化的预览版本，具有增强的网络搜索能力和实时信息检索功能。',
+      displayName: 'GPT-4o mini Search Preview',
+      functionCall: true,
+      id: 'gpt-4o-mini-search-preview',
+      maxOutput: 16_384,
+      pricing: {
+        input: 0.15,
+        output: 0.6,
+      },
+      releasedAt: '2024-12-01',
       vision: true,
     },
     {
@@ -341,7 +373,7 @@ const OpenAI: ModelProviderCard = {
       },
     },
   ],
-  checkModel: 'gpt-4o-mini',
+  checkModel: 'gpt-4.1-nano',
   description:
     'OpenAI 是全球领先的人工智能研究机构，其开发的模型如GPT系列推动了自然语言处理的前沿。OpenAI 致力于通过创新和高效的AI解决方案改变多个行业。他们的产品具有显著的性能和经济性，广泛用于研究、商业和创新应用。',
   enabled: true,
@@ -350,10 +382,9 @@ const OpenAI: ModelProviderCard = {
   modelsUrl: 'https://platform.openai.com/docs/models',
   name: 'OpenAI',
   settings: {
+    responseAnimation: 'smooth',
     showModelFetcher: true,
-    smoothing: {
-      text: true,
-    },
+    supportResponsesApi: true,
   },
   url: 'https://openai.com',
 };

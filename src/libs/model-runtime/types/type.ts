@@ -16,6 +16,12 @@ export interface ChatCompletionErrorPayload {
   provider: string;
 }
 
+export interface CreateImageErrorPayload {
+  error: object;
+  errorType: ILobeAgentRuntimeErrorType;
+  provider: string;
+}
+
 export interface CreateChatCompletionOptions {
   chatModel: OpenAI;
   payload: ChatStreamPayload;
@@ -23,7 +29,9 @@ export interface CreateChatCompletionOptions {
 
 export enum ModelProvider {
   Ai21 = 'ai21',
+  Ai302 = 'ai302',
   Ai360 = 'ai360',
+  AiHubMix = 'aihubmix',
   Anthropic = 'anthropic',
   Azure = 'azure',
   AzureAI = 'azureai',
@@ -32,6 +40,7 @@ export enum ModelProvider {
   Cloudflare = 'cloudflare',
   Cohere = 'cohere',
   DeepSeek = 'deepseek',
+  Fal = 'fal',
   FireworksAI = 'fireworksai',
   GiteeAI = 'giteeai',
   Github = 'github',
@@ -44,8 +53,10 @@ export enum ModelProvider {
   InternLM = 'internlm',
   Jina = 'jina',
   LMStudio = 'lmstudio',
+  LobeHub = 'lobehub',
   Minimax = 'minimax',
   Mistral = 'mistral',
+  ModelScope = 'modelscope',
   Moonshot = 'moonshot',
   Novita = 'novita',
   Nvidia = 'nvidia',
@@ -66,6 +77,7 @@ export enum ModelProvider {
   TencentCloud = 'tencentcloud',
   TogetherAI = 'togetherai',
   Upstage = 'upstage',
+  V0 = 'v0',
   VLLM = 'vllm',
   VertexAI = 'vertexai',
   Volcengine = 'volcengine',

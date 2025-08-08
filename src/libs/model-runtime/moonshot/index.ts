@@ -1,17 +1,25 @@
 import type { ChatModelCard } from '@/types/llm';
 
 import { ChatStreamPayload, ModelProvider } from '../types';
-import { LobeOpenAICompatibleFactory } from '../utils/openaiCompatibleFactory';
+import { createOpenAICompatibleRuntime } from '../utils/openaiCompatibleFactory';
 
 export interface MoonshotModelCard {
   id: string;
 }
 
-export const LobeMoonshotAI = LobeOpenAICompatibleFactory({
+export const LobeMoonshotAI = createOpenAICompatibleRuntime({
   baseURL: 'https://api.moonshot.cn/v1',
   chatCompletion: {
     handlePayload: (payload: ChatStreamPayload) => {
-      const { enabledSearch, temperature, tools, ...rest } = payload;
+      const { enabledSearch, messages, temperature, tools, ...rest } = payload;
+
+      // 为 assistant 空消息添加一个空格 (#8418)
+      const filteredMessages = messages.map(message => {
+        if (message.role === 'assistant' && (!message.content || message.content === '')) {
+          return { ...message, content: ' ' };
+        }
+        return message;
+      });
 
       const moonshotTools = enabledSearch
         ? [
@@ -27,6 +35,7 @@ export const LobeMoonshotAI = LobeOpenAICompatibleFactory({
 
       return {
         ...rest,
+        messages: filteredMessages,
         temperature: temperature !== undefined ? temperature / 2 : undefined,
         tools: moonshotTools,
       } as any;
@@ -40,7 +49,9 @@ export const LobeMoonshotAI = LobeOpenAICompatibleFactory({
 
     const functionCallKeywords = ['moonshot-v1', 'kimi-latest'];
 
-    const visionKeywords = ['kimi-latest', 'vision'];
+    const visionKeywords = ['kimi-latest', 'kimi-thinking', 'vision'];
+
+    const reasoningKeywords = ['thinking'];
 
     const modelsPage = (await client.models.list()) as any;
     const modelList: MoonshotModelCard[] = modelsPage.data;
@@ -60,7 +71,10 @@ export const LobeMoonshotAI = LobeOpenAICompatibleFactory({
             knownModel?.abilities?.functionCall ||
             false,
           id: model.id,
-          reasoning: knownModel?.abilities?.reasoning || false,
+          reasoning:
+            reasoningKeywords.some((keyword) => model.id.toLowerCase().includes(keyword)) ||
+            knownModel?.abilities?.reasoning ||
+            false,
           vision:
             visionKeywords.some((keyword) => model.id.toLowerCase().includes(keyword)) ||
             knownModel?.abilities?.vision ||

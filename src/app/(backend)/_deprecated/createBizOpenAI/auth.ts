@@ -1,5 +1,6 @@
-import { getAppConfig } from '@/config/app';
-import { ChatErrorType } from '@/types/fetch';
+import { ChatErrorType } from '@lobechat/types';
+
+import { getAppConfig } from '@/envs/app';
 
 interface AuthConfig {
   accessCode?: string | null;
