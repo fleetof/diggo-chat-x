@@ -27,7 +27,7 @@ const OpenAI: ModelProviderCard = {
       contextWindowTokens: 400_000,
       description:
         'GPT-5 是 OpenAI 的最新一代模型，具有更强大的推理能力和更快的响应速度。适用于需要进行复杂推理和逻辑推理的任务。',
-      displayName: 'GPT-5 (数文学证明、复杂逻辑推理专用)',
+      displayName: 'GPT-5 (数学证明、复杂逻辑推理专用)',
       enabled: true,
       functionCall: true,
       id: 'gpt-5',

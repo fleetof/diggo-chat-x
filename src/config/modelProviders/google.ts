@@ -36,6 +36,25 @@ const Google: ModelProviderCard = {
     {
       contextWindowTokens: 2_097_152 + 8192,
       description:
+        'Gemini 2.5 Flash 是 Google 最新的实验性多模态AI模型，与历史版本相比有一定的质量提升，特别是对于世界知识、代码和长上下文。',
+      displayName: 'Gemini 2.5 Flash (数学证明、复杂逻辑推理专用)',
+      enabled: true,
+      functionCall: true,
+      id: 'gemini-2.5-flash',
+      maxOutput: 65_536,
+      pricing: {
+        units: [
+          { name: 'textInput', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+          { name: 'textOutput', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+          { name: 'textInput_cacheRead', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+        ],
+      },
+      releasedAt: '2025-08-19',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 2_097_152 + 8192,
+      description:
         'Gemini 2.0 Pro Experimental 是 Google 最新的实验性多模态AI模型，与历史版本相比有一定的质量提升，特别是对于世界知识、代码和长上下文。',
       displayName: 'Gemini 2.0 Pro Experimental 02-05 (推荐使用！强大且全面)',
       enabled: false,
