@@ -114,15 +114,14 @@ export const LOBE_DEFAULT_MODEL_LIST: ChatModelCard[] = [
 ].flat();
 
 export const DEFAULT_MODEL_PROVIDER_LIST = [
+  GoogleProvider,
   OpenAIProvider,
   { ...AzureProvider, chatModels: [] },
   AzureAIProvider,
   OllamaProvider,
   VLLMProvider,
   XinferenceProvider,
-  AnthropicProvider,
   BedrockProvider,
-  GoogleProvider,
   VertexAIProvider,
   DeepSeekProvider,
   MoonshotProvider,
@@ -172,6 +171,7 @@ export const DEFAULT_MODEL_PROVIDER_LIST = [
   Search1APIProvider,
   InfiniAIProvider,
   QiniuProvider,
+  AnthropicProvider,
 ];
 
 export const filterEnabledModels = (provider: ModelProviderCard) => {
