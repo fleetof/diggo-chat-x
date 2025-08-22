@@ -42,6 +42,8 @@ const getErrorAlertConfig = (
   /* ↑ cloud slot ↑ */
 
   switch (errorType) {
+    case ChatErrorType.Forbidden:
+    case 403:
     case ChatErrorType.SystemTimeNotMatchError:
     case AgentRuntimeErrorType.PermissionDenied:
     case AgentRuntimeErrorType.InsufficientQuota:
@@ -91,6 +93,32 @@ const ErrorMessageExtra = memo<{ data: ChatMessage }>(({ data }) => {
   if (!error?.type) return;
 
   switch (error.type) {
+    case ChatErrorType.Forbidden:
+    case 403: {
+      return (
+        <ErrorActionContainer>
+          <div
+            style={{
+              backgroundColor: '#fff2f0',
+              border: '1px solid #ffccc7',
+              borderRadius: '6px',
+              color: '#ff4d4f',
+              fontSize: '14px',
+              padding: '12px',
+            }}
+          >
+            <strong>🚫 模型访问被禁止</strong>
+            <br />
+            <div style={{ marginTop: '8px' }}>
+              {error?.message ||
+                error?.body?.error ||
+                '该模型暂时禁止使用，请联系管理员获取更多信息。'}
+            </div>
+          </div>
+        </ErrorActionContainer>
+      );
+    }
+
     case AgentRuntimeErrorType.OllamaServiceUnavailable: {
       return <OllamaSetupGuide id={data.id} />;
     }
