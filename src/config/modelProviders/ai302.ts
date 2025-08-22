@@ -120,8 +120,9 @@ const Ai302: ModelProviderCard = {
     },
     {
       contextWindowTokens: 200_000,
+      disabledReason: '该模型暂时禁止使用，请联系管理员获取更多信息。',
       displayName: 'claude-opus-4-20250514',
-      enabled: true,
+      enabled: false,
       id: 'claude-opus-4-20250514',
     },
     {

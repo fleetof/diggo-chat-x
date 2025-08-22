@@ -17,6 +17,10 @@ export interface ChatModelCard {
   deploymentName?: string;
   description?: string;
   /**
+   * reason why the model is disabled (optional custom message)
+   */
+  disabledReason?: string;
+  /**
    * the name show for end user
    */
   displayName?: string;
