@@ -167,6 +167,11 @@ interface ModelItemRenderProps extends ChatModelCard {
 
 export const ModelItemRender = memo<ModelItemRenderProps>(({ showInfoTag = true, ...model }) => {
   const { mobile } = useResponsive();
+
+  // Models that should have bold font
+  const boldModels = ['gemini-2.0-flash', 'gpt-5-mini'];
+  const shouldBeBold = boldModels.includes(model.id);
+
   return (
     <Flexbox
       align={'center'}
@@ -187,7 +192,12 @@ export const ModelItemRender = memo<ModelItemRenderProps>(({ showInfoTag = true,
         style={{ flexShrink: 1, minWidth: 0, overflow: 'hidden' }}
       >
         <ModelIcon model={model.id} size={20} />
-        <Text style={mobile ? { maxWidth: '60vw', overflowX: 'auto', whiteSpace: 'nowrap' } : {}}>
+        <Text
+          style={{
+            ...(mobile ? { maxWidth: '60vw', overflowX: 'auto', whiteSpace: 'nowrap' } : {}),
+            fontWeight: shouldBeBold ? 'bold' : 'normal',
+          }}
+        >
           {model.displayName || model.id}
         </Text>
       </Flexbox>

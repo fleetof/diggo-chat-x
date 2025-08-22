@@ -59,7 +59,9 @@ export const createCommonSlice: StateCreator<
         // if user have set the trace, return false
         if (typeof userAllowTrace === 'boolean') return Promise.resolve(false);
 
-        return Promise.resolve(get().isUserCanEnableTrace);
+        // Always return false to disable telemetry notification popup
+        // 删除“反馈收集”弹窗
+        return Promise.resolve(false);
       },
       {
         revalidateOnFocus: false,

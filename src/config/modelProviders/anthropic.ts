@@ -6,18 +6,6 @@ const Anthropic: ModelProviderCard = {
     {
       contextWindowTokens: 200_000,
       description:
-        'Claude 4 Opus 是 Anthropic 最强大的下一代模型，具有卓越的推理能力和创造力，适用于最复杂的任务和高级分析。',
-      displayName: 'Claude 4 Opus',
-      enabled: false,
-      functionCall: true,
-      id: 'claude-opus-4-20250514',
-      maxOutput: 32_000,
-      releasedAt: '2025-05-14',
-      vision: true,
-    },
-    {
-      contextWindowTokens: 200_000,
-      description:
         'Claude 3.7 sonnet 是 Anthropic 最快的下一代模型。与 Claude 3 Haiku 相比，Claude 3.7 Sonnet 在各项技能上都有所提升，并在许多智力基准测试中超越了上一代最大的模型 Claude 3 Opus。',
       displayName: 'Claude 3.7 Sonnet (数学证明、复杂逻辑推理专用)',
       enabled: true,
