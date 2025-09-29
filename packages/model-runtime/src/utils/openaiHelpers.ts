@@ -1,9 +1,8 @@
 import OpenAI, { toFile } from 'openai';
 
-import { disableStreamModels, systemToUserModels } from '@/const/models';
-import { ChatStreamPayload, OpenAIChatMessage } from '@/libs/model-runtime';
-import { imageUrlToBase64 } from '@/utils/imageToBase64';
-
+import { disableStreamModels, systemToUserModels } from '../const/models';
+import { ChatStreamPayload, OpenAIChatMessage } from '../types';
+import { imageUrlToBase64 } from './imageToBase64';
 import { parseDataUri } from './uriParser';
 
 export const convertMessageContent = async (

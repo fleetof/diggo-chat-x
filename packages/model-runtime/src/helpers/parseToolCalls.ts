@@ -1,6 +1,6 @@
 import { produce } from 'immer';
 
-import { MessageToolCall, MessageToolCallChunk, MessageToolCallSchema } from '@/types/message';
+import { MessageToolCall, MessageToolCallChunk, MessageToolCallSchema } from '../types';
 
 export const parseToolCalls = (origin: MessageToolCall[], value: MessageToolCallChunk[]) =>
   produce(origin, (draft) => {

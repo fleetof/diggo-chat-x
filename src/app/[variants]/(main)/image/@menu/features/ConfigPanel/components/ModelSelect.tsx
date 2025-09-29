@@ -1,7 +1,8 @@
-import { ActionIcon, Select, type SelectProps } from '@lobehub/ui';
-import { createStyles } from 'antd-style';
-import { LucideBolt } from 'lucide-react';
+import { ActionIcon, Icon, Select, type SelectProps } from '@lobehub/ui';
+import { createStyles, useTheme } from 'antd-style';
+import { LucideArrowRight, LucideBolt } from 'lucide-react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
@@ -31,6 +32,8 @@ interface ModelOption {
 
 const ModelSelect = memo(() => {
   const { styles } = useStyles();
+  const theme = useTheme();
+  const router = useRouter();
   const { t } = useTranslation('components');
   const { showLLM } = useServerConfigStore(featureFlagsSelectors);
 
@@ -50,12 +53,50 @@ const ModelSelect = memo(() => {
         value: `${provider.id}/${model.id}`,
       }));
 
-      // Simply return empty array if no models
+      // if there are no models, add a placeholder guide
+      if (modelOptions.length === 0) {
+        return [
+          {
+            disabled: true,
+            label: (
+              <Flexbox gap={8} horizontal style={{ color: theme.colorTextTertiary }}>
+                {t('ModelSwitchPanel.emptyModel')}
+                <Icon icon={LucideArrowRight} />
+              </Flexbox>
+            ),
+            onClick: () => {
+              router.push(
+                isDeprecatedEdition
+                  ? '/settings?active=llm'
+                  : `/settings?active=provider&provider=${provider.id}`,
+              );
+            },
+            value: `${provider.id}/empty`,
+          },
+        ];
+      }
+
       return modelOptions;
     };
 
-    // Simply return empty array if no providers
-    if (enabledImageModelList.length === 0) return [];
+    // if there are no providers at all
+    if (enabledImageModelList.length === 0) {
+      return [
+        {
+          disabled: true,
+          label: (
+            <Flexbox gap={8} horizontal style={{ color: theme.colorTextTertiary }}>
+              {t('ModelSwitchPanel.emptyProvider')}
+              <Icon icon={LucideArrowRight} />
+            </Flexbox>
+          ),
+          onClick: () => {
+            router.push(isDeprecatedEdition ? '/settings?active=llm' : '/settings?active=provider');
+          },
+          value: 'no-provider',
+        },
+      ];
+    }
 
     if (enabledImageModelList.length === 1) {
       const provider = enabledImageModelList[0];
@@ -73,7 +114,11 @@ const ModelSelect = memo(() => {
           />
           {showLLM && (
             <Link
-              href={isDeprecatedEdition ? '/settings/llm' : `/settings/provider/${provider.id}`}
+              href={
+                isDeprecatedEdition
+                  ? '/settings?active=llm'
+                  : `/settings?active=provider&provider=${provider.id}`
+              }
             >
               <ActionIcon
                 icon={LucideBolt}
