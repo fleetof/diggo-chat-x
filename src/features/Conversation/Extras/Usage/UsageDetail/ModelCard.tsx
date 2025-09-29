@@ -9,8 +9,9 @@ import { Flexbox } from 'react-layout-kit';
 import { getPrice } from '@/features/Conversation/Extras/Usage/UsageDetail/pricing';
 import { useGlobalStore } from '@/store/global';
 import { systemStatusSelectors } from '@/store/global/selectors';
-import { LobeDefaultAiModelListItem } from '@/types/aiModel';
 import { getCachedTextInputUnitRate, getWriteCacheInputUnitRate } from '@/utils/pricing';
+
+import { LobeDefaultAiModelListItem } from '../../../../../../packages/model-bank/src/types/aiModel';
 
 export const useStyles = createStyles(({ css, token }) => {
   return {
