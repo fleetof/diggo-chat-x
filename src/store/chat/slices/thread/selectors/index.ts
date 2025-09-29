@@ -123,7 +123,7 @@ const portalAIChatsWithHistoryConfig = (s: ChatStoreState) => {
 
   const messages = [...parentMessages, ...afterMessages].filter(Boolean) as ChatMessage[];
 
-  const enableHistoryCount = agentChatConfigSelectors.enableHistoryCount(useAgentStore.getState());
+  const enableHistoryCount = agentChatConfigSelectors.enableHistoryCount();
   const historyCount = agentChatConfigSelectors.historyCount(useAgentStore.getState());
 
   return chatHelpers.getSlicedMessages(messages, {

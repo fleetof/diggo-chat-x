@@ -19,8 +19,6 @@ import { LobeChatDatabase } from '../../type';
 import { GenerationModel } from '../generation';
 import { getTestDB } from './_util';
 
-import { AsyncTaskStatus } from '@/types/asyncTask';
-
 const serverDB: LobeChatDatabase = await getTestDB();
 
 // Mock FileService

@@ -1,8 +1,7 @@
 import { Form, type FormItemProps, SliderWithInput } from '@lobehub/ui';
-import { Form as AntdForm, Switch } from 'antd';
+import { Form as AntdForm } from 'antd';
 import { debounce } from 'lodash-es';
 import { memo, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { useAgentStore } from '@/store/agent';
 import { agentChatConfigSelectors } from '@/store/agent/selectors';
@@ -11,40 +10,25 @@ interface ControlsProps {
   setUpdating: (updating: boolean) => void;
   updating: boolean;
 }
-const Controls = memo<ControlsProps>(({ updating, setUpdating }) => {
-  const { t } = useTranslation('setting');
+const Controls = memo<ControlsProps>(({ setUpdating }) => {
   const [form] = AntdForm.useForm();
 
-  const [historyCount, enableHistoryCount, updateAgentConfig] = useAgentStore((s) => {
-    return [
-      agentChatConfigSelectors.historyCount(s),
-      agentChatConfigSelectors.enableHistoryCount(s),
-      s.updateAgentChatConfig,
-    ];
+  const [historyCount, updateAgentConfig] = useAgentStore((s) => {
+    return [agentChatConfigSelectors.historyCount(s), s.updateAgentChatConfig];
   });
 
   // Sync external store updates to the form without remounting to keep Switch animation
   useEffect(() => {
     form?.setFieldsValue({
-      enableHistoryCount,
       historyCount,
     });
-  }, [enableHistoryCount, historyCount, form]);
+  }, [historyCount, form]);
 
   let items: FormItemProps[] = [
     {
-      children: <Switch loading={updating} size={'small'} />,
-      label: t('settingChat.enableHistoryCount.title'),
-      layout: 'horizontal',
-      minWidth: undefined,
-      name: 'enableHistoryCount',
-      valuePropName: 'checked',
-    },
-    {
       children: (
         <SliderWithInput
-          disabled={!enableHistoryCount}
-          max={20}
+          max={5}
           min={0}
           size={'small'}
           step={1}
@@ -54,7 +38,7 @@ const Controls = memo<ControlsProps>(({ updating, setUpdating }) => {
               maxWidth: 64,
             },
           }}
-          unlimitedInput={true}
+          unlimitedInput={false}
         />
       ),
       name: 'historyCount',
@@ -66,7 +50,6 @@ const Controls = memo<ControlsProps>(({ updating, setUpdating }) => {
     <Form
       form={form}
       initialValues={{
-        enableHistoryCount,
         historyCount,
       }}
       items={items}

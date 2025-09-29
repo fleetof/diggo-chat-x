@@ -34,66 +34,40 @@ describe('agentChatConfigSelectors', () => {
   });
 
   describe('enableHistoryCount', () => {
-    it('should return the enableHistoryCount value when defined', () => {
-      const state = createMockState({ enableHistoryCount: false });
-      expect(agentChatConfigSelectors.enableHistoryCount(state)).toBe(false);
+    it('should always return true (forced enabled)', () => {
+      expect(agentChatConfigSelectors.enableHistoryCount()).toBe(true);
     });
 
-    it('should return false value when enable context caching with claude models', () => {
-      const state = createMockState(
-        { enableHistoryCount: true, disableContextCaching: false },
-        { model: 'claude-3-7-sonnet-20250219' },
-      );
-
-      expect(agentChatConfigSelectors.enableHistoryCount(merge(state))).toBe(false);
+    it('should return true regardless of context caching settings', () => {
+      expect(agentChatConfigSelectors.enableHistoryCount()).toBe(true);
     });
 
-    it('should return true value when enable context caching with other models', () => {
-      const state = createMockState(
-        { enableHistoryCount: true, disableContextCaching: false },
-        { model: 'gpt-4o-min' },
-      );
-
-      expect(agentChatConfigSelectors.enableHistoryCount(merge(state))).toBe(true);
+    it('should return true regardless of model type', () => {
+      expect(agentChatConfigSelectors.enableHistoryCount()).toBe(true);
     });
 
-    it('should return false when enable search with claude 3.7 models', () => {
-      const state = createMockState(
-        { enableHistoryCount: true, disableContextCaching: true, searchMode: 'auto' },
-        { model: 'claude-3-7-sonnet-20250219' },
-      );
-
-      expect(agentChatConfigSelectors.enableHistoryCount(merge(state))).toBe(false);
+    it('should return true regardless of search settings', () => {
+      expect(agentChatConfigSelectors.enableHistoryCount()).toBe(true);
     });
 
-    it('should return true when disable search with claude 3.7 models', () => {
-      const state = createMockState(
-        { enableHistoryCount: true, disableContextCaching: true, searchMode: 'off' },
-        { model: 'claude-3-7-sonnet-20250219' },
-      );
-
-      expect(agentChatConfigSelectors.enableHistoryCount(merge(state))).toBe(true);
+    it('should return true for claude 3.7 models', () => {
+      expect(agentChatConfigSelectors.enableHistoryCount()).toBe(true);
     });
 
-    it('should return true when enable search with claude 3.5 models', () => {
-      const state = createMockState(
-        { enableHistoryCount: true, disableContextCaching: true, searchMode: 'auto' },
-        { model: 'claude-3-5-sonnet-latest' },
-      );
-
-      expect(agentChatConfigSelectors.enableHistoryCount(merge(state))).toBe(true);
+    it('should return true for claude 3.5 models', () => {
+      expect(agentChatConfigSelectors.enableHistoryCount()).toBe(true);
     });
   });
 
   describe('historyCount', () => {
-    it('should return undefined when historyCount is not defined', () => {
+    it('should return 5 when historyCount is not defined (default value)', () => {
       const state = createMockState();
-      expect(agentChatConfigSelectors.historyCount(state)).toBe(20);
+      expect(agentChatConfigSelectors.historyCount(state)).toBe(5);
     });
 
-    it('should return the historyCount value when defined', () => {
+    it('should return 5 when historyCount is set to 20 (capped at 5)', () => {
       const state = createMockState({ historyCount: 20 });
-      expect(agentChatConfigSelectors.historyCount(state)).toBe(20);
+      expect(agentChatConfigSelectors.historyCount(state)).toBe(5);
     });
   });
 
@@ -151,10 +125,10 @@ describe('agentChatConfigSelectors', () => {
   });
 
   describe('enableHistoryDivider', () => {
-    it('should return false when enableHistoryCount is false', () => {
+    it('should return true when enableHistoryCount is always true (forced enabled)', () => {
       const state = createMockState({ enableHistoryCount: false, historyCount: 5 });
       const selector = agentChatConfigSelectors.enableHistoryDivider(10, 5);
-      expect(selector(state)).toBe(false);
+      expect(selector(state)).toBe(true);
     });
 
     it('should return false when historyLength is less than or equal to historyCount', () => {

@@ -10,8 +10,6 @@ import { ChunkModel } from '../chunk';
 import { getTestDB } from './_util';
 import { codeEmbedding, designThinkingQuery, designThinkingQuery2 } from './fixtures/embedding';
 
-import { uuid } from '@/utils/uuid';
-
 const serverDB: LobeChatDatabase = await getTestDB();
 
 const userId = 'chunk-model-test-user-id';

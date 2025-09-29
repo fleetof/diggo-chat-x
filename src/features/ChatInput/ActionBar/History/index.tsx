@@ -10,45 +10,22 @@ import Action from '../components/Action';
 import Controls from './Controls';
 
 const History = memo(() => {
-  const [isLoading, chatConfig, updateAgentChatConfig] = useAgentStore((s) => [
-    agentSelectors.isAgentConfigLoading(s),
-    agentChatConfigSelectors.currentChatConfig(s),
-    s.updateAgentChatConfig,
-  ]);
+  const [isLoading] = useAgentStore((s) => [agentSelectors.isAgentConfigLoading(s)]);
   const [updating, setUpdating] = useState(false);
   const { t } = useTranslation('setting');
   const isMobile = useIsMobile();
 
-  const [historyCount, enableHistoryCount] = useAgentStore((s) => {
-    return [
-      agentChatConfigSelectors.historyCount(s),
-      agentChatConfigSelectors.enableHistoryCount(s),
-    ];
-  });
+  const historyCount = useAgentStore(agentChatConfigSelectors.historyCount);
 
   if (isLoading) return <Action disabled icon={TimerOff} />;
 
-  const title = t(
-    enableHistoryCount
-      ? 'settingChat.enableHistoryCount.limited'
-      : 'settingChat.enableHistoryCount.unlimited',
-    { number: historyCount || 0 },
-  );
+  const title = t('settingChat.enableHistoryCount.limited', { number: historyCount || 0 });
 
   return (
     <Action
-      icon={enableHistoryCount ? Timer : TimerOff}
+      icon={Timer}
       loading={updating}
-      onClick={
-        isMobile
-          ? undefined
-          : async (e) => {
-              e?.preventDefault?.();
-              e?.stopPropagation?.();
-              const next = !Boolean(chatConfig.enableHistoryCount);
-              await updateAgentChatConfig({ enableHistoryCount: next });
-            }
-      }
+      onClick={undefined}
       popover={{
         content: <Controls setUpdating={setUpdating} updating={updating} />,
         minWidth: 240,
