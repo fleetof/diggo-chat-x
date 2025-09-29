@@ -380,6 +380,13 @@
     "registry": "https://registry.npmjs.org"
   },
   "pnpm": {
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "@opentelemetry/exporter-jaeger": "*",
+        "@opentelemetry/instrumentation-winston": "*",
+        "@opentelemetry/winston-transport": "*"
+      }
+    },
     "onlyBuiltDependencies": [
       "@vercel/speed-insights"
     ],

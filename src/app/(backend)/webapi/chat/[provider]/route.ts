@@ -11,7 +11,7 @@ import { createTraceOptions, initModelRuntimeWithUserPayload } from '@/server/mo
 import { createErrorResponse } from '@/utils/errorResponse';
 import { getTracePayload } from '@/utils/trace';
 
-export const maxDuration = 300;
+export const maxDuration = 60;
 
 // Restricted models that should be blocked
 const RESTRICTED_MODELS = new Set(['claude-opus-4-20250514']);
