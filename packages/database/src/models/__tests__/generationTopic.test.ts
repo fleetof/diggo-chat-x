@@ -11,8 +11,6 @@ import { LobeChatDatabase } from '../../type';
 import { GenerationTopicModel } from '../generationTopic';
 import { getTestDB } from './_util';
 
-import { FileService } from '@/server/services/file';
-
 // Mock FileService
 const mockGetFullFileUrl = vi.fn();
 vi.mock('@/server/services/file', () => ({

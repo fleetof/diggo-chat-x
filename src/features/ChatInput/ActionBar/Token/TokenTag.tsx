@@ -39,13 +39,13 @@ const Token = memo<TokenTagProps>(({ total: messageString }) => {
       agentSelectors.currentAgentModelProvider(s) as string,
       // add these two params to enable the component to re-render
       agentChatConfigSelectors.historyCount(s),
-      agentChatConfigSelectors.enableHistoryCount(s),
+      agentChatConfigSelectors.enableHistoryCount(),
     ];
   });
 
   const [historyCount, enableHistoryCount] = useAgentStore((s) => [
     agentChatConfigSelectors.historyCount(s),
-    agentChatConfigSelectors.enableHistoryCount(s),
+    agentChatConfigSelectors.enableHistoryCount(),
     // need to re-render by search mode
     agentChatConfigSelectors.isAgentEnableSearch(s),
   ]);

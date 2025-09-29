@@ -509,7 +509,7 @@ export const generateAIChatV2: StateCreator<
     const historyCount = agentChatConfigSelectors.historyCount(agentStoreState);
 
     if (
-      agentChatConfigSelectors.enableHistoryCount(agentStoreState) &&
+      agentChatConfigSelectors.enableHistoryCount() &&
       chatConfig.enableCompressHistory &&
       originalMessages.length > historyCount
     ) {
