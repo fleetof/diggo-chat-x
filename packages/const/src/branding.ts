@@ -1,9 +1,9 @@
-export const LOBE_CHAT_CLOUD = 'Diggo Chat Cloud';
+export const LOBE_CHAT_CLOUD = 'LobeHub Cloud';
 
-export const BRANDING_NAME = 'Diggo Chat';
-export const BRANDING_LOGO_URL = '/icons/icon-192x192.png';
+export const BRANDING_NAME = 'LobeHub';
+export const BRANDING_LOGO_URL = '';
 
-export const ORG_NAME = 'Diggo Chat';
+export const ORG_NAME = 'LobeHub';
 
 export const BRANDING_URL = {
   help: undefined,

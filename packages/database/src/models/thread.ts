@@ -1,6 +1,5 @@
+import { CreateThreadParams, ThreadStatus } from '@lobechat/types';
 import { and, desc, eq } from 'drizzle-orm';
-
-import { CreateThreadParams, ThreadStatus } from '@/types/topic';
 
 import { ThreadItem, threads } from '../schemas';
 import { LobeChatDatabase } from '../type';

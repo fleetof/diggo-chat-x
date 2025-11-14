@@ -1,6 +1,9 @@
 import { ModelProvider } from 'model-bank';
 
-import { createOpenAICompatibleRuntime } from '../../core/openaiCompatibleFactory';
+import {
+  OpenAICompatibleFactoryOptions,
+  createOpenAICompatibleRuntime,
+} from '../../core/openaiCompatibleFactory';
 import { processMultiProviderModelList } from '../../utils/modelParse';
 
 const THINKING_MODELS = new Set(['DeepSeek-V3-1']);
@@ -9,7 +12,7 @@ export interface AkashChatModelCard {
   id: string;
 }
 
-export const LobeAkashChatAI = createOpenAICompatibleRuntime({
+export const params = {
   baseURL: 'https://chatapi.akash.network/api/v1',
   chatCompletion: {
     handlePayload: (payload) => {
@@ -53,4 +56,6 @@ export const LobeAkashChatAI = createOpenAICompatibleRuntime({
     }
   },
   provider: ModelProvider.AkashChat,
-});
+} satisfies OpenAICompatibleFactoryOptions;
+
+export const LobeAkashChatAI = createOpenAICompatibleRuntime(params);

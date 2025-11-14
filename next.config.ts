@@ -19,9 +19,11 @@ const standaloneConfig: NextConfig = {
   outputFileTracingIncludes: { '*': ['public/**/*', '.next/static/**/*'] },
 };
 
+const assetPrefix = process.env.NEXT_PUBLIC_ASSET_PREFIX;
+
 const nextConfig: NextConfig = {
   ...(isStandaloneMode ? standaloneConfig : {}),
-  assetPrefix: process.env.NEXT_PUBLIC_ASSET_PREFIX,
+  assetPrefix,
   compiler: {
     emotion: true,
   },
@@ -45,6 +47,7 @@ const nextConfig: NextConfig = {
     // refs: https://github.com/lobehub/lobe-chat/pull/7430
     serverMinification: false,
     webVitalsAttribution: ['CLS', 'LCP'],
+    webpackBuildWorker: true,
     webpackMemoryOptimizations: true,
   },
   async headers() {
@@ -198,7 +201,6 @@ const nextConfig: NextConfig = {
     },
   },
   reactStrictMode: true,
-
   redirects: async () => [
     {
       destination: '/sitemap-index.xml',
@@ -252,15 +254,14 @@ const nextConfig: NextConfig = {
     // },
     {
       destination: '/chat',
+      permanent: false,
+      source: '/',
+    },
+    {
+      destination: '/chat',
       permanent: true,
       source: '/welcome',
     },
-    // TODO: 等 V2 做强制跳转吧
-    // {
-    //   destination: '/settings/provider/volcengine',
-    //   permanent: true,
-    //   source: '/settings/provider/doubao',
-    // },
     // we need back /repos url in the further
     {
       destination: '/files',
@@ -270,20 +271,7 @@ const nextConfig: NextConfig = {
   ],
 
   // when external packages in dev mode with turbopack, this config will lead to bundle error
-  serverExternalPackages: isProd
-    ? [
-        '@electric-sql/pglite',
-        // Exclude OpenTelemetry packages in Vercel environment to avoid dependency issues
-        ...(process.env.VERCEL
-          ? [
-              '@opentelemetry/winston-transport',
-              '@opentelemetry/exporter-jaeger',
-              '@opentelemetry/auto-instrumentations-node',
-              '@lobechat/observability-otel',
-            ]
-          : []),
-      ]
-    : undefined,
+  serverExternalPackages: isProd ? ['@electric-sql/pglite', "pdfkit"] : ["pdfkit"],
   transpilePackages: ['pdfjs-dist', 'mermaid'],
 
   typescript: {
@@ -323,6 +311,20 @@ const nextConfig: NextConfig = {
       zipfile: false,
     };
 
+    if (assetPrefix && (assetPrefix.startsWith('http://') || assetPrefix.startsWith('https://'))) {
+      // fix the Worker URL cross-origin issue
+      // refs: https://github.com/lobehub/lobe-chat/pull/9624
+      config.module.rules.push({
+        generator: {
+          // @see https://webpack.js.org/configuration/module/#rulegeneratorpublicpath
+          publicPath: '/_next/',
+        },
+        test: /worker\.ts$/,
+        // @see https://webpack.js.org/guides/asset-modules/
+        type: 'asset/resource',
+      });
+    }
+
     return config;
   },
 };
@@ -334,10 +336,10 @@ const withBundleAnalyzer = process.env.ANALYZE === 'true' ? analyzer() : noWrapp
 const withPWA =
   isProd && !isDesktop
     ? withSerwistInit({
-        register: false,
-        swDest: 'public/sw.js',
-        swSrc: 'src/app/sw.ts',
-      })
+      register: false,
+      swDest: 'public/sw.js',
+      swSrc: 'src/app/sw.ts',
+    })
     : noWrapper;
 
 export default withBundleAnalyzer(withPWA(nextConfig as NextConfig));

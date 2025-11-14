@@ -6,13 +6,5 @@
     }
   },
   "buildCommand": "bun run build",
-  "functions": {
-    "src/app/(backend)/webapi/chat/[provider]/route.ts": {
-      "maxDuration": 60
-    },
-    "src/app/(backend)/webapi/chat/vertexai/route.ts": {
-      "maxDuration": 60
-    }
-  },
-  "installCommand": "bun install"
+  "installCommand": "npx bun@1.2.23 install"
 }

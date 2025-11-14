@@ -1,4 +1,4 @@
-import { ModelProviderCard } from '@/types/llm';
+import { ModelProviderCard } from '../llm';
 
 import { LobeDefaultAiModelListItem } from '../../../model-bank/src/types/aiModel';
 

@@ -1,8 +1,8 @@
+import { MigrationTableItem } from '@lobechat/types';
 import { sql } from 'drizzle-orm';
 
-import { MigrationTableItem } from '@/types/clientDB';
-
 import { LobeChatDatabase } from '../type';
+
 
 export class DrizzleMigrationModel {
   private db: LobeChatDatabase;

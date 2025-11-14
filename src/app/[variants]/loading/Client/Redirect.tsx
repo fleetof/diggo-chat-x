@@ -31,7 +31,7 @@ const Redirect = memo<RedirectProps>(({ setActiveStage }) => {
         return;
       }
 
-      const topics = await topicService.getTopics({ sessionId: activeId }); // <-- 使用 topicService
+      const topics = await topicService.getTopics({ containerId: activeId }); // <-- 使用 topicService
 
       if (topics && topics.length > 0) {
         const latestTopicId = topics[0].id;

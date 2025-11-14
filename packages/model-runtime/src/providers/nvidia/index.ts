@@ -1,15 +1,18 @@
 import { ModelProvider } from 'model-bank';
 
-import { createOpenAICompatibleRuntime } from '../../core/openaiCompatibleFactory';
+import {
+  OpenAICompatibleFactoryOptions,
+  createOpenAICompatibleRuntime,
+} from '../../core/openaiCompatibleFactory';
 import { processMultiProviderModelList } from '../../utils/modelParse';
 
-const THINKING_MODELS = new Set(['deepseek-ai/deepseek-v3.1']);
+const THINKING_MODELS = new Set(['deepseek-ai/deepseek-v3.1', 'deepseek-ai/deepseek-v3.1-terminus']);
 
 export interface NvidiaModelCard {
   id: string;
 }
 
-export const LobeNvidiaAI = createOpenAICompatibleRuntime({
+export const params = {
   baseURL: 'https://integrate.api.nvidia.com/v1',
   chatCompletion: {
     handlePayload: (payload) => {
@@ -39,4 +42,6 @@ export const LobeNvidiaAI = createOpenAICompatibleRuntime({
     return processMultiProviderModelList(modelList, 'nvidia');
   },
   provider: ModelProvider.Nvidia,
-});
+} satisfies OpenAICompatibleFactoryOptions;
+
+export const LobeNvidiaAI = createOpenAICompatibleRuntime(params);

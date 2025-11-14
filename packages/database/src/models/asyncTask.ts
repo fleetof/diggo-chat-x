@@ -1,11 +1,10 @@
-import { and, eq, inArray, lt } from 'drizzle-orm';
-
 import {
   AsyncTaskError,
   AsyncTaskErrorType,
   AsyncTaskStatus,
   AsyncTaskType,
-} from '@/types/asyncTask';
+} from '@lobechat/types';
+import { and, eq, inArray, lt } from 'drizzle-orm';
 
 import { AsyncTaskSelectItem, NewAsyncTaskItem, asyncTasks } from '../schemas';
 import { LobeChatDatabase } from '../type';

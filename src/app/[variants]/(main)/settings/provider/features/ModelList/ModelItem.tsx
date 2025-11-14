@@ -246,7 +246,7 @@ const ModelItem = memo<ModelItemProps>(
             loading={isModelLoading}
             onChange={async (e) => {
               setChecked(e);
-              await toggleModelEnabled({ enabled: e, id, source });
+              await toggleModelEnabled({ enabled: e, id, source, type });
             }}
             size={'small'}
           />
@@ -337,7 +337,7 @@ const ModelItem = memo<ModelItemProps>(
             loading={isModelLoading}
             onChange={async (e) => {
               setChecked(e);
-              await toggleModelEnabled({ enabled: e, id, source });
+              await toggleModelEnabled({ enabled: e, id, source, type });
             }}
             size={'small'}
           />

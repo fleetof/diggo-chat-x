@@ -76,6 +76,7 @@ const SortModelModal = memo<SortModelModalProps>(({ open, onCancel, defaultItems
             const sortMap = items.map((item, index) => ({
               id: item.id,
               sort: index,
+              type: item.type,
             }));
 
             setLoading(true);
