@@ -1,10 +1,14 @@
+import {
+  AsyncTaskError,
+  AsyncTaskStatus,
+  FileSource,
+  Generation,
+  ImageGenerationAsset,
+} from '@lobechat/types';
 import debug from 'debug';
 import { and, eq } from 'drizzle-orm';
 
 import { FileService } from '@/server/services/file';
-import { AsyncTaskError, AsyncTaskStatus } from '@/types/asyncTask';
-import { FileSource } from '@/types/files';
-import { Generation, ImageGenerationAsset } from '@/types/generation';
 
 import { NewFile } from '../schemas';
 import {

@@ -41,12 +41,27 @@ export async function postProcessModelList(
     const matchingModels = finalModels.filter((model) => model.id.endsWith(whitelistPattern));
 
     for (const model of matchingModels) {
+      // Blacklist: remove unnecessary properties, keep the rest
+      /* eslint-disable @typescript-eslint/no-unused-vars */
+      const {
+        files: _files,           // drop
+        functionCall: _functionCall,    // drop
+        reasoning: _reasoning,       // drop
+        search: _search,          // drop
+        imageOutput: _imageOutput,     // drop
+        video: _video,           // drop
+        vision: _vision,          // drop
+        type: _dropType, // will be overwritten
+        parameters: _dropParams, // will be overwritten
+        ...rest
+      } = model;
+      /* eslint-enable @typescript-eslint/no-unused-vars */
+
       imageModels.push({
-        ...model, // Reuse all configurations from the original model
+        ...rest, // Keep other fields (such as displayName, pricing, enabled, contextWindowTokens, etc.)
         id: `${model.id}:image`,
-        // Override to image type
-        parameters: CHAT_MODEL_IMAGE_GENERATION_PARAMS,
-        type: 'image', // Set image parameters
+        parameters: CHAT_MODEL_IMAGE_GENERATION_PARAMS, // Set image parameters
+        type: 'image', // Override to image type
       });
     }
   }
