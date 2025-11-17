@@ -43,6 +43,44 @@ const OpenAI: ModelProviderCard = {
       vision: true,
     },
     {
+      contextWindowTokens: 400_000,
+      description:
+        '更快、更经济高效的 GPT-5 版本，适用于明确定义的任务。在保持高质量输出的同时，提供更快的响应速度。',
+      displayName: 'GPT-5.1 Chat (适合聊天、写作、润色、头脑风暴)',
+      enabled: true,
+      functionCall: true,
+      id: 'gpt-5.1-chat',
+      maxOutput: 128_000,
+      pricing: {
+        units: [
+          { name: 'textInput', rate: 0.25, strategy: 'fixed', unit: 'millionTokens' },
+          { name: 'textOutput', rate: 2, strategy: 'fixed', unit: 'millionTokens' },
+          { name: 'textInput_cacheRead', rate: 0.03, strategy: 'fixed', unit: 'millionTokens' },
+        ],
+      },
+      releasedAt: '2025-11-13',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 400_000,
+      description:
+        '更快、更经济高效的 GPT-5 版本，适用于明确定义的任务。在保持高质量输出的同时，提供更快的响应速度。',
+      displayName: 'GPT-5.1 (适合代码生成、数学推理、任务分解)',
+      enabled: true,
+      functionCall: true,
+      id: 'gpt-5.1',
+      maxOutput: 128_000,
+      pricing: {
+        units: [
+          { name: 'textInput', rate: 0.25, strategy: 'fixed', unit: 'millionTokens' },
+          { name: 'textOutput', rate: 2, strategy: 'fixed', unit: 'millionTokens' },
+          { name: 'textInput_cacheRead', rate: 0.03, strategy: 'fixed', unit: 'millionTokens' },
+        ],
+      },
+      releasedAt: '2025-11-13',
+      vision: true,
+    },
+    {
       contextWindowTokens: 1_047_576,
       description:
         'GPT-4.1 mini 提供了智能、速度和成本之间的平衡，使其成为许多用例中有吸引力的模型。',
