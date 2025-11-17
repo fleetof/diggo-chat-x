@@ -1,8 +1,7 @@
 import { ActionIcon, ActionIconProps } from '@lobehub/ui';
-import { FlaskConical, Github } from 'lucide-react';
+import { Github } from 'lucide-react';
 import Link from 'next/link';
 import { memo } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import { GITHUB } from '@/const/url';
@@ -15,8 +14,6 @@ const ICON_SIZE: ActionIconProps['size'] = {
 };
 
 const BottomActions = memo(() => {
-  const { t } = useTranslation('common');
-
   const { hideGitHub } = useServerConfigStore(featureFlagsSelectors);
 
   return (
@@ -31,14 +28,6 @@ const BottomActions = memo(() => {
           />
         </Link>
       )}
-      <Link aria-label={t('labs')} href={'/labs'}>
-        <ActionIcon
-          icon={FlaskConical}
-          size={ICON_SIZE}
-          title={t('labs')}
-          tooltipProps={{ placement: 'right' }}
-        />
-      </Link>
     </Flexbox>
   );
 });
