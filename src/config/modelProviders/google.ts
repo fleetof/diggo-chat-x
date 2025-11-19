@@ -55,6 +55,25 @@ const Google: ModelProviderCard = {
     {
       contextWindowTokens: 2_097_152 + 8192,
       description:
+        'Gemini 3 是迄今为止最智能的模型系列，以先进的推理能力为基础。它旨在通过掌握智能体工作流、自主编码和复杂的多模态任务，将任何想法变为现实。',
+      displayName: 'Gemini 3 Pro Preview',
+      enabled: true,
+      functionCall: true,
+      id: 'gemini-3-pro-preview',
+      maxOutput: 8192,
+      pricing: {
+        units: [
+          { name: 'textInput', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+          { name: 'textOutput', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+          { name: 'textInput_cacheRead', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+        ],
+      },
+      releasedAt: '2025-11-19',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 2_097_152 + 8192,
+      description:
         'Gemini 2.0 Pro Experimental 是 Google 最新的实验性多模态AI模型，与历史版本相比有一定的质量提升，特别是对于世界知识、代码和长上下文。',
       displayName: 'Gemini 2.0 Pro Experimental 02-05 (推荐使用！强大且全面)',
       enabled: false,
