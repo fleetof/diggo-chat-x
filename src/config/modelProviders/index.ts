@@ -123,8 +123,10 @@ export const LOBE_DEFAULT_MODEL_LIST: ChatModelCard[] = [
 ].flat();
 
 export const DEFAULT_MODEL_PROVIDER_LIST = [
-  GoogleProvider,
+  QwenProvider,
+  XAIProvider,
   OpenAIProvider,
+  GoogleProvider,
   { ...AzureProvider, chatModels: [] },
   AzureAIProvider,
   OllamaProvider,
@@ -156,12 +158,10 @@ export const DEFAULT_MODEL_PROVIDER_LIST = [
   ModelScopeProvider,
   Ai21Provider,
   UpstageProvider,
-  XAIProvider,
   JinaProvider,
   SambaNovaProvider,
   CohereProvider,
   V0Provider,
-  QwenProvider,
   WenxinProvider,
   TencentcloudProvider,
   HunyuanProvider,
