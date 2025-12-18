@@ -20,6 +20,7 @@ const OpenAI: ModelProviderCard = {
           { name: 'textInput_cacheRead', rate: 0.03, strategy: 'fixed', unit: 'millionTokens' },
         ],
       },
+      reasoning: true,
       releasedAt: '2025-08-07',
       vision: true,
     },

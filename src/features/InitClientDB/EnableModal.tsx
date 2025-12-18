@@ -1,6 +1,6 @@
 import { Button, Icon } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
-import { CpuIcon, LibraryBig, ShieldCheck } from 'lucide-react';
+import { CpuIcon, ShieldCheck } from 'lucide-react';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Center, Flexbox } from 'react-layout-kit';
@@ -69,11 +69,6 @@ const EnableClientDBModal = memo<EnableClientDBModalProps>(({ open }) => {
       avatar: ShieldCheck,
       desc: t('clientDB.modal.features.localFirst.desc'),
       title: t('clientDB.modal.features.localFirst.title'),
-    },
-    {
-      avatar: LibraryBig,
-      desc: t('clientDB.modal.features.knowledgeBase.desc'),
-      title: t('clientDB.modal.features.knowledgeBase.title'),
     },
   ];
 

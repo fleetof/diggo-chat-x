@@ -10,6 +10,92 @@ const googleChatModels: AIChatModelCard[] = [
   {
     abilities: {
       functionCall: true,
+      search: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_048_576 + 8192,
+    description:
+      'Gemini 2.0 Flash 提供下一代功能和改进，包括卓越的速度、原生工具使用、多模态生成和1M令牌上下文窗口。',
+    displayName: 'Gemini 2.0 Flash（推荐使用！强大且全面）',
+    enabled: true,
+    id: 'gemini-2.0-flash',
+    maxOutput: 8192,
+    pricing: {
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.025, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.1, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0.4, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2025-02-05',
+    settings: {
+      extendParams: ['urlContext'],
+      searchImpl: 'params',
+      searchProvider: 'google',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      video: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_048_576 + 65_536,
+    description: 'Gemini 2.5 Flash 是 Google 性价比最高的模型，提供全面的功能。',
+    displayName: 'Gemini 2.5 Flash（数学证明、复杂逻辑推理专用）',
+    enabled: true,
+    id: 'gemini-2.5-flash',
+    maxOutput: 65_536,
+    pricing: {
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.075, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.3, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 2.5, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2025-06-17',
+    settings: {
+      extendParams: ['thinkingBudget', 'urlContext'],
+      searchImpl: 'params',
+      searchProvider: 'google',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      video: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_048_576 + 65_536,
+    description: 'Gemini 3 Flash 是 Google 性价比最高的模型，提供全面的功能。',
+    displayName: 'Gemini 3 Flash（最新模型，提供最新功能，数学证明、复杂逻辑推理专用）',
+    enabled: true,
+    id: 'gemini-3-flash-preview',
+    maxOutput: 65_536,
+    pricing: {
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.075, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.3, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 2.5, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2025-06-17',
+    settings: {
+      extendParams: ['thinkingBudget', 'urlContext'],
+      searchImpl: 'params',
+      searchProvider: 'google',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
       reasoning: true,
       search: true,
       structuredOutput: true,
@@ -175,6 +261,60 @@ const googleChatModels: AIChatModelCard[] = [
       video: true,
       vision: true,
     },
+    contextWindowTokens: 2_097_152 + 65_536,
+    description:
+      'Gemini 3 Pro Preview 是 Google 下一代旗舰模型的预览版，具备更强大的推理能力和更广泛的知识覆盖。',
+    displayName: 'Gemini 3 Pro Preview',
+    enabled: true,
+    id: 'gemini-3-pro-preview',
+    maxOutput: 65_536,
+    pricing: {
+      units: [
+        {
+          name: 'textInput_cacheRead',
+          strategy: 'tiered',
+          tiers: [
+            { rate: 0.5, upTo: 200_000 },
+            { rate: 1, upTo: 'infinity' },
+          ],
+          unit: 'millionTokens',
+        },
+        {
+          name: 'textInput',
+          strategy: 'tiered',
+          tiers: [
+            { rate: 2, upTo: 200_000 },
+            { rate: 4, upTo: 'infinity' },
+          ],
+          unit: 'millionTokens',
+        },
+        {
+          name: 'textOutput',
+          strategy: 'tiered',
+          tiers: [
+            { rate: 15, upTo: 200_000 },
+            { rate: 20, upTo: 'infinity' },
+          ],
+          unit: 'millionTokens',
+        },
+      ],
+    },
+    releasedAt: '2025-11-01',
+    settings: {
+      extendParams: ['thinkingBudget', 'urlContext'],
+      searchImpl: 'params',
+      searchProvider: 'google',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      video: true,
+      vision: true,
+    },
     contextWindowTokens: 1_048_576 + 65_536,
     description:
       'Gemini 2.5 Pro Preview 是 Google 最先进的思维模型，能够对代码、数学和STEM领域的复杂问题进行推理，以及使用长上下文分析大型数据集、代码库和文档。',
@@ -281,35 +421,6 @@ const googleChatModels: AIChatModelCard[] = [
       vision: true,
     },
     contextWindowTokens: 1_048_576 + 65_536,
-    description: 'Gemini 2.5 Flash 是 Google 性价比最高的模型，提供全面的功能。',
-    displayName: 'Gemini 2.5 Flash',
-    enabled: true,
-    id: 'gemini-2.5-flash',
-    maxOutput: 65_536,
-    pricing: {
-      units: [
-        { name: 'textInput_cacheRead', rate: 0.075, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textInput', rate: 0.3, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textOutput', rate: 2.5, strategy: 'fixed', unit: 'millionTokens' },
-      ],
-    },
-    releasedAt: '2025-06-17',
-    settings: {
-      extendParams: ['thinkingBudget', 'urlContext'],
-      searchImpl: 'params',
-      searchProvider: 'google',
-    },
-    type: 'chat',
-  },
-  {
-    abilities: {
-      functionCall: true,
-      reasoning: true,
-      search: true,
-      video: true,
-      vision: true,
-    },
-    contextWindowTokens: 1_048_576 + 65_536,
     description: 'Preview release (Septempber 25th, 2025) of Gemini 2.5 Flash',
     displayName: 'Gemini 2.5 Flash Preview Sep 2025',
     id: 'gemini-2.5-flash-preview-09-2025',
@@ -366,7 +477,6 @@ const googleChatModels: AIChatModelCard[] = [
     description:
       'Nano Banana 是 Google 最新、最快、最高效的原生多模态模型，它允许您通过对话生成和编辑图像。',
     displayName: 'Nano Banana',
-    enabled: true,
     id: 'gemini-2.5-flash-image',
     maxOutput: 8192,
     pricing: {
@@ -482,33 +592,6 @@ const googleChatModels: AIChatModelCard[] = [
     releasedAt: '2025-06-11',
     settings: {
       extendParams: ['thinkingBudget', 'urlContext'],
-      searchImpl: 'params',
-      searchProvider: 'google',
-    },
-    type: 'chat',
-  },
-  {
-    abilities: {
-      functionCall: true,
-      search: true,
-      vision: true,
-    },
-    contextWindowTokens: 1_048_576 + 8192,
-    description:
-      'Gemini 2.0 Flash 提供下一代功能和改进，包括卓越的速度、原生工具使用、多模态生成和1M令牌上下文窗口。',
-    displayName: 'Gemini 2.0 Flash',
-    id: 'gemini-2.0-flash',
-    maxOutput: 8192,
-    pricing: {
-      units: [
-        { name: 'textInput_cacheRead', rate: 0.025, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textInput', rate: 0.1, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textOutput', rate: 0.4, strategy: 'fixed', unit: 'millionTokens' },
-      ],
-    },
-    releasedAt: '2025-02-05',
-    settings: {
-      extendParams: ['urlContext'],
       searchImpl: 'params',
       searchProvider: 'google',
     },
@@ -857,7 +940,7 @@ const googleImageModels: AIImageModelCard[] = [
   {
     displayName: 'Nano Banana',
     id: 'gemini-2.5-flash-image:image',
-    enabled: true,
+    enabled: false,
     type: 'image',
     description:
       'Nano Banana 是 Google 最新、最快、最高效的原生多模态模型，它允许您通过对话生成和编辑图像。',
@@ -890,7 +973,7 @@ const googleImageModels: AIImageModelCard[] = [
   {
     displayName: 'Imagen 4',
     id: 'imagen-4.0-generate-001',
-    enabled: true,
+    enabled: false,
     type: 'image',
     description: 'Imagen 4th generation text-to-image model series',
     organization: 'Deepmind',
@@ -903,7 +986,7 @@ const googleImageModels: AIImageModelCard[] = [
   {
     displayName: 'Imagen 4 Ultra',
     id: 'imagen-4.0-ultra-generate-001',
-    enabled: true,
+    enabled: false,
     type: 'image',
     description: 'Imagen 4th generation text-to-image model series Ultra version',
     organization: 'Deepmind',
@@ -916,7 +999,7 @@ const googleImageModels: AIImageModelCard[] = [
   {
     displayName: 'Imagen 4 Fast',
     id: 'imagen-4.0-fast-generate-001',
-    enabled: true,
+    enabled: false,
     type: 'image',
     description: 'Imagen 4th generation text-to-image model series Fast version',
     organization: 'Deepmind',

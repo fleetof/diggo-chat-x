@@ -1,3 +1,4 @@
+
 import { AIChatModelCard, AIImageModelCard } from '../types/aiModel';
 
 // https://docs.x.ai/docs/models
@@ -12,7 +13,7 @@ const xaiChatModels: AIChatModelCard[] = [
     description: '我们很高兴发布 Grok 4 Fast，这是我们在成本效益推理模型方面的最新进展。',
     displayName: 'Grok 4 Fast (Non-Reasoning)',
     enabled: true,
-    id: 'grok-4-fast-non-reasoning',
+    id: 'x-ai/grok-4-fast-non-reasoning',
     pricing: {
       units: [
         { name: 'textInput_cacheRead', rate: 0.05, strategy: 'fixed', unit: 'millionTokens' },
@@ -49,11 +50,11 @@ const xaiChatModels: AIChatModelCard[] = [
       search: true,
       vision: true,
     },
-    contextWindowTokens: 2_000_000,
+    contextWindowTokens: 128_000,
     description: '我们很高兴发布 Grok 4 Fast，这是我们在成本效益推理模型方面的最新进展。',
     displayName: 'Grok 4 Fast',
     enabled: true,
-    id: 'grok-4-fast-reasoning',
+    id: 'x-ai/grok-4-fast-reasoning',
     pricing: {
       units: [
         { name: 'textInput_cacheRead', rate: 0.05, strategy: 'fixed', unit: 'millionTokens' },
@@ -118,7 +119,7 @@ const xaiChatModels: AIChatModelCard[] = [
     description:
       '我们最新最强大的旗舰模型，在自然语言处理、数学计算和推理方面表现卓越 —— 是一款完美的全能型选手。',
     displayName: 'Grok 4 0709',
-    enabled: true,
+    enabled: false,
     id: 'grok-4',
     pricing: {
       units: [
@@ -212,7 +213,7 @@ const xaiImageModels: AIImageModelCard[] = [
     description:
       '我们最新的图像生成模型可以根据文本提示生成生动逼真的图像。它在营销、社交媒体和娱乐等领域的图像生成方面表现出色。',
     displayName: 'Grok 2 Image 1212',
-    enabled: true,
+    enabled: false,
     id: 'grok-2-image-1212',
     parameters: {
       prompt: {

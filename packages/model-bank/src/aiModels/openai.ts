@@ -23,6 +23,35 @@ export const openaiChatModels: AIChatModelCard[] = [
       functionCall: true,
       reasoning: true,
       search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 400_000,
+    description:
+      '更快、更经济高效的 GPT-5 版本，适用于明确定义的任务。在保持高质量输出的同时，提供更快的响应速度。',
+    displayName: 'GPT-5 mini（日常对话、创意写作）',
+    enabled: true,
+    id: 'gpt-5-mini',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 0.25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 2, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.025, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2025-08-07',
+    settings: {
+      extendParams: ['gpt5ReasoningEffort', 'textVerbosity'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
       vision: true,
     },
     contextWindowTokens: 400_000,
@@ -80,7 +109,7 @@ export const openaiChatModels: AIChatModelCard[] = [
     contextWindowTokens: 400_000,
     description:
       '跨领域编码和代理任务的最佳模型。GPT-5 在准确性、速度、推理、上下文识别、结构化思维和问题解决方面实现了飞跃。',
-    displayName: 'GPT-5',
+    displayName: 'GPT-5（数学证明、复杂逻辑推理专用）',
     enabled: true,
     id: 'gpt-5',
     maxOutput: 128_000,
@@ -89,35 +118,6 @@ export const openaiChatModels: AIChatModelCard[] = [
         { name: 'textInput', rate: 1.25, strategy: 'fixed', unit: 'millionTokens' },
         { name: 'textOutput', rate: 10, strategy: 'fixed', unit: 'millionTokens' },
         { name: 'textInput_cacheRead', rate: 0.125, strategy: 'fixed', unit: 'millionTokens' },
-      ],
-    },
-    releasedAt: '2025-08-07',
-    settings: {
-      extendParams: ['gpt5ReasoningEffort', 'textVerbosity'],
-      searchImpl: 'params',
-    },
-    type: 'chat',
-  },
-  {
-    abilities: {
-      functionCall: true,
-      reasoning: true,
-      search: true,
-      structuredOutput: true,
-      vision: true,
-    },
-    contextWindowTokens: 400_000,
-    description:
-      '更快、更经济高效的 GPT-5 版本，适用于明确定义的任务。在保持高质量输出的同时，提供更快的响应速度。',
-    displayName: 'GPT-5 mini',
-    enabled: true,
-    id: 'gpt-5-mini',
-    maxOutput: 128_000,
-    pricing: {
-      units: [
-        { name: 'textInput', rate: 0.25, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textOutput', rate: 2, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textInput_cacheRead', rate: 0.025, strategy: 'fixed', unit: 'millionTokens' },
       ],
     },
     releasedAt: '2025-08-07',
@@ -158,8 +158,8 @@ export const openaiChatModels: AIChatModelCard[] = [
     contextWindowTokens: 400_000,
     description:
       'ChatGPT 中使用的 GPT-5 模型。结合了强大的语言理解与生成能力，适合对话式交互应用。',
-    displayName: 'GPT-5 Chat',
-    enabled: true,
+    displayName: 'GPT-5.1 Chat（适合聊天、写作、润色、头脑风暴）',
+    enabled: false,
     id: 'gpt-5-chat-latest',
     maxOutput: 128_000,
     pricing: {
@@ -170,6 +170,62 @@ export const openaiChatModels: AIChatModelCard[] = [
       ],
     },
     releasedAt: '2025-08-07',
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 400_000,
+    description: 'GPT-5.1 是 OpenAI 最新的旗舰模型，在代码生成、数学推理和任务分解方面表现出色。',
+    displayName: 'GPT-5.1（适合代码生成、数学推理、任务分解）',
+    enabled: true,
+    id: 'gpt-5.1',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 1.5, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 12, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.15, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2025-10-01',
+    settings: {
+      extendParams: ['gpt5ReasoningEffort', 'textVerbosity'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 400_000,
+    description: 'GPT-5.2 是 OpenAI 最新的旗舰模型，在代码生成、数学推理和任务分解方面表现出色。',
+    displayName: 'GPT-5.2（OpenAI 最新的旗舰模型，在代码生成、数学推理和任务分解方面表现出色）',
+    enabled: true,
+    id: 'gpt-5.2',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 1.5, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 12, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.15, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2025-12-01',
+    settings: {
+      extendParams: ['gpt5ReasoningEffort', 'textVerbosity'],
+      searchImpl: 'params',
+    },
     type: 'chat',
   },
   {
