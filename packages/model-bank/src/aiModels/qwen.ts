@@ -1,3 +1,4 @@
+
 import { AIChatModelCard, AIImageModelCard } from '../types/aiModel';
 
 // https://help.aliyun.com/zh/model-studio/models?spm=a2c4g.11186623
@@ -482,7 +483,7 @@ const qwenChatModels: AIChatModelCard[] = [
     description:
       '基于Qwen3的思考模式开源模型，相较上一版本（通义千问3-235B-A22B）逻辑能力、通用能力、知识增强及创作能力均有大幅提升，适用于高难度强推理场景。',
     displayName: 'Qwen3 235B A22B Thinking 2507',
-    enabled: true,
+    enabled: false,
     id: 'qwen3-235b-a22b-thinking-2507',
     maxOutput: 32_768,
     organization: 'Qwen',
@@ -507,7 +508,7 @@ const qwenChatModels: AIChatModelCard[] = [
     description:
       '基于Qwen3的非思考模式开源模型，相较上一版本（通义千问3-235B-A22B）主观创作能力与模型安全性均有小幅度提升。',
     displayName: 'Qwen3 235B A22B Instruct 2507',
-    enabled: true,
+    enabled: false,
     id: 'qwen3-235b-a22b-instruct-2507',
     maxOutput: 32_768,
     organization: 'Qwen',
@@ -854,7 +855,7 @@ const qwenChatModels: AIChatModelCard[] = [
     contextWindowTokens: 1_000_000,
     description: '通义千问系列速度最快、成本极低的模型，适合简单任务。',
     displayName: 'Qwen Flash',
-    enabled: true,
+    enabled: false,
     id: 'qwen-flash',
     maxOutput: 32_768,
     organization: 'Qwen',
@@ -943,7 +944,7 @@ const qwenChatModels: AIChatModelCard[] = [
     contextWindowTokens: 1_000_000,
     description: '通义千问超大规模语言模型增强版，支持中文、英文等不同语言输入。',
     displayName: 'Qwen Plus',
-    enabled: true,
+    enabled: false,
     id: 'qwen-plus',
     maxOutput: 32_768,
     organization: 'Qwen',
@@ -1012,7 +1013,7 @@ const qwenChatModels: AIChatModelCard[] = [
     description:
       '通义千问3系列Max模型，相较2.5系列整体通用能力有大幅度提升，中英文通用文本理解能力、复杂指令遵循能力、主观开放任务能力、多语言能力、工具调用能力均显著增强；模型知识幻觉更少。最新的qwen3-max模型：相较qwen3-max-preview版本，在智能体编程与工具调用方向进行了专项升级。本次发布的正式版模型达到领域SOTA水平，适配场景更加复杂的智能体需求。',
     displayName: 'Qwen3 Max',
-    enabled: true,
+    enabled: false,
     id: 'qwen3-max',
     maxOutput: 65_536,
     organization: 'Qwen',
@@ -1260,8 +1261,8 @@ const qwenChatModels: AIChatModelCard[] = [
   },
   {
     abilities: {
-      vision: true,
       reasoning: true,
+      vision: true,
     },
     contextWindowTokens: 131_072,
     description:
@@ -1287,7 +1288,8 @@ const qwenChatModels: AIChatModelCard[] = [
       vision: true,
     },
     contextWindowTokens: 131_072,
-    description: 'Qwen3 VL 30B 非思考模式（Instruct），面向普通指令跟随场景，保持较高的多模态理解与生成能力。',
+    description:
+      'Qwen3 VL 30B 非思考模式（Instruct），面向普通指令跟随场景，保持较高的多模态理解与生成能力。',
     displayName: 'Qwen3 VL 30B A3B Instruct',
     id: 'qwen3-vl-30b-a3b-instruct',
     maxOutput: 32_768,
@@ -1303,13 +1305,14 @@ const qwenChatModels: AIChatModelCard[] = [
   },
   {
     abilities: {
-      vision: true,
       reasoning: true,
+      vision: true,
     },
-    contextWindowTokens: 131_072,
+    contextWindowTokens: 1_000_000,
     description: 'Qwen3 VL 8B 思考模式，面向轻量级多模态推理与交互场景，保留长上下文理解能力。',
     displayName: 'Qwen3 VL 8B Thinking',
-    id: 'qwen3-vl-8b-thinking',
+    enabled: true,
+    id: 'qwen/qwen3-vl-8b-thinking',
     maxOutput: 32_768,
     organization: 'Qwen',
     pricing: {
@@ -1325,10 +1328,11 @@ const qwenChatModels: AIChatModelCard[] = [
     abilities: {
       vision: true,
     },
-    contextWindowTokens: 131_072,
+    contextWindowTokens: 1_000_000,
     description: 'Qwen3 VL 8B 非思考模式（Instruct），适合常规多模态生成与识别任务。',
     displayName: 'Qwen3 VL 8B Instruct',
-    id: 'qwen3-vl-8b-instruct',
+    enabled: true,
+    id: 'qwen/qwen3-vl-8b-instruct',
     maxOutput: 32_768,
     organization: 'Qwen',
     pricing: {
@@ -1342,11 +1346,12 @@ const qwenChatModels: AIChatModelCard[] = [
   },
   {
     abilities: {
-      vision: true,
       reasoning: true,
+      vision: true,
     },
     contextWindowTokens: 131_072,
-    description: 'Qwen3 VL 235B A22B 思考模式（开源版），针对高难度强推理与长视频理解场景，提供顶尖的视觉+文本推理能力。',
+    description:
+      'Qwen3 VL 235B A22B 思考模式（开源版），针对高难度强推理与长视频理解场景，提供顶尖的视觉+文本推理能力。',
     displayName: 'Qwen3 VL 235B A22B Thinking',
     id: 'qwen3-vl-235b-a22b-thinking',
     maxOutput: 32_768,
@@ -1368,7 +1373,8 @@ const qwenChatModels: AIChatModelCard[] = [
       vision: true,
     },
     contextWindowTokens: 131_072,
-    description: 'Qwen3 VL 235B A22B 非思考模式（Instruct），适用于非思考指令场景，保持强大的视觉理解能力。',
+    description:
+      'Qwen3 VL 235B A22B 非思考模式（Instruct），适用于非思考指令场景，保持强大的视觉理解能力。',
     displayName: 'Qwen3 VL 235B A22B Instruct',
     id: 'qwen3-vl-235b-a22b-instruct',
     maxOutput: 32_768,
@@ -1981,7 +1987,7 @@ const qwenImageModels: AIImageModelCard[] = [
     description:
       'Qwen Image Edit 是一款图生图模型，支持基于输入图像和文本提示进行图像编辑和修改，能够根据用户需求对原图进行精准调整和创意改造。',
     displayName: 'Qwen Image Edit',
-    enabled: true,
+    enabled: false,
     id: 'qwen-image-edit',
     organization: 'Qwen',
     parameters: {
@@ -2004,7 +2010,7 @@ const qwenImageModels: AIImageModelCard[] = [
     description:
       'Qwen-Image 是一款通用图像生成模型，支持多种艺术风格，尤其擅长复杂文本渲染，特别是中英文文本渲染。模型支持多行布局、段落级文本生成以及细粒度细节刻画，可实现复杂的图文混合布局设计。',
     displayName: 'Qwen Image',
-    enabled: true,
+    enabled: false,
     id: 'qwen-image',
     organization: 'Qwen',
     parameters: {
@@ -2028,7 +2034,7 @@ const qwenImageModels: AIImageModelCard[] = [
     description:
       '万相2.2极速版，当前最新模型。在创意性、稳定性、写实质感上全面升级，生成速度快，性价比高。',
     displayName: 'Wanxiang2.2 T2I Flash',
-    enabled: true,
+    enabled: false,
     id: 'wan2.2-t2i-flash',
     organization: 'Qwen',
     parameters: {
@@ -2050,7 +2056,7 @@ const qwenImageModels: AIImageModelCard[] = [
     description:
       '万相2.2专业版，当前最新模型。在创意性、稳定性、写实质感上全面升级，生成细节丰富。',
     displayName: 'Wanxiang2.2 T2I Plus',
-    enabled: true,
+    enabled: false,
     id: 'wan2.2-t2i-plus',
     organization: 'Qwen',
     parameters: {
@@ -2152,7 +2158,7 @@ const qwenImageModels: AIImageModelCard[] = [
     description:
       'FLUX.1 [schnell] 作为目前开源最先进的少步模型，不仅超越了同类竞争者，甚至还优于诸如 Midjourney v6.0 和 DALL·E 3 (HD) 等强大的非精馏模型。该模型经过专门微调，以保留预训练阶段的全部输出多样性，相较于当前市场上的最先进模型，FLUX.1 [schnell] 显著提升了在视觉质量、指令遵从、尺寸/比例变化、字体处理及输出多样性等方面的可能，为用户带来更为丰富多样的创意图像生成体验。',
     displayName: 'FLUX.1 [schnell]',
-    enabled: true,
+    enabled: false,
     id: 'flux-schnell',
     organization: 'Qwen',
     parameters: {
@@ -2177,7 +2183,7 @@ const qwenImageModels: AIImageModelCard[] = [
     description:
       'FLUX.1 [dev] 是一款面向非商业应用的开源权重、精炼模型。FLUX.1 [dev] 在保持了与FLUX专业版相近的图像质量和指令遵循能力的同时，具备更高的运行效率。相较于同尺寸的标准模型，它在资源利用上更为高效。',
     displayName: 'FLUX.1 [dev]',
-    enabled: true,
+    enabled: false,
     id: 'flux-dev',
     organization: 'Qwen',
     parameters: {
@@ -2202,7 +2208,7 @@ const qwenImageModels: AIImageModelCard[] = [
     description:
       'FLUX.1-merged 模型结合了 "DEV" 在开发阶段探索的深度特性和 "Schnell" 所代表的高速执行优势。通过这一举措，FLUX.1-merged 不仅提升了模型的性能界限，还拓宽了其应用范围。',
     displayName: 'FLUX.1-merged',
-    enabled: true,
+    enabled: false,
     id: 'flux-merged',
     organization: 'Qwen',
     parameters: {
