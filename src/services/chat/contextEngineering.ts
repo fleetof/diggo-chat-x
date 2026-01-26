@@ -99,6 +99,14 @@ export const contextEngineering = async ({
       // 8. Message content processing
       new MessageContentProcessor({
         fileContext: { enabled: isServerMode, includeFileUrl: !isDesktop },
+        imageCompression: {
+          compressThreshold: 512 * 1024,
+          enabled: ['google', 'vertexai', 'qwen', 'xai', 'openai', 'deepseek'].includes(provider),
+          format: 'image/webp',
+          maxHeight: 2048,
+          maxWidth: 2048,
+          quality: 0.8,
+        },
         isCanUseVideo,
         isCanUseVision,
         model,

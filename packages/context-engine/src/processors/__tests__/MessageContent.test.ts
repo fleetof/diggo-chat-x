@@ -15,6 +15,11 @@ vi.mock('@lobechat/utils/imageToBase64', async (importOriginal) => {
   };
 });
 
+// Mock compressImageForAI
+vi.mock('../../utils', () => ({
+  compressImageForAI: vi.fn((url: string) => Promise.resolve(url + '_compressed')),
+}));
+
 const createContext = (messages: UIChatMessage[]): PipelineContext => ({
   initialState: { messages: [] } as any,
   messages,
@@ -63,6 +68,7 @@ describe('MessageContentProcessor', () => {
         provider: 'openai',
         isCanUseVision: mockIsCanUseVision,
         fileContext: { enabled: false },
+        imageCompression: { enabled: false }, // Disable compression for this test
       });
 
       const messages: UIChatMessage[] = [
@@ -127,6 +133,7 @@ describe('MessageContentProcessor', () => {
         provider: 'openai',
         isCanUseVision: mockIsCanUseVision,
         fileContext: { enabled: false },
+        imageCompression: { enabled: false }, // Disable compression for this test
       });
 
       const messages: UIChatMessage[] = [
@@ -159,6 +166,7 @@ describe('MessageContentProcessor', () => {
         provider: 'openai',
         isCanUseVision: mockIsCanUseVision,
         fileContext: { enabled: false },
+        imageCompression: { enabled: false }, // Disable compression for this test
       });
 
       const messages: UIChatMessage[] = [
@@ -192,6 +200,7 @@ describe('MessageContentProcessor', () => {
         provider: 'openai',
         isCanUseVision: mockIsCanUseVision,
         fileContext: { enabled: false },
+        imageCompression: { enabled: false }, // Disable compression for this test
       });
 
       const messages: UIChatMessage[] = [
@@ -535,6 +544,7 @@ describe('MessageContentProcessor', () => {
         isCanUseVideo: mockIsCanUseVideo,
         isCanUseVision: mockIsCanUseVision,
         fileContext: { enabled: false },
+        imageCompression: { enabled: false },
       });
 
       const messages: UIChatMessage[] = [
@@ -561,9 +571,128 @@ describe('MessageContentProcessor', () => {
       expect(content[0].type).toBe('text');
       expect(content[0].text).toBe('Analyze these media files');
       expect(content[1].type).toBe('image_url');
+      // Remote URL should not be compressed
       expect(content[1].image_url.url).toBe('http://example.com/image.jpg');
       expect(content[2].type).toBe('video_url');
       expect(content[2].video_url.url).toBe('http://example.com/video.mp4');
+    });
+  });
+
+  describe('Image compression functionality', () => {
+    it('should compress images by default', async () => {
+      mockIsCanUseVision.mockReturnValue(true);
+
+      const processor = new MessageContentProcessor({
+        model: 'gpt-4-vision',
+        provider: 'google',
+        isCanUseVision: mockIsCanUseVision,
+        fileContext: { enabled: false },
+      });
+
+      const messages: UIChatMessage[] = [
+        {
+          id: 'test',
+          role: 'user',
+          content: 'Hello',
+          imageList: [
+            {
+              url: 'data:image/png;base64,large-image-data',
+              alt: 'large image',
+              id: 'img1',
+            },
+          ] as ChatImageItem[],
+          createdAt: Date.now(),
+          updatedAt: Date.now(),
+          meta: {},
+        },
+      ];
+
+      const result = await processor.process(createContext(messages));
+
+      const content = result.messages[0].content as any[];
+      expect(content[1].type).toBe('image_url');
+      // Should be compressed (mocked to append _compressed)
+      expect(content[1].image_url.url).toBe('data:image/png;base64,large-image-data_compressed');
+    });
+
+    it('should not compress images when compression is disabled', async () => {
+      mockIsCanUseVision.mockReturnValue(true);
+
+      const processor = new MessageContentProcessor({
+        model: 'gpt-4-vision',
+        provider: 'google',
+        isCanUseVision: mockIsCanUseVision,
+        fileContext: { enabled: false },
+        imageCompression: { enabled: false },
+      });
+
+      const messages: UIChatMessage[] = [
+        {
+          id: 'test',
+          role: 'user',
+          content: 'Hello',
+          imageList: [
+            { url: 'data:image/png;base64,small-image-data', alt: 'image', id: 'img1' },
+          ] as ChatImageItem[],
+          createdAt: Date.now(),
+          updatedAt: Date.now(),
+          meta: {},
+        },
+      ];
+
+      const result = await processor.process(createContext(messages));
+
+      const content = result.messages[0].content as any[];
+      expect(content[1].type).toBe('image_url');
+      // Should NOT be compressed (no _compressed suffix)
+      expect(content[1].image_url.url).toBe('data:image/png;base64,small-image-data');
+    });
+
+    it('should use custom compression options', async () => {
+      mockIsCanUseVision.mockReturnValue(true);
+
+      const { compressImageForAI } = await import('../../utils');
+      const mockCompress = vi.mocked(compressImageForAI);
+      mockCompress.mockClear();
+
+      const processor = new MessageContentProcessor({
+        model: 'gpt-4-vision',
+        provider: 'google',
+        isCanUseVision: mockIsCanUseVision,
+        fileContext: { enabled: false },
+        imageCompression: {
+          enabled: true,
+          maxWidth: 1024,
+          maxHeight: 1024,
+          quality: 0.6,
+          compressThreshold: 256 * 1024,
+        },
+      });
+
+      const messages: UIChatMessage[] = [
+        {
+          id: 'test',
+          role: 'user',
+          content: 'Hello',
+          imageList: [
+            { url: 'data:image/png;base64,custom-options-data', alt: 'image', id: 'img1' },
+          ] as ChatImageItem[],
+          createdAt: Date.now(),
+          updatedAt: Date.now(),
+          meta: {},
+        },
+      ];
+
+      await processor.process(createContext(messages));
+
+      // Verify compression was called with custom options
+      expect(mockCompress).toHaveBeenCalledWith('data:image/png;base64,custom-options-data', {
+        compressThreshold: 256 * 1024,
+        format: undefined,
+        maxHeight: 1024,
+        maxWidth: 1024,
+        quality: 0.6,
+      });
     });
   });
 });
