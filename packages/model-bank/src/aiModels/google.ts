@@ -17,7 +17,7 @@ const googleChatModels: AIChatModelCard[] = [
     description:
       'Gemini 2.0 Flash 提供下一代功能和改进，包括卓越的速度、原生工具使用、多模态生成和1M令牌上下文窗口。',
     displayName: 'Gemini 2.0 Flash（推荐使用！强大且全面）',
-    enabled: true,
+    enabled: false,
     id: 'gemini-2.0-flash',
     maxOutput: 8192,
     pricing: {

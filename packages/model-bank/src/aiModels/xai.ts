@@ -1,4 +1,3 @@
-
 import { AIChatModelCard, AIImageModelCard } from '../types/aiModel';
 
 // https://docs.x.ai/docs/models
@@ -11,9 +10,9 @@ const xaiChatModels: AIChatModelCard[] = [
     },
     contextWindowTokens: 2_000_000,
     description: '我们很高兴发布 Grok 4 Fast，这是我们在成本效益推理模型方面的最新进展。',
-    displayName: 'Grok 4 Fast (Non-Reasoning)',
+    displayName: 'Grok 4 Fast',
     enabled: true,
-    id: 'x-ai/grok-4-fast-non-reasoning',
+    id: 'x-ai/grok-4-fast',
     pricing: {
       units: [
         { name: 'textInput_cacheRead', rate: 0.05, strategy: 'fixed', unit: 'millionTokens' },
@@ -52,9 +51,9 @@ const xaiChatModels: AIChatModelCard[] = [
     },
     contextWindowTokens: 128_000,
     description: '我们很高兴发布 Grok 4 Fast，这是我们在成本效益推理模型方面的最新进展。',
-    displayName: 'Grok 4 Fast',
+    displayName: 'Grok 4 Fast Reasoning',
     enabled: true,
-    id: 'x-ai/grok-4-fast-reasoning',
+    id: 'x-ai/grok-4',
     pricing: {
       units: [
         { name: 'textInput_cacheRead', rate: 0.05, strategy: 'fixed', unit: 'millionTokens' },
