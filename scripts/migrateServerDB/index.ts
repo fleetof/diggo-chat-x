@@ -13,6 +13,7 @@ dotenv.config();
 const migrationsFolder = join(__dirname, '../../packages/database/migrations');
 
 const isDesktop = process.env.NEXT_PUBLIC_IS_DESKTOP_APP === '1';
+const isServerMode = process.env.NEXT_PUBLIC_SERVICE_MODE === 'server';
 
 const runMigrations = async () => {
   const { serverDB } = await import('../../packages/database/src/server');
@@ -30,8 +31,8 @@ const runMigrations = async () => {
 
 let connectionString = process.env.DATABASE_URL;
 
-// only migrate database if the connection string is available
-if (!isDesktop && connectionString) {
+// only migrate database if the connection string is available and in server mode
+if (!isDesktop && isServerMode && connectionString) {
   // eslint-disable-next-line unicorn/prefer-top-level-await
   runMigrations().catch((err) => {
     console.error('❌ Database migrate failed:', err);
@@ -48,5 +49,5 @@ if (!isDesktop && connectionString) {
     process.exit(1);
   });
 } else {
-  console.log('🟢 not find database env or in desktop mode, migration skipped');
+  console.log('🟢 database migration skipped: not server mode or no database env');
 }
