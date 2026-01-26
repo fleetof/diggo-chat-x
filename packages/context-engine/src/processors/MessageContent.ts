@@ -6,6 +6,7 @@ import debug from 'debug';
 
 import { BaseProcessor } from '../base/BaseProcessor';
 import type { PipelineContext, ProcessorOptions } from '../types';
+import { type CompressImageOptions, compressImageForAI } from '../utils';
 
 const log = debug('context-engine:processor:MessageContentProcessor');
 
@@ -19,6 +20,11 @@ export interface FileContextConfig {
 export interface MessageContentConfig {
   /** File context configuration */
   fileContext?: FileContextConfig;
+  /** Image compression configuration */
+  imageCompression?: CompressImageOptions & {
+    /** Whether to enable image compression. @default true */
+    enabled?: boolean;
+  };
   /** Function to check if video is supported */
   isCanUseVideo?: (model: string, provider: string) => boolean | undefined;
   /** Function to check if vision is supported */
@@ -274,14 +280,34 @@ export class MessageContentProcessor extends BaseProcessor {
       return [];
     }
 
+    const compressionEnabled = this.config.imageCompression?.enabled !== false;
+
     return Promise.all(
       imageList.map(async (image) => {
         const { type } = parseDataUri(image.url);
 
         let processedUrl = image.url;
+
+        // Convert local desktop URLs to base64
         if (type === 'url' && isDesktopLocalStaticServerUrl(image.url)) {
           const { base64, mimeType } = await imageUrlToBase64(image.url);
           processedUrl = `data:${mimeType};base64,${base64}`;
+        }
+
+        // Compress image if enabled and we already have a data URL
+        if (compressionEnabled && processedUrl.startsWith('data:')) {
+          try {
+            processedUrl = await compressImageForAI(processedUrl, {
+              compressThreshold: this.config.imageCompression?.compressThreshold,
+              format: this.config.imageCompression?.format,
+              maxHeight: this.config.imageCompression?.maxHeight,
+              maxWidth: this.config.imageCompression?.maxWidth,
+              quality: this.config.imageCompression?.quality,
+            });
+          } catch (error) {
+            log.extend('error')('Failed to compress image: %O', error);
+            // Continue with original image if compression fails
+          }
         }
 
         return {

@@ -41,3 +41,7 @@ export type {
   ToolsGenerationResult,
 } from './tools';
 export { filterValidManifests, ToolNameResolver, ToolsEngine, validateManifest } from './tools';
+
+// Utils
+export type { CompressImageOptions } from './utils';
+export { compressImageForAI } from './utils';
