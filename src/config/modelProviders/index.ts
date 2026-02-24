@@ -127,6 +127,7 @@ export const DEFAULT_MODEL_PROVIDER_LIST = [
   XAIProvider,
   OpenAIProvider,
   GoogleProvider,
+  AnthropicProvider,
   { ...AzureProvider, chatModels: [] },
   AzureAIProvider,
   OllamaProvider,
