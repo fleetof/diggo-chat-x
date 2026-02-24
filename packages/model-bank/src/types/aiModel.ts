@@ -237,6 +237,7 @@ export type ExtendParamsType =
   | 'textVerbosity'
   | 'thinking'
   | 'thinkingBudget'
+  | 'thinkingLevel3'
   | 'urlContext';
 
 export interface AiModelSettings {
