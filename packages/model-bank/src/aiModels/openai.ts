@@ -210,7 +210,7 @@ export const openaiChatModels: AIChatModelCard[] = [
     },
     contextWindowTokens: 400_000,
     description: 'GPT-5.2 是 OpenAI 最新的旗舰模型，在代码生成、数学推理和任务分解方面表现出色。',
-    displayName: 'GPT-5.2（OpenAI 最新的旗舰模型，在代码生成、数学推理和任务分解方面表现出色）',
+    displayName: 'GPT-5.2（在代码生成、数学推理和任务分解方面表现出色）',
     enabled: true,
     id: 'gpt-5.2',
     maxOutput: 128_000,
@@ -222,6 +222,34 @@ export const openaiChatModels: AIChatModelCard[] = [
       ],
     },
     releasedAt: '2025-12-01',
+    settings: {
+      extendParams: ['gpt5ReasoningEffort', 'textVerbosity'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 400_000,
+    description: 'GPT-5.4 是 OpenAI 最新的旗舰模型，在代码生成、数学推理和任务分解方面表现出色。',
+    displayName: 'GPT-5.4（OpenAI 最新的旗舰模型，在代码生成、数学推理和任务分解方面表现出色）',
+    enabled: true,
+    id: 'gpt-5.4',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 1.5, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 12, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.15, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2026-03-06',
     settings: {
       extendParams: ['gpt5ReasoningEffort', 'textVerbosity'],
       searchImpl: 'params',
