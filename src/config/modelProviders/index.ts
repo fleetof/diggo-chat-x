@@ -70,12 +70,14 @@ import ZhiPuProvider from './zhipu';
  * @deprecated
  */
 export const LOBE_DEFAULT_MODEL_LIST: ChatModelCard[] = [
+  GoogleProvider.chatModels,
   OpenAIProvider.chatModels,
+  AnthropicProvider.chatModels,
+  XAIProvider.chatModels,
+  DeepSeekProvider.chatModels,
   QwenProvider.chatModels,
   ZhiPuProvider.chatModels,
   BedrockProvider.chatModels,
-  DeepSeekProvider.chatModels,
-  GoogleProvider.chatModels,
   GroqProvider.chatModels,
   GithubProvider.chatModels,
   MinimaxProvider.chatModels,
@@ -89,9 +91,7 @@ export const LOBE_DEFAULT_MODEL_LIST: ChatModelCard[] = [
   TogetherAIProvider.chatModels,
   FireworksAIProvider.chatModels,
   PerplexityProvider.chatModels,
-  AnthropicProvider.chatModels,
   HuggingFaceProvider.chatModels,
-  XAIProvider.chatModels,
   JinaProvider.chatModels,
   SambaNovaProvider.chatModels,
   CohereProvider.chatModels,
@@ -123,11 +123,12 @@ export const LOBE_DEFAULT_MODEL_LIST: ChatModelCard[] = [
 ].flat();
 
 export const DEFAULT_MODEL_PROVIDER_LIST = [
-  QwenProvider,
-  XAIProvider,
-  OpenAIProvider,
   GoogleProvider,
+  OpenAIProvider,
   AnthropicProvider,
+  XAIProvider,
+  DeepSeekProvider,
+  QwenProvider,
   { ...AzureProvider, chatModels: [] },
   AzureAIProvider,
   OllamaProvider,
@@ -137,7 +138,6 @@ export const DEFAULT_MODEL_PROVIDER_LIST = [
   XinferenceProvider,
   BedrockProvider,
   VertexAIProvider,
-  DeepSeekProvider,
   MoonshotProvider,
   AiHubMixProvider,
   OpenRouterProvider,
