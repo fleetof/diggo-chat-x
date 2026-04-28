@@ -29,8 +29,66 @@ export const openaiChatModels: AIChatModelCard[] = [
     contextWindowTokens: 400_000,
     description:
       '更快、更经济高效的 GPT-5 版本，适用于明确定义的任务。在保持高质量输出的同时，提供更快的响应速度。',
-    displayName: 'GPT-5 mini（日常对话、创意写作）',
+    displayName: 'GPT-5.4 Nano',
     enabled: true,
+    id: 'gpt-5.4-nano',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 0.25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 2, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.025, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2025-08-07',
+    settings: {
+      extendParams: ['gpt5ReasoningEffort', 'textVerbosity'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 400_000,
+    description:
+      '更快、更经济高效的 GPT-5 版本，适用于明确定义的任务。在保持高质量输出的同时，提供更快的响应速度。',
+    displayName: 'GPT-5.4 Mini',
+    enabled: true,
+    id: 'gpt-5.4-mini',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 0.25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 2, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.025, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2025-08-07',
+    settings: {
+      extendParams: ['gpt5ReasoningEffort', 'textVerbosity'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 400_000,
+    description:
+      '更快、更经济高效的 GPT-5 版本，适用于明确定义的任务。在保持高质量输出的同时，提供更快的响应速度。',
+    displayName: 'GPT-5 mini（日常对话、创意写作）',
+    enabled: false,
     id: 'gpt-5-mini',
     maxOutput: 128_000,
     pricing: {
@@ -110,7 +168,7 @@ export const openaiChatModels: AIChatModelCard[] = [
     description:
       '跨领域编码和代理任务的最佳模型。GPT-5 在准确性、速度、推理、上下文识别、结构化思维和问题解决方面实现了飞跃。',
     displayName: 'GPT-5（数学证明、复杂逻辑推理专用）',
-    enabled: true,
+    enabled: false,
     id: 'gpt-5',
     maxOutput: 128_000,
     pricing: {
@@ -183,7 +241,7 @@ export const openaiChatModels: AIChatModelCard[] = [
     contextWindowTokens: 400_000,
     description: 'GPT-5.1 是 OpenAI 最新的旗舰模型，在代码生成、数学推理和任务分解方面表现出色。',
     displayName: 'GPT-5.1（适合代码生成、数学推理、任务分解）',
-    enabled: true,
+    enabled: false,
     id: 'gpt-5.1',
     maxOutput: 128_000,
     pricing: {
@@ -211,7 +269,7 @@ export const openaiChatModels: AIChatModelCard[] = [
     contextWindowTokens: 400_000,
     description: 'GPT-5.2 是 OpenAI 最新的旗舰模型，在代码生成、数学推理和任务分解方面表现出色。',
     displayName: 'GPT-5.2（在代码生成、数学推理和任务分解方面表现出色）',
-    enabled: true,
+    enabled: false,
     id: 'gpt-5.2',
     maxOutput: 128_000,
     pricing: {
@@ -239,7 +297,7 @@ export const openaiChatModels: AIChatModelCard[] = [
     contextWindowTokens: 400_000,
     description: 'GPT-5.4 是 OpenAI 最新的旗舰模型，在代码生成、数学推理和任务分解方面表现出色。',
     displayName: 'GPT-5.4（OpenAI 最新的旗舰模型，在代码生成、数学推理和任务分解方面表现出色）',
-    enabled: true,
+    enabled: false,
     id: 'gpt-5.4',
     maxOutput: 128_000,
     pricing: {
@@ -1147,7 +1205,7 @@ export const openaiImageModels: AIImageModelCard[] = [
   {
     description: 'ChatGPT 原生多模态图片生成模型',
     displayName: 'GPT Image 1',
-    enabled: true,
+    enabled: false,
     id: 'gpt-image-1',
     parameters: gptImage1ParamsSchema,
     pricing: {
@@ -1184,7 +1242,7 @@ export const openaiImageModels: AIImageModelCard[] = [
   {
     description: '成本更低的 GPT Image 1 版本，原生支持文本与图像输入并生成图像输出。',
     displayName: 'GPT Image 1 Mini',
-    enabled: true,
+    enabled: false,
     id: 'gpt-image-1-mini',
     parameters: gptImage1ParamsSchema,
     pricing: {

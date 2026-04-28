@@ -77,7 +77,7 @@ const googleChatModels: AIChatModelCard[] = [
     contextWindowTokens: 1_048_576 + 65_536,
     description: 'Gemini 2.5 Flash 是 Google 性价比最高的模型，提供全面的功能。',
     displayName: 'Gemini 2.5 Flash（数学证明、复杂逻辑推理专用）',
-    enabled: true,
+    enabled: false,
     id: 'gemini-2.5-flash',
     maxOutput: 65_536,
     pricing: {
@@ -242,7 +242,7 @@ const googleChatModels: AIChatModelCard[] = [
     description:
       'Gemini 2.5 Pro 是 Google 最先进的思维模型，能够对代码、数学和STEM领域的复杂问题进行推理，以及使用长上下文分析大型数据集、代码库和文档。',
     displayName: 'Gemini 2.5 Pro',
-    enabled: true,
+    enabled: false,
     id: 'gemini-2.5-pro',
     maxOutput: 65_536,
     pricing: {
@@ -296,7 +296,7 @@ const googleChatModels: AIChatModelCard[] = [
     description:
       'Gemini 3 Pro Preview 是 Google 下一代旗舰模型的预览版，具备更强大的推理能力和更广泛的知识覆盖。',
     displayName: 'Gemini 3 Pro Preview',
-    enabled: true,
+    enabled: false,
     id: 'gemini-3-pro-preview',
     maxOutput: 65_536,
     pricing: {

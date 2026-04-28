@@ -1,4 +1,3 @@
-
 import { AIChatModelCard, AIImageModelCard } from '../types/aiModel';
 
 // https://help.aliyun.com/zh/model-studio/models?spm=a2c4g.11186623
@@ -1311,7 +1310,7 @@ const qwenChatModels: AIChatModelCard[] = [
     contextWindowTokens: 1_000_000,
     description: 'Qwen3 VL 8B 思考模式，面向轻量级多模态推理与交互场景，保留长上下文理解能力。',
     displayName: 'Qwen3 VL 8B Thinking',
-    enabled: true,
+    enabled: false,
     id: 'qwen/qwen3-vl-8b-thinking',
     maxOutput: 32_768,
     organization: 'Qwen',
@@ -1331,7 +1330,7 @@ const qwenChatModels: AIChatModelCard[] = [
     contextWindowTokens: 1_000_000,
     description: 'Qwen3 VL 8B 非思考模式（Instruct），适合常规多模态生成与识别任务。',
     displayName: 'Qwen3 VL 8B Instruct',
-    enabled: true,
+    enabled: false,
     id: 'qwen/qwen3-vl-8b-instruct',
     maxOutput: 32_768,
     organization: 'Qwen',
