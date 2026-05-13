@@ -181,7 +181,7 @@ export const ModelItemRender = memo<ModelItemRenderProps>(({ showInfoTag = true,
   const { mobile } = useResponsive();
 
   // Models that should have bold font
-  const boldModels = ['gemini-3.1-flash-lite-preview', 'gpt-5-mini'];
+  const boldModels = ['gemini-3.1-flash-lite', 'gpt-5-mini'];
   const shouldBeBold = boldModels.includes(model.id);
 
   return (

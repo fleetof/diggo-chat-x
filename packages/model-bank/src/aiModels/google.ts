@@ -46,10 +46,10 @@ const googleChatModels: AIChatModelCard[] = [
     },
     contextWindowTokens: 1_048_576 + 65_536,
     description:
-      "Gemini 3.1 Flash-Lite Preview is Google's most cost-efficient multimodal model, optimized for high-volume agentic tasks, translation, and data processing.",
-    displayName: 'Gemini 3.1 Flash Lite Preview',
+      "Gemini 3.1 Flash-Lite is Google's most cost-efficient multimodal model, optimized for high-volume agentic tasks, translation, and data processing.",
+    displayName: 'Gemini 3.1 Flash Lite',
     enabled: true,
-    id: 'gemini-3.1-flash-lite-preview',
+    id: 'gemini-3.1-flash-lite',
     maxOutput: 65_536,
     pricing: {
       units: [
